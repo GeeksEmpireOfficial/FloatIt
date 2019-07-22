@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>integer_version_code_new_update_wear</key>
+        <value>0</value>
+    </entry>
+    <entry>
+        <key>string_version_name_new_update_wear</key>
+        <value>ZERO</value>
+    </entry>
+    <entry>
+        <key>string_upcoming_change_log_wear</key>
+        <value>
+            New Features Available | Click Here to See…!
+        </value>
+    </entry>
+    <!-- BETA -->
+    <entry>
+        <key>beta_integer_version_code_new_update_wear</key>
+        <value>0</value>
+    </entry>
+</defaultsMap>

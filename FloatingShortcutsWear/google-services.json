@@ -1,0 +1,57 @@
+{
+  "project_info": {
+    "project_number": "225410713006",
+    "firebase_url": "https://floating-shortcuts-free.firebaseio.com",
+    "project_id": "floating-shortcuts-free",
+    "storage_bucket": "floating-shortcuts-free.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225410713006:android:4574b67bf2ac3203",
+        "android_client_info": {
+          "package_name": "net.geekstools.floatshort"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "225410713006-nn5b0084gl8g4od9v0d1o43sdtahcknf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.geekstools.floatshort",
+            "certificate_hash": "c4f7ba6ff825ee77e200fa6c3edc4a749be7baac"
+          }
+        },
+        {
+          "client_id": "225410713006-6lmbjqqcsf40jndluj9jdca9tbl8b1id.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.geekstools.floatshort",
+            "certificate_hash": "37fbff8cd1abf32298a686e2cee3b305fb89ad55"
+          }
+        },
+        {
+          "client_id": "225410713006-iom2spuegnnphdgnrs9i5fbtssus4dh9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkiLtb8A2OhxWXR_3VVvsti7P2I-_x5nU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "225410713006-iom2spuegnnphdgnrs9i5fbtssus4dh9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-2920235108594210~9229356687"
+    }
+  ],
+  "configuration_version": "1"
+}

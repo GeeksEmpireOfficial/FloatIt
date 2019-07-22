@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/backgroundFull"
+    android:background="@color/light">
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        style="@style/Widget.AppCompat.ProgressBar" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/shareNow"
+        android:layout_width="237dp"
+        android:layout_height="51dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="7dp"
+        android:paddingBottom="3dp"
+        android:textAllCaps="false"
+        android:text="@string/share"
+        android:textSize="17sp"
+        android:textColor="@color/light"
+        android:textStyle="bold"
+        android:fontFamily="@font/upcil"
+        app:icon="@drawable/w_sharing"
+        app:iconSize="19dp"
+        app:iconTint="@color/light"
+        app:rippleColor="@color/default_color"
+        app:backgroundTint="@color/default_color_game"
+        app:elevation="13dp"
+        app:cornerRadius="51dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/shareNow"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="37dp"
+        android:cacheColorHint="@android:color/transparent"
+        android:smoothScrollbar="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:paddingStart="7dp"
+            android:paddingEnd="7dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:requiresFadingEdge="vertical"
+                android:fadingEdge="vertical"
+                android:fadingEdgeLength="37dp"
+                android:cacheColorHint="@android:color/transparent"
+                android:smoothScrollbar="true"
+                android:scrollbars="none" />
+
+            <TextView
+                android:id="@+id/itemDemoDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/list"
+                android:layout_marginTop="27dp"
+                android:layout_marginBottom="7dp"
+                android:paddingStart="17dp"
+                android:paddingEnd="17dp" />
+
+            <HorizontalScrollView
+                android:id="@+id/itemDemo"
+                android:layout_width="match_parent"
+                android:layout_height="480dp"
+                android:layout_below="@id/itemDemoDescription"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="3dp"
+                android:paddingStart="11dp"
+                android:paddingEnd="11dp"
+                android:scrollbars="none"
+                android:fadeScrollbars="true"
+                android:cacheColorHint="@android:color/transparent"
+                android:fadingEdge="horizontal"
+                android:fadingEdgeLength="37dp"
+                android:requiresFadingEdge="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/itemDemoList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" />
+            </HorizontalScrollView>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

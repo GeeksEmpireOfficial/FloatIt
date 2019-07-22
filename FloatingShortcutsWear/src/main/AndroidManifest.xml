@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="net.geekstools.floatshort.PRO">
+
+    <uses-feature
+        android:name="android.hardware.type.watch"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:appCategory="productivity"
+        android:fullBackupContent="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/GeeksEmpire">
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="true" />
+
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_notification" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/default_color" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="9b0354fa8241f4d8bb14ea59641166ccbd3583f6" />
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="28.0.0"
+            tools:replace="android:value" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".Configurations"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PermissionDialogue"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.DeviceDefault.Light" />
+        <activity
+            android:name=".Util.SettingGUI"
+            android:label="@string/settingTitle"
+            android:theme="@android:style/Theme.DeviceDefault.Wallpaper" />
+        <activity
+            android:name=".Shortcuts.ListViewOff"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.DeviceDefault.Wallpaper" />
+        <activity
+            android:name=".Util.OpenApplications"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".Util.RemoteTask.CreateFloatingShortcuts"
+            android:exported="true"
+            android:theme="@style/Transparent">
+            <intent-filter>
+                <action android:name="Create_Floating_Shortcuts" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".Automation.RecoveryShortcuts"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="net.geekstools.floatshort.pro.LAUNCH_BACKGROUND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name=".LicenseValidator" />
+        <service android:name=".App_Unlimited_Shortcuts" />
+        <service android:name=".App_Unlimited_HIS" />
+        <service android:name=".Category_Unlimited_Category" />
+        <service android:name=".BindServices" />
+        <service
+            android:name=".CloudNotificationHandler"
+            android:icon="@drawable/ic_launcher">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".Util.UI.FloatingSplash" />
+        <service
+            android:name=".Util.RemoteTask.RecoveryComplication"
+            android:icon="@drawable/draw_recovery"
+            android:label="@string/bootRecovery"
+            android:permission="com.google.android.wearable.permission.BIND_COMPLICATION_PROVIDER">
+            <intent-filter>
+                <action android:name="android.support.wearable.complications.ACTION_COMPLICATION_UPDATE_REQUEST" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.wearable.complications.SUPPORTED_TYPES"
+                android:value="LARGE_IMAGE,TYPE_ICON,RANGED_VALUE" />
+            <meta-data
+                android:name="android.support.wearable.complications.UPDATE_PERIOD_SECONDS"
+                android:value="300" />
+        </service>
+        <service android:name=".Util.UI.PopupOptionsFloatingShortcuts" />
+        <service android:name=".Util.UI.PopupOptionsFloatingCategory" />
+
+        <receiver android:name=".Receivers.BootRecoverReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

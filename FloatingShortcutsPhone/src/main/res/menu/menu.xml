@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="net.geekstools.floatshort.MainScope">
+
+    <item
+        android:id="@+id/facebook"
+        android:icon="@drawable/w_facebook"
+        android:orderInCategory="0"
+        android:showAsAction="always"
+        android:title="@string/like" />
+
+    <item
+        android:id="@+id/donate"
+        android:icon="@drawable/ic_gift"
+        android:orderInCategory="1"
+        android:showAsAction="always"
+        android:title="@string/donate" />
+</menu>

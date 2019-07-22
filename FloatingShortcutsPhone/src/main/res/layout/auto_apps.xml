@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/MainView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_transparent_high">
+
+    <ListView
+        android:id="@+id/listFav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@drawable/draw_divider"
+        android:dividerHeight="5dp"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="37dp"
+        android:listSelector="@color/transparent_default"
+        android:paddingStart="9dp"
+        android:paddingTop="113dp"
+        android:paddingEnd="30dp"
+        android:requiresFadingEdge="vertical"
+        android:saveEnabled="true"
+        android:scrollbars="none"
+        android:smoothScrollbar="true" />
+
+    <RelativeLayout
+        android:id="@+id/loadingSplash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/loadLogo"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/draw_floating_logo" />
+
+        <ProgressBar
+            android:id="@+id/loadingProgressltr"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="13dp"
+            android:layout_alignParentBottom="true"
+            android:indeterminate="true"
+            android:indeterminateBehavior="cycle" />
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="39dp"
+            android:gravity="center"
+            android:padding="7dp"
+            android:shadowColor="@android:color/black"
+            android:shadowRadius="25"
+            android:text="@string/retry"
+            android:textColor="@color/default_color"
+            android:textSize="43sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/autoSelect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:paddingBottom="3dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/autoApps"
+            android:layout_width="0dp"
+            android:layout_height="33dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/auto_apps"
+            android:textColor="@color/light"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/autoCategories"
+            android:layout_width="0dp"
+            android:layout_height="33dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/auto_categories"
+            android:textColor="@color/light"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/autoSelection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/autoSelect"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:fadeScrollbars="true"
+        android:fadingEdge="horizontal"
+        android:fadingEdgeLength="37dp"
+        android:paddingBottom="3dp"
+        android:requiresFadingEdge="horizontal"
+        android:scrollbarSize="2dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbarThumbHorizontal="@color/dark_transparent_high"
+        android:scrollbars="horizontal"
+        android:smoothScrollbar="true"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/autoid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/wifi"
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:background="@drawable/draw_wifi" />
+
+            <Button
+                android:id="@+id/bluetooth"
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:background="@drawable/draw_bluetooth" />
+
+            <Button
+                android:id="@+id/gps"
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:background="@drawable/draw_gps" />
+
+            <Button
+                android:id="@+id/nfc"
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:background="@drawable/draw_nfc" />
+
+            <Button
+                android:id="@+id/time"
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:background="@drawable/draw_time" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:id="@+id/nestedIndexScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/autoSelection"
+        android:layout_alignEnd="@id/listFav"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:foregroundGravity="center_vertical"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:id="@+id/side_index"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/transparent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/popupIndex"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_toStartOf="@id/nestedIndexScrollView"
+        android:gravity="center"
+        android:textColor="@color/light"
+        android:textSize="29sp"
+        android:typeface="monospace"
+        android:background="@drawable/ic_launcher_balloon"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:id="@+id/fullActionViews"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_light"
+        android:visibility="invisible">
+
+        <ListView
+            android:id="@+id/acttionElementsList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:divider="@drawable/draw_divider"
+            android:dividerHeight="2dp"
+            android:listSelector="@color/transparent_default"
+            android:saveEnabled="true"
+            android:smoothScrollbar="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/preferences"
+                android:layout_width="87dp"
+                android:layout_height="87dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/draw_pref_action"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

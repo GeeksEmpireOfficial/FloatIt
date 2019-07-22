@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wholeCategoryFloating"
+    android:layout_width="96dp"
+    android:layout_height="96dp"
+    android:background="@drawable/back_floating_category"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <net.geekstools.imageview.customshapes.ShapesImage
+            android:id="@+id/one"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop" />
+
+        <net.geekstools.imageview.customshapes.ShapesImage
+            android:id="@+id/two"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_above="@id/one"
+            android:layout_toStartOf="@id/one"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop" />
+
+        <net.geekstools.imageview.customshapes.ShapesImage
+            android:id="@+id/three"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/two"
+            android:layout_toStartOf="@id/one"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop" />
+
+        <net.geekstools.imageview.customshapes.ShapesImage
+            android:id="@+id/four"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_above="@id/one"
+            android:layout_toEndOf="@id/two"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop" />
+    </RelativeLayout>
+
+    <net.geekstools.imageview.customshapes.ShapesImage
+        android:id="@+id/pin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:scaleType="centerCrop" />
+
+    <net.geekstools.imageview.customshapes.ShapesImage
+        android:id="@+id/notificationDotEnd"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible" />
+
+    <net.geekstools.imageview.customshapes.ShapesImage
+        android:id="@+id/notificationDotStart"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible" />
+</RelativeLayout>

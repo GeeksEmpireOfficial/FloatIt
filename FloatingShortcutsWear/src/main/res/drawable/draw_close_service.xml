@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/backtemp"
+        android:bottom="0dp"
+        android:left="0dp"
+        android:right="0dp"
+        android:top="0dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/default_color" />
+            <corners android:radius="0dp" />
+        </shape>
+    </item>
+
+    <item
+        android:bottom="33dp"
+        android:left="33dp"
+        android:right="33dp"
+        android:top="33dp">
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/ic_close_service" />
+    </item>
+</layer-list>

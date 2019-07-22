@@ -1,0 +1,2 @@
+include ':FloatingShortcutsPhone', ':FloatingShortcutsWear', ':ShapesCustomImageViewLibrary'
+include ':LicenseLibrary'

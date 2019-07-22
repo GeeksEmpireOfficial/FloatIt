@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/backtemp">
+        <shape android:shape="oval">
+            <solid android:color="@color/default_color" />
+        </shape>
+    </item>
+
+    <item android:drawable="@drawable/w_support" />
+</layer-list>

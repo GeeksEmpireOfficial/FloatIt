@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:drawable="@drawable/ic_launcher_balloon"
+        android:id="@+id/ic_launcher_back_layer" />
+    <item
+        android:id="@+id/ic_launcher_front_layer"
+        android:drawable="@drawable/ic_launcher_dots" />
+</layer-list>

@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="net.geekstools.floatshort.PRO">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+
+    <application
+        android:allowBackup="true"
+        android:appCategory="productivity"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher_adaptive"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:resizeableActivity="true"
+        android:roundIcon="@mipmap/ic_launcher_adaptive_round"
+        android:screenOrientation="sensorPortrait"
+        android:theme="@style/GeeksEmpire">
+
+        <!--FREE-->
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/AdAppId" />
+
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            tools:replace="android:theme" />
+        <!--FREE-->
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_notification" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/default_color" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="9b0354fa8241f4d8bb14ea59641166ccbd3583f6" />
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="28.0.0"
+            tools:replace="android:value" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".Configurations"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CheckPoint"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:theme="@android:style/Theme.DeviceDefault.Wallpaper.NoTitleBar" />
+        <activity
+            android:name=".Shortcuts.HybridViewOff"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:resizeableActivity="true"
+            android:screenOrientation="sensorPortrait"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/GeeksEmpire.Material" />
+        <activity
+            android:name=".Category.CategoryHandler"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:exported="true"
+            android:resizeableActivity="true"
+            android:screenOrientation="sensorPortrait"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/GeeksEmpire.Material"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Widget.WidgetConfigurations"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:exported="true"
+            android:resizeableActivity="true"
+            android:screenOrientation="sensorPortrait"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/GeeksEmpire.Material"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Category.AppSelectionList"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:resizeableActivity="true"
+            android:screenOrientation="sensorPortrait"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/GeeksEmpire.Material" />
+        <activity
+            android:name=".Automation.Apps.AppAutoFeatures"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:exported="true"
+            android:label="@string/automation"
+            android:resizeableActivity="true"
+            android:screenOrientation="sensorPortrait"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/GeeksEmpire.AutomationFeatures" />
+        <activity
+            android:name=".Automation.Categories.CategoryAutoFeatures"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:exported="true"
+            android:label="@string/automation"
+            android:resizeableActivity="true"
+            android:screenOrientation="sensorPortrait"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/GeeksEmpire.AutomationFeatures" />
+        <activity
+            android:name=".Util.SettingGUI.SettingGUILight"
+            android:label="@string/settingTitle"
+            android:theme="@style/GeeksEmpire.Preference.Light" />
+        <activity
+            android:name=".Util.SettingGUI.SettingGUIDark"
+            android:label="@string/settingTitle"
+            android:theme="@style/GeeksEmpire.Preference.Dark" />
+        <activity
+            android:name=".Automation.Alarms.TimeDialogue"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
+        <activity
+            android:name=".Util.RemoteTask.DeepLinkedShortcuts"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter
+                android:autoVerify="true"
+                android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.geeksempire.net"
+                    android:pathPrefix="/createshortcuts.html"
+                    android:scheme="https" />
+                <!-- adb shell am start -W -a android.intent.action.VIEW -d "https//...." net.geekstools.floatshort.PRO -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Category.DeepLinkedCategory"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter
+                android:autoVerify="true"
+                android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.geeksempire.net"
+                    android:pathPrefix="/createcategory.html"
+                    android:scheme="https" />
+                <!-- adb shell am start -W -a android.intent.action.VIEW -d "https//...." net.geekstools.floatshort.PRO -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Util.InteractionObserver.SplitTransparentPair"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".Util.InteractionObserver.SplitTransparentSingle"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".Util.RemoteTask.RecoveryAllActivity"
+            android:exported="true"
+            android:icon="@drawable/draw_recovery"
+            android:label="@string/recover_all"
+            android:noHistory="true"
+            android:excludeFromRecents="true"
+            android:theme="@style/Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <action android:name="Remote_Recover_All" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Util.RemoteTask.RemoveAllActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".Util.RemoteTask.RecoveryShortcutsActivity"
+            android:exported="true"
+            android:icon="@drawable/draw_widget_shortcuts"
+            android:label="@string/shortcuts"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:theme="@style/Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <action android:name="Remote_Recover_Shortcuts" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Util.RemoteTask.RecoveryCategoryActivity"
+            android:exported="true"
+            android:icon="@drawable/draw_widget_categories"
+            android:excludeFromRecents="true"
+            android:label="@string/floatingCategory"
+            android:noHistory="true"
+            android:theme="@style/Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <action android:name="Remote_Recover_Categories" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Util.RemoteTask.RecoveryWidgetActivity"
+            android:exported="true"
+            android:icon="@drawable/draw_widget_widgets"
+            android:excludeFromRecents="true"
+            android:label="@string/floatingWidget"
+            android:noHistory="true"
+            android:theme="@style/Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <action android:name="Remote_Recover_Widgets" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Util.RemoteTask.RemoteRecoveryActivity"
+            android:exported="true"
+            android:label="@string/recovery_center"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:theme="@style/Transparent">
+            <intent-filter>
+                <action android:name="Remote_Single_Floating_Shortcuts" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Util.OpenApplications"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:noHistory="true"
+            android:excludeFromRecents="true"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".Util.RemoteTask.CreateFloatingShortcuts"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:theme="@style/Transparent">
+            <intent-filter>
+                <action android:name="Create_Floating_Shortcuts" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Util.RemoteTask.FloatingWidgetHomeScreenShortcuts"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:theme="@style/Transparent">
+            <intent-filter>
+                <action android:name="CREATE_FLOATING_WIDGET_HOME_SCREEN_SHORTCUTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Util.IAP.InAppBilling"
+            android:theme="@style/GeeksEmpire.Material.IAP.DARK">
+            <intent-filter>
+                <action android:name="RESPONSE_OWNED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity-alias
+            android:name=".Alias.CategoryHandler"
+            android:enabled="false"
+            android:icon="@drawable/alias_categories"
+            android:label="@string/floatingCategory"
+            android:targetActivity=".Category.CategoryHandler">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".Alias.WidgetConfigurations"
+            android:enabled="false"
+            android:icon="@drawable/alias_widgets"
+            android:label="@string/floatingWidget"
+            android:targetActivity=".Widget.WidgetConfigurations">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".Alias.Automation"
+            android:enabled="false"
+            android:icon="@drawable/alias_auto"
+            android:label="@string/automation"
+            android:targetActivity=".Automation.Apps.AppAutoFeatures">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".Alias.Recover.Shortcuts"
+            android:enabled="false"
+            android:icon="@drawable/alias_shortcuts_recovery"
+            android:label="@string/recoveryShortcuts"
+            android:targetActivity=".Util.RemoteTask.RecoveryShortcutsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".Alias.Recover.Categories"
+            android:enabled="false"
+            android:icon="@drawable/alias_categories_recovery"
+            android:label="@string/recover_category"
+            android:targetActivity=".Util.RemoteTask.RecoveryCategoryActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <service
+            android:name=".Util.RemoteTask.RecoveryShortcuts"
+            android:exported="true"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="net.geekstools.floatshort.pro.LAUNCH_BACKGROUND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".Util.RemoteTask.RecoveryCategory"
+            android:exported="true"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <service
+            android:name=".Util.RemoteTask.RecoveryWidgets"
+            android:exported="true"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <service
+            android:name=".Util.RemoteTask.RecoveryAll"
+            android:exported="true"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <service
+            android:name=".Automation.RecoveryWifi"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <service
+            android:name=".Automation.RecoveryBluetooth"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <service
+            android:name=".Automation.RecoveryNfc"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <service
+            android:name=".Automation.RecoveryGps"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <service
+            android:name=".Util.RemoteTask.RemoveAll"
+            android:exported="true"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <service android:name=".Automation.Alarms.SetupAlarms" />
+        <service android:name=".App_Unlimited_Shortcuts" />
+        <service android:name=".App_Unlimited_Wifi" />
+        <service android:name=".App_Unlimited_Bluetooth" />
+        <service android:name=".App_Unlimited_Gps" />
+        <service android:name=".App_Unlimited_Nfc" />
+        <service android:name=".App_Unlimited_Time" />
+        <service android:name=".Category_Unlimited_Floating" />
+        <service android:name=".Category_Unlimited_Wifi" />
+        <service android:name=".Category_Unlimited_Bluetooth" />
+        <service android:name=".Category_Unlimited_Gps" />
+        <service android:name=".Category_Unlimited_Nfc" />
+        <service android:name=".Category_Unlimited_Time" />
+        <service android:name=".Widget_Unlimited_Floating" />
+        <service android:name=".App_Unlimited_HIS" />
+        <service android:name=".Util.CloudNotificationHandler">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".Util.InteractionObserver.InteractionObserver"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/split_screen_config" />
+        </service>
+        <service
+            android:name=".Util.RemoteTask.RemoteController"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <service android:name=".BindServices" />
+        <service android:name=".Util.LicenseValidator" />
+        <service
+            android:name=".Notifications.NotificationListener"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+        <service android:name=".Util.UI.FloatingSplash" />
+        <service android:name=".Util.UI.PopupOptionsFloatingShortcuts" />
+        <service android:name=".Util.UI.PopupOptionsFloatingCategory" />
+
+        <receiver android:name=".Receivers.ReceiverWifi">
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Receivers.ReceiverBluetooth">
+            <intent-filter>
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Receivers.ReceiverGPS">
+            <intent-filter>
+                <action android:name="android.location.PROVIDERS_CHANGED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Receivers.ReceiverNFC">
+            <intent-filter>
+                <action android:name="android.nfc.action.ADAPTER_STATE_CHANGED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Receivers.ColorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.WALLPAPER_CHANGED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Receivers.BootRecoverReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Automation.Alarms.AlarmAlertBroadcastReceiver" />
+        <receiver android:name=".Receivers.AppsReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_FULLY_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/one"
+        android:drawable="@drawable/ic_launcher" />
+    <item
+        android:id="@+id/two"
+
+        android:drawable="@drawable/ic_launcher"
+        android:gravity="bottom|left" />
+</layer-list>

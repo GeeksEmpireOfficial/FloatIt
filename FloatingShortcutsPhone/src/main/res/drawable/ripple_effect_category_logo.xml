@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/red">
+
+    <item
+        android:id="@+id/category_logo_layer"
+        android:drawable="@drawable/category_droplet_icon"></item>
+
+    <item
+        android:id="@android:id/mask"
+        android:drawable="@drawable/category_droplet_icon"></item>
+</ripple>

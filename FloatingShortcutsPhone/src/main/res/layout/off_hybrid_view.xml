@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/MainView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_transparent_high">
+
+    <HorizontalScrollView
+        android:id="@+id/freqList"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="56dp"
+        android:paddingStart="11dp"
+        android:paddingEnd="11dp"
+        android:cacheColorHint="@android:color/transparent"
+        android:fadeScrollbars="true"
+        android:fadingEdge="horizontal"
+        android:fadingEdgeLength="39dp"
+        android:requiresFadingEdge="horizontal"
+        android:scrollbars="none"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:id="@+id/freqItem"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@android:color/transparent" />
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="37dp"
+        android:requiresFadingEdge="vertical"
+        android:scrollbars="none"
+        android:smoothScrollbar="true">
+
+        <RelativeLayout
+            android:id="@+id/scrollRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="37dp"
+            android:paddingBottom="47dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alwaysDrawnWithCache="true"
+                android:drawSelectorOnTop="true"
+                android:isScrollContainer="false"
+                android:listSelector="@color/transparent_default"
+                android:nestedScrollingEnabled="false"
+                android:paddingStart="3dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="27dp"
+                android:persistentDrawingCache="animation|scrolling"
+                android:saveEnabled="true" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/nestedIndexScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignEnd="@id/nestedScrollView"
+        android:foregroundGravity="center_vertical"
+        android:background="@android:color/transparent"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:id="@+id/side_index"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:background="@android:color/transparent"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <net.geekstools.imageview.customshapes.ShapesImage
+        app:shapeDrawable="@drawable/ic_bulb"
+        android:id="@+id/recoverFloatingCategories"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="43dp"
+        android:layout_marginEnd="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/draw_recovery"
+        android:visibility="gone"
+        android:contentDescription="@string/recover_category" />
+
+    <net.geekstools.imageview.customshapes.ShapesImage
+        app:shapeDrawable="@drawable/ic_bulb"
+        android:id="@+id/recoverFloatingWidgets"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="43dp"
+        android:layout_marginStart="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/draw_recovery_widgets"
+        android:visibility="gone"
+        android:contentDescription="@string/recover_widgets" />
+
+    <LinearLayout
+        android:id="@+id/switchFloating"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:visibility="invisible"
+        android:background="@android:color/transparent"
+        android:weightSum="2">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/switchWidgets"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:gravity="center"
+            android:ellipsize="start"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:text="@string/widgetHint"
+            android:textSize="19sp"
+            android:fontFamily="@font/upcil"
+            app:elevation="7dp"
+            app:cornerRadius="7dp"
+            app:backgroundTint="@color/default_color" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/switchCategories"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:gravity="center"
+            android:ellipsize="start"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:text="@string/categoryHint"
+            android:textSize="19sp"
+            android:fontFamily="@font/upcil"
+            app:elevation="7dp"
+            app:cornerRadius="7dp"
+            app:backgroundTint="@color/default_color" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/recoveryAction"
+        android:layout_width="247dp"
+        android:layout_height="49dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="61dp"
+        android:gravity="center"
+        android:ellipsize="middle"
+        android:singleLine="true"
+        android:text="@string/recoveryShortcuts"
+        android:textAllCaps="false"
+        android:textColor="@color/light"
+        android:textSize="19sp"
+        android:fontFamily="@font/upcil"
+        app:elevation="3dp"
+        app:backgroundTint="@color/default_color"
+        app:rippleColor="@color/light"
+        app:cornerRadius="57dp"
+        app:icon="@drawable/w_recovery"
+        app:iconGravity="start"
+        app:iconSize="29dp"
+        app:iconPadding="1dp" />
+
+    <RelativeLayout
+        android:id="@+id/fullActionViews"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_light"
+        android:visibility="invisible">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/automationAction"
+            android:layout_width="247dp"
+            android:layout_height="49dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="61dp"
+            android:gravity="center"
+            android:ellipsize="middle"
+            android:singleLine="true"
+            android:text="@string/automation"
+            android:textAllCaps="false"
+            android:textColor="@color/light"
+            android:textSize="19sp"
+            android:fontFamily="@font/upcil"
+            app:elevation="3dp"
+            app:backgroundTint="@color/default_color"
+            app:rippleColor="@color/light"
+            app:cornerRadius="57dp"
+            app:icon="@drawable/w_floating"
+            app:iconGravity="start"
+            app:iconSize="29dp"
+            app:iconPadding="1dp" />
+
+        <Button
+            android:id="@+id/preferences"
+            android:layout_width="87dp"
+            android:layout_height="87dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/draw_pref_action"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/actionButton"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/draw_pref_action" />
+
+    <ImageView
+        android:id="@+id/share"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:layout_marginStart="7dp"
+        android:padding="3dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/draw_share" />
+
+    <ImageView
+        android:id="@+id/newUpdate"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:layout_marginStart="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_update"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/popupIndex"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_toStartOf="@id/nestedIndexScrollView"
+        android:gravity="center"
+        android:textColor="@color/light"
+        android:textSize="29sp"
+        android:typeface="monospace"
+        android:background="@drawable/ic_launcher_balloon"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:id="@+id/loadingSplash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/loadLogo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_launcher_layer" />
+
+        <ProgressBar
+            android:id="@+id/loadingProgressltr"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="-15dp"
+            android:indeterminate="true"
+            android:indeterminateBehavior="cycle" />
+    </RelativeLayout>
+
+</RelativeLayout>

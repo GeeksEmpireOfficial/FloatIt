@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:apps="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item"
+    android:layout_width="110dp"
+    android:layout_height="105dp"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/ripple_effect"
+    android:gravity="center">
+
+    <net.geekstools.imageview.customshapes.ShapesImage
+        android:id="@+id/icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        apps:shapeDrawable="@drawable/square_icon" />
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/icon"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:maxLines="2"
+        android:paddingStart="7dp"
+        android:paddingEnd="7dp"
+        android:textColor="@color/dark"
+        android:textSize="12sp"
+        android:textStyle="normal" />
+
+    <Button
+        android:id="@+id/recoveryIndicator"
+        android:layout_width="19dp"
+        android:layout_height="19dp"
+        android:layout_alignStart="@id/icon"
+        android:layout_marginStart="-17dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/draw_recovery_indicator"
+        android:visibility="invisible" />
+
+</RelativeLayout>

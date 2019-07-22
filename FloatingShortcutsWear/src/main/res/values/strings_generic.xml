@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" translatable="false">Floating Shortcuts</string>
+    <string name="updateAvailable" translatable="false">New Update Available | Go to Play Store to Install it…!</string>
+    <string name="recoveryEmoji"> 🔄 </string>
+
+    <string name="integerVersionCodeNewUpdateWear" translatable="false">integer_version_code_new_update_wear</string>
+
+    <string name="BETAintegerVersionCodeNewUpdateWear" translatable="false">beta_integer_version_code_new_update_wear</string>
+
+    <string name="buy" translatable="false">Purchase</string>
+    <string name="free" translatable="false">Free Edition</string>
+    <string name="contact" translatable="false">Contact me</string>
+    <string name="license_info" translatable="false">License Issuing</string>
+    <string name="license_info_desc" translatable="false">Retrieving License Information from Google Play Store</string>
+    <string name="license_title" translatable="false">
+        <![CDATA[
+            <b>License Validating Issue</b>
+        ]]>
+    </string>
+    <string name="license_msg" translatable="false">
+        <![CDATA[
+            <br/>
+            <b>Hi</b>&#8230; &#9786;<br/>
+            <small>Floating Shortcuts has been installed illegally & It can cause Security Risk ⚠️<br/><br/>
+            <b>Please, Consider following Solutions</b>&#8230;<br/>
+            1. Purchase Floating Shortcuts ᴾᴿᴼ from Google Play Store <big>💳</big><br/>
+            2. Install Free Edition from Google Play Store <big>🆓</big><br/>
+            3. Always Ready to Help, Contact me! <big>📧</big></small>
+        ]]>
+    </string>
+    <string name="license" translatable="false">LICENSE</string>
+
+    <string name="support" translatable="false">Support@GeeksEmpire.net</string>
+    <string name="feedback_tag" translatable="false">Floating Shortcuts Direct Help | Feedback</string>
+
+    <string name="link_xda" translatable="false">http://goo.gl/QJYKWJ</string>
+    <string name="play_store_link" translatable="false">https://play.google.com/store/apps/details?id=</string>
+</resources>

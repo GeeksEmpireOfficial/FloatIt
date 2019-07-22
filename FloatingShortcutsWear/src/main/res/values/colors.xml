@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="default_color">#237DAE</color>
+    <color name="default_color_trans">#33237dae</color>
+    <color name="default_color_light">#008dda</color>
+    <color name="default_color_darker">#0a415e</color>
+    <color name="trans_def">#80237dae</color>
+
+    <color name="red">#9b000e</color>
+    <color name="red_trans">#4d9b000e</color>
+    <color name="green">#007b08</color>
+
+    <color name="light">#f2f7ff</color>
+    <color name="lighter">#fafbff</color>
+    <color name="light_trans">#b7f2f7ff</color>
+    <color name="light_trans_high">#0ff2f7ff</color>
+
+    <color name="white">#b3f2f7ff</color>
+
+    <color name="dark">#0a0f18</color>
+    <color name="darker">#070b12</color>
+    <color name="trans_black">#b40a0f18</color>
+    <color name="trans_black_high">#4b0a0f18</color>
+</resources>

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light"
+    tools:context="net.geekstools.floatshort.PRO.Util.SettingGUI"
+    tools:deviceIds="wear">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:background="@drawable/draw_back" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:cacheColorHint="@android:color/transparent"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="13dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/remoteRecovery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="7dp"
+                android:padding="2dp"
+                android:text="@string/smartTitle"
+                android:textColor="@color/dark"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_box="all" />
+
+            <Switch
+                android:id="@+id/bootReceiver"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_below="@id/remoteRecovery"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/ripple_effect" />
+
+            <TextView
+                android:id="@+id/bootText"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_below="@id/remoteRecovery"
+                android:layout_marginTop="2dp"
+                android:layout_toEndOf="@id/hide"
+                android:background="@drawable/ripple_effect"
+                android:gravity="center_vertical"
+                android:text="@string/bootRecovery"
+                android:textColor="@color/dark"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/shape"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bootText"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="7dp"
+                android:padding="2dp"
+                android:text="@string/shapesTitle"
+                android:textColor="@color/dark"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_box="all" />
+
+            <ScrollView
+                android:id="@+id/shapesView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shape">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="31dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="19dp"
+                    android:paddingEnd="19dp"
+                    android:weightSum="6">
+
+                    <ImageView
+                        android:id="@+id/dropletIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="31dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/droplet_icon"
+                        android:tint="@color/default_color_darker" />
+
+                    <ImageView
+                        android:id="@+id/circleIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="31dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/circle_icon"
+                        android:tint="@color/default_color_darker" />
+
+                    <ImageView
+                        android:id="@+id/squareIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="31dp"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/square_icon"
+                        android:tint="@color/default_color_darker" />
+
+                    <ImageView
+                        android:id="@+id/squircleIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="31dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/squircle_icon"
+                        android:tint="@color/default_color_darker" />
+
+                    <ImageView
+                        android:id="@+id/cutCircleIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="31dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/cut_circle_icon"
+                        android:tint="@color/default_color_darker" />
+
+                    <TextView
+                        android:id="@+id/noneIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="31dp"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical"
+                        android:paddingStart="5dp"
+                        android:text="@string/boot_none"
+                        android:textColor="@color/default_color_darker"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shapesView"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="7dp"
+                android:padding="2dp"
+                android:text="@string/themeTrans"
+                android:textColor="@color/dark"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_box="all" />
+
+            <RadioButton
+                android:id="@+id/light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/theme"
+                android:layout_marginStart="21dp"
+                android:background="@drawable/ripple_effect"
+                android:buttonTint="@color/default_color"
+                android:paddingStart="11dp"
+                android:text="@string/light"
+                android:textColor="@color/dark"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/dark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/light"
+                android:layout_marginStart="21dp"
+                android:background="@drawable/ripple_effect"
+                android:buttonTint="@color/default_color"
+                android:paddingStart="11dp"
+                android:text="@string/dark"
+                android:textColor="@color/dark"
+                android:textSize="12sp" />
+
+            <Switch
+                android:id="@+id/hide"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_below="@id/dark"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/ripple_effect" />
+
+            <TextView
+                android:id="@+id/hideText"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_below="@id/dark"
+                android:layout_marginTop="2dp"
+                android:layout_toEndOf="@id/hide"
+                android:background="@drawable/ripple_effect"
+                android:gravity="center_vertical"
+                android:text="@string/autotrans"
+                android:textColor="@color/dark"
+                android:textSize="12sp" />
+
+            <Switch
+                android:id="@+id/floatingSplash"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_below="@id/hide"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/ripple_effect" />
+
+            <TextView
+                android:id="@+id/floatingSplashText"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_below="@id/hide"
+                android:layout_marginTop="2dp"
+                android:layout_toEndOf="@id/hide"
+                android:background="@drawable/ripple_effect"
+                android:gravity="center_vertical"
+                android:text="@string/splashTitle"
+                android:textColor="@color/dark"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/support"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/floatingSplash"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="3dp"
+                android:background="@drawable/draw_support" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="settingTitle">Preferences</string>
+    <string name="overlayset">Turn On Permission, Please!</string>
+    <string name="bindTitle">Floating Shortcuts | Steady Mode</string>
+    <string name="bindDesc">It will Stop Automatically</string>
+    <string name="shapesTitle">Floating Shapes</string>
+    <string name="dark">Dark</string>
+    <string name="light">Light</string>
+    <string name="not_install">The Application is Not Available</string>
+    <string name="updating_info">Updating Applications Information</string>
+    <string name="supportTitle">Help &amp; Feedback</string>
+    <string name="permTitle">
+         <![CDATA[
+            <b>Permissions Info</b>, Be Patient!
+        ]]>
+    </string>
+    <string name="permDesc">
+        <![CDATA[
+            <b>Hi</b>&#8230; &#9786;<br/>I need your Permission to create <b>Shortcuts in Floating View</b>.
+            Please Grant permission by Enabling the Switch.<br/>
+            Also to make me Smarter Please go to Preferences, Details &amp; Practical Info to Enable <b>Smart Features</b>.<br/>
+            Press Grant to Proceed to Settings.<br/>
+            <b>Thanks!</b>
+       ]]>
+    </string>
+    <string name="grant">Grant</string>
+    <string name="read">Read More</string>
+    <string name="later">Later Setup</string>
+    <string name="group">Floating Folders</string>
+    <string name="themeTrans">Transparent Theme</string>
+    <string name="autotrans">Floating Transparency</string>
+    <string name="splashTitle">Floating Splash</string>
+    <string name="smartTitle">Smart Feature</string>
+    <string name="bootRecovery">Remote Recovery</string>
+    <string name="boot_none">NONE</string>
+    <string name="remove_all_shortcuts">REMOVE ALL</string>
+    <string name="pin">Pin Shortcut</string>
+    <string name="unpin">Unpin Shortcut</string>
+    <string name="pin_category">Pin Folder</string>
+    <string name="unpin_category">Unpin Folder</string>
+    <string name="remove">Remove Shortcut</string>
+    <string name="remove_category">Remove Folder</string>
+    <string name="edit_category">Edit </string>
+
+</resources>

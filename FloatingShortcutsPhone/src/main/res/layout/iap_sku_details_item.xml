@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView style="@style/CardViewStyle"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="3dp"
+    app:cardBackgroundColor="@color/light"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:background="@android:color/transparent">
+
+        <TextView
+            android:id="@+id/purchaseItemName"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center_vertical"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:scrollHorizontally="true"
+            android:text="@string/app_name"
+            android:typeface="monospace"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/darker"
+            android:background="@android:color/transparent" />
+
+        <ImageView
+            android:id="@+id/purchaseItemIcon"
+            android:layout_width="77dp"
+            android:layout_height="77dp"
+            android:layout_below="@id/purchaseItemName"
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            android:gravity="center"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/purchaseItemPrice"
+            android:layout_width="77dp"
+            android:layout_height="23dp"
+            android:layout_below="@id/purchaseItemIcon"
+            android:gravity="center"
+            android:padding="3dp"
+            android:ellipsize="end"
+            android:scrollHorizontally="true"
+            android:text="@string/app_name"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/default_color_light"
+            android:background="@android:color/transparent" />
+
+        <TextView
+            android:id="@+id/purchaseItemDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/purchaseItemName"
+            android:layout_toEndOf="@id/purchaseItemIcon"
+            android:layout_alignBottom="@id/purchaseItemPrice"
+            android:layout_margin="3dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:ellipsize="end"
+            android:scrollHorizontally="true"
+            android:text="@string/app_name"
+            android:textColor="@color/dark_transparent"
+            android:textSize="13sp"
+            android:typeface="monospace"
+            android:background="@android:color/transparent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/purchaseItemButton"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_margin="3dp"
+            android:layout_below="@id/purchaseItemPrice"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/purchase"
+            android:textSize="12sp"
+            android:textColor="@color/light"
+            android:textStyle="bold"
+            android:contentDescription="@string/purchase"
+            app:cornerRadius="3dp"
+            app:rippleColor="@color/light_transparent_high"
+            app:backgroundTint="@color/default_color_light"
+            app:elevation="7dp" />
+
+        <TextView
+            android:id="@+id/purchaseItemInfo"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_below="@id/purchaseItemButton"
+            android:layout_margin="3dp"
+            android:text="@string/restorePurchase"
+            android:textSize="12sp"
+            android:textColor="@color/dark_transparent_high"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

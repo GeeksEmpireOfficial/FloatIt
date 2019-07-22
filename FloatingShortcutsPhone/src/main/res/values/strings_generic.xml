@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Free String -->
+    <string name="pro_version" translatable="false">Floating Shortcuts ᴾᴿᴼ</string>
+    <string name="upgradeNow" translatable="false">Upgrade</string>
+    <string name="upgrade" translatable="false">Upgrade to Floating Shortcuts ᴾᴿᴼ</string>
+    <string name="upgradeDesc" translatable="false">
+        <![CDATA[
+            <b>Unlimited Floating Shortcuts</b>…!<br/>
+            Get The Newest Stable Features & Enhanced Graphical Interface (No Ads)
+        ]]>
+    </string>
+    <string name="ads" translatable="false">Remove Ads</string>
+    <string name="adsDesc" translatable="false">Remove All Ads</string>
+    <string name="iabRestore">
+        To Restore \'<b>Remove All Ads</b>\' Item Select your Email 📧 &amp; Re-Click on <b>Purchase</b>.
+    </string>
+    <string name="dot_pro">.PRO</string>
+    <string name="AdAppId" translatable="false">ca-app-pub-2920235108594210~9229356687</string>
+    <string name="AdUnitActivities" translatable="false">ca-app-pub-2920235108594210/1750751487</string>
+    <string name="AdUnitSettingGUI" translatable="false">ca-app-pub-2920235108594210/9496182194</string>
+    <string name="AdUnitReward" translatable="false">ca-app-pub-2920235108594210/2451118698</string>
+    <string name="ads_title" translatable="false">
+        <![CDATA[
+            <b>Advertising Blocker Found</b>
+        ]]>
+    </string>
+    <string name="ads_msg" translatable="false">
+        <![CDATA[
+            <br/>
+            <b>Hi</b>&#8230; &#9786;<br/>
+            <small>There is an Issue on Loading & Showing Ads. I highly Recommend to Uninstall AdBlocker Services. They Scan All your Internet Communications & It can cause Security Risk ⚠️<br/><br/>
+            <b>Please, Consider following Solutions</b>&#8230;<br/>
+            1. Let Me Showing Ads <b>...</b><br/>
+            2. Go to Preferences & Select <b>Remove All Ads</b> <b>🛑</b><br/>
+            3. Purchase Floating Shortcuts ᴾᴿᴼ from Google Play Store <big>💳</big><br/>
+            4. Always Ready to Help, Contact me! <big>📧</big></small>
+        ]]>
+    </string>
+
+    <string name="minimumLocalPrice"><![CDATA[
+        Minimum Local Price &ensp; 🇺🇳 &ensp; | Click to Check the Price
+    ]]></string>
+    <string name="price_DZ" translatable="false"><![CDATA[
+        <b>DZD 110</b> for Algeria &ensp;  🇩🇿  &ensp;
+    ]]></string>
+    <string name="price_AU" translatable="false"><![CDATA[
+        <b>AUD 0.99</b> for Australia &ensp;  🇦🇺  &ensp;
+    ]]></string>
+    <string name="price_AT" translatable="false"><![CDATA[
+        <b>€0.59</b> for Austria &ensp;  🇦🇹  &ensp;
+    ]]></string>
+    <string name="price_BD" translatable="false"><![CDATA[
+        <b>BDT 80.00</b> for Bangladesh &ensp;  🇧🇩  &ensp;
+    ]]></string>
+    <string name="price_BE" translatable="false"><![CDATA[
+        <b>€0.59</b> for Belgium &ensp;  🇧🇪  &ensp;
+    ]]></string>
+    <string name="price_BO" translatable="false"><![CDATA[
+        <b>BOB 7.49</b> for Bolivia &ensp;  🇧🇴  &ensp;
+    ]]></string>
+    <string name="price_BR" translatable="false"><![CDATA[
+        <b>BRL 0.99</b> for Brazil &ensp;  🇧🇷  &ensp;
+    ]]></string>
+    <string name="price_BG" translatable="false"><![CDATA[
+        <b>BGN 1.59</b> for Bulgaria &ensp;  🇧🇬  &ensp;
+    ]]></string>
+    <string name="price_CA" translatable="false"><![CDATA[
+        <b>CAD 0.99</b> for Canada &ensp;  🇨🇦  &ensp;
+    ]]></string>
+    <string name="price_CL" translatable="false"><![CDATA[
+        <b>CLP 200</b> for Chile &ensp;  🇨🇱  &ensp;
+    ]]></string>
+    <string name="price_CO" translatable="false"><![CDATA[
+        <b>COP 800</b> for Colombia &ensp;  🇨🇴  &ensp;
+    ]]></string>
+    <string name="price_CR" translatable="false"><![CDATA[
+        <b>CRC 500</b> for Costa Rica &ensp;  🇨🇷  &ensp;
+    ]]></string>
+    <string name="price_HR" translatable="false"><![CDATA[
+        <b>HRK 7.00</b> for Croatia &ensp;  🇭🇷  &ensp;
+    ]]></string>
+    <string name="price_CY" translatable="false"><![CDATA[
+        <b>€0.59</b> for Cyprus &ensp;  🇨🇾  &ensp;
+    ]]></string>
+    <string name="price_CZ" translatable="false"><![CDATA[
+        <b>CZK 19.99</b> for Czech Republic &ensp;  🇨🇿  &ensp;
+    ]]></string>
+    <string name="price_DK" translatable="false"><![CDATA[
+        <b>DKK 6.00</b> for Denmark &ensp;  🇩🇰  &ensp;
+    ]]></string>
+    <string name="price_EG" translatable="false"><![CDATA[
+        <b>EGP 2.09</b> for Egypt &ensp;  🇪🇬  &ensp;
+    ]]></string>
+    <string name="price_EE" translatable="false"><![CDATA[
+        <b>€0.59</b> for Estonia &ensp;  🇪🇪  &ensp;
+    ]]></string>
+    <string name="price_FI" translatable="false"><![CDATA[
+        <b>€0.59</b> for Finland &ensp;  🇫🇮  &ensp;
+    ]]></string>
+    <string name="price_FR" translatable="false"><![CDATA[
+        <b>€0.59</b> for France &ensp;  🇫🇷  &ensp;
+    ]]></string>
+    <string name="price_DE" translatable="false"><![CDATA[
+        <b>€0.59</b> for Germany &ensp;  🇩🇪  &ensp;
+    ]]></string>
+    <string name="price_GH" translatable="false"><![CDATA[
+        <b>GHS 4.00</b> for Ghana &ensp;  🇬🇭  &ensp;
+    ]]></string>
+    <string name="price_GR" translatable="false"><![CDATA[
+        <b>€0.59</b> for Greece &ensp;  🇬🇷  &ensp;
+    ]]></string>
+    <string name="price_HK" translatable="false"><![CDATA[
+        <b>HKD 8.00</b> for Hong Kong SAR China &ensp;  🇭🇰  &ensp;
+    ]]></string>
+    <string name="price_HU" translatable="false"><![CDATA[
+        <b>HUF 129</b> for Hungary &ensp;  🇭🇺  &ensp;
+    ]]></string>
+    <string name="price_IN" translatable="false"><![CDATA[
+        <b>INR 10.00</b> for India &ensp;  🇮🇳  &ensp;
+    ]]></string>
+    <string name="price_ID" translatable="false"><![CDATA[
+        <b>IDR 3,000</b> for Indonesia &ensp;  🇮🇩  &ensp;
+    ]]></string>
+    <string name="price_IE" translatable="false"><![CDATA[
+        <b>€0.59</b> for Ireland &ensp;  🇮🇪  &ensp;
+    ]]></string>
+    <string name="price_IL" translatable="false"><![CDATA[
+        <b>ILS 3.00</b> for Israel &ensp;  🇮🇱  &ensp;
+    ]]></string>
+    <string name="price_IT" translatable="false"><![CDATA[
+        <b>€0.59</b> for Italy &ensp;  🇮🇹  &ensp;
+    ]]></string>
+    <string name="price_JP" translatable="false"><![CDATA[
+        <b>JPY 100</b> for Japan &ensp;  🇯🇵  &ensp;
+    ]]></string>
+    <string name="price_KZ" translatable="false"><![CDATA[
+        <b>KZT 300.00</b> for Kazakhstan &ensp;  🇰🇿  &ensp;
+    ]]></string>
+    <string name="price_KE" translatable="false"><![CDATA[
+        <b>KES 102.00</b> for Kenya &ensp;  🇰🇪  &ensp;
+    ]]></string>
+    <string name="price_LV" translatable="false"><![CDATA[
+        <b>€0.59</b> for Latvia &ensp;  🇱🇻  &ensp;
+    ]]></string>
+    <string name="price_LB" translatable="false"><![CDATA[
+        <b>LBP 1,500</b> for Lebanon &ensp;  🇱🇧  &ensp;
+    ]]></string>
+    <string name="price_LI" translatable="false"><![CDATA[
+        <b>CHF 1.00</b> for Liechtenstein &ensp;  🇱🇮  &ensp;
+    ]]></string>
+    <string name="price_LT" translatable="false"><![CDATA[
+        <b>€0.59</b> for Lithuania &ensp;  🇱🇹  &ensp;
+    ]]></string>
+    <string name="price_LU" translatable="false"><![CDATA[
+        <b>€0.59</b> for Luxembourg &ensp;  🇱🇺  &ensp;
+    ]]></string>
+    <string name="price_MO" translatable="false"><![CDATA[
+        <b>MOP 7.88</b> for Macau SAR China &ensp;  🇲🇴  &ensp;
+    ]]></string>
+    <string name="price_MY" translatable="false"><![CDATA[
+        <b>MYR 1.49</b> for Malaysia &ensp;  🇲🇾  &ensp;
+    ]]></string>
+    <string name="price_MX" translatable="false"><![CDATA[
+        <b>MXN 5.00</b> for Mexico &ensp;  🇲🇽  &ensp;
+    ]]></string>
+    <string name="price_MA" translatable="false"><![CDATA[
+        <b>MAD 8.59</b> for Morocco &ensp;  🇲🇦  &ensp;
+    ]]></string>
+    <string name="price_NL" translatable="false"><![CDATA[
+        <b>€0.59</b> for Netherlands &ensp;  🇳🇱  &ensp;
+    ]]></string>
+    <string name="price_NZ" translatable="false"><![CDATA[
+        <b>NZD 0.99</b> for New Zealand &ensp;  🇳🇿  &ensp;
+    ]]></string>
+    <string name="price_NG" translatable="false"><![CDATA[
+        <b>NGN 40.00</b> for Nigeria &ensp;  🇳🇬  &ensp;
+    ]]></string>
+    <string name="price_NO" translatable="false"><![CDATA[
+        <b>NOK 6.00</b> for Norway &ensp;  🇳🇴  &ensp;
+    ]]></string>
+    <string name="price_PK" translatable="false"><![CDATA[
+        <b>PKR 110</b> for Pakistan &ensp;  🇵🇰  &ensp;
+    ]]></string>
+    <string name="price_PE" translatable="false"><![CDATA[
+        <b>PEN 0.99</b> for Peru &ensp;  🇵🇪  &ensp;
+    ]]></string>
+    <string name="price_PH" translatable="false"><![CDATA[
+        <b>PHP 15.00</b> for Philippines &ensp;  🇵🇭  &ensp;
+    ]]></string>
+    <string name="price_PL" translatable="false"><![CDATA[
+        <b>PLN 1.79</b> for Poland &ensp;  🇵🇱  &ensp;
+    ]]></string>
+    <string name="price_PT" translatable="false"><![CDATA[
+        <b>€0.59</b> for Portugal &ensp;  🇵🇹  &ensp;
+    ]]></string>
+    <string name="price_QA" translatable="false"><![CDATA[
+        <b>QAR 3.50</b> for Qatar &ensp;  🇶🇦  &ensp;
+    ]]></string>
+    <string name="price_RO" translatable="false"><![CDATA[
+        <b>RON 3.59</b> for Romania &ensp;  🇷🇴  &ensp;
+    ]]></string>
+    <string name="price_RU" translatable="false"><![CDATA[
+        <b>RUB 15.00</b> for Russia &ensp;  🇷🇺  &ensp;
+    ]]></string>
+    <string name="price_SA" translatable="false"><![CDATA[
+        <b>SAR 0.99</b> for Saudi Arabia &ensp;  🇸🇦  &ensp;
+    ]]></string>
+    <string name="price_SG" translatable="false"><![CDATA[
+        <b>SGD 0.99</b> for Singapore &ensp;  🇸🇬  &ensp;
+    ]]></string>
+    <string name="price_SK" translatable="false"><![CDATA[
+        <b>€0.59</b> for Slovakia &ensp;  🇸🇰  &ensp;
+    ]]></string>
+    <string name="price_SI" translatable="false"><![CDATA[
+        <b>€0.59</b> for Slovenia &ensp;  🇸🇮  &ensp;
+    ]]></string>
+    <string name="price_ZA" translatable="false"><![CDATA[
+        <b>ZAR 3.99</b> for South Africa &ensp;  🇿🇦  &ensp;
+    ]]></string>
+    <string name="price_KR" translatable="false"><![CDATA[
+        <b>KRW 1,000</b> for South Korea &ensp;  🇰🇷  &ensp;
+    ]]></string>
+    <string name="price_ES" translatable="false"><![CDATA[
+        <b>€0.59</b> for Spain &ensp;  🇪🇸  &ensp;
+    ]]></string>
+    <string name="price_LK" translatable="false"><![CDATA[
+        <b>LKR 175.00</b> for Sri Lanka &ensp;  🇱🇰  &ensp;
+    ]]></string>
+    <string name="price_SE" translatable="false"><![CDATA[
+        <b>SEK 7.00</b> for Sweden &ensp;  🇸🇪  &ensp;
+    ]]></string>
+    <string name="price_CH" translatable="false"><![CDATA[
+        <b>CHF 1.00</b> for Switzerland &ensp;  🇨🇭  &ensp;
+    ]]></string>
+    <string name="price_TW" translatable="false"><![CDATA[
+        <b>TWD 30.00</b> for Taiwan &ensp;  🇹🇼  &ensp;
+    ]]></string>
+    <string name="price_TZ" translatable="false"><![CDATA[
+        <b>TZS 2,200</b> for Tanzania &ensp;  🇹🇿  &ensp;
+    ]]></string>
+    <string name="price_TH" translatable="false"><![CDATA[
+        <b>THB 10.00</b> for Thailand &ensp;  🇹🇭  &ensp;
+    ]]></string>
+    <string name="price_TR" translatable="false"><![CDATA[
+        <b>TRY 0.69</b> for Turkey &ensp;  🇹🇷  &ensp;
+    ]]></string>
+    <string name="price_UA" translatable="false"><![CDATA[
+        <b>UAH 5.49</b> for Ukraine &ensp;  🇺🇦  &ensp;
+    ]]></string>
+    <string name="price_AE" translatable="false"><![CDATA[
+        <b>AED 3.59</b> for United Arab Emirates &ensp;  🇦🇪  &ensp;
+    ]]></string>
+    <string name="price_UK" translatable="false"><![CDATA[
+        <b>£0.59</b> for United Kingdom &ensp;  🇬🇧  &ensp;
+    ]]></string>
+    <string name="price_GB" translatable="false"><![CDATA[
+        <b>£0.59</b> for Great Britain &ensp;  🇬🇧  &ensp;
+    ]]></string>
+    <string name="price_US" translatable="false"><![CDATA[
+        <b>$0.99</b> for United State of America &ensp;  🇺🇸  &ensp;
+    ]]></string>
+    <string name="price_VN" translatable="false"><![CDATA[
+        <b>VND 6,000</b> for Vietnam &ensp;  🇻🇳  &ensp;
+    ]]></string>
+    <!-- Free String -->
+
+    <string name="adApp" translatable="false">
+        <![CDATA[
+            <big>Super Shortcuts</big> | <small>One Shortcut to Rule them All</small>
+        ]]>
+    </string>
+    <string name="adAppSummary" translatable="false">
+        <![CDATA[
+            Replace All Home Screen Shortcuts &amp; Folders with One Super Shortcuts with Extra Features
+        ]]>
+    </string>
+
+    <string name="app_name" translatable="false">Floating Shortcuts</string>
+    <string name="geeksempire" translatable="false">Geeks Empire</string>
+
+    <string name="visibilityActionAdvance" translatable="false">VISIBILITY_ACTION_ADVANCE</string>
+    <string name="animtaionActionAdvance" translatable="false">ANIMATION_ACTION_ADVANCE</string>
+    <string name="setDismissAdvance" translatable="false">SET_DISMISS_ADVANCE</string>
+    <string name="counterActionAdvance" translatable="false">COUNTER_ACTION_ADVANCE</string>
+    <string name="savedActionAdvance" translatable="false">SAVED_ACTION_ADVANCE</string>
+    <string name="savedActionHideAdvance" translatable="false">SAVED_ACTION_HIDE_ADVANCE</string>
+    <string name="checkboxActionAdvance" translatable="false">CHECKBOX_ACTION_ADVANCE</string>
+    <string name="splitActionAdvance" translatable="false">SET_SPLIT_ADVANCE</string>
+
+    <string name="millis">Millisecond</string>
+
+    <string name="shareTitle" translatable="false">
+        #FloatIt To Become Master Of Multitasking ⚡
+    </string>
+    <string name="shareSummary" translatable="false">
+        Only One Click to Switch Apps by Floating Shortcuts, Floating Folders &amp; Floating Widgets | By @GeeksEmpire
+    </string>
+
+    <string name="buy" translatable="false">Purchase</string>
+    <string name="free" translatable="false">Free Edition</string>
+    <string name="contact" translatable="false">Contact me</string>
+    <string name="license_info" translatable="false">License Issuing</string>
+    <string name="license_info_desc" translatable="false">Retrieving License Information from Google Play Store</string>
+    <string name="license_title" translatable="false">
+        <![CDATA[
+            <b>License Validating Issue</b>
+        ]]>
+    </string>
+    <string name="license_msg" translatable="false">
+        <![CDATA[
+            <br/>
+            <b>Hi</b>&#8230; &#9786;<br/>
+            <small>Floating Shortcuts has been installed illegally & It can cause Security Risk ⚠️<br/><br/>
+            <b>Please, Consider following Solutions</b>&#8230;<br/>
+            1. Purchase Floating Shortcuts ᴾᴿᴼ from Google Play Store <big>💳</big><br/>
+            2. Install Free Edition from Google Play Store <big>🆓</big><br/>
+            3. Always Ready to Help, Contact me! <big>📧</big></small>
+        ]]>
+    </string>
+    <string name="license" translatable="false">LICENSE</string>
+    <string name="error" translatable="false">Error Occurred</string>
+    <string name="internetError" translatable="false">⚠ Internet Connection Problem ⚠</string>
+    <string name="authError" translatable="false">⚠ Authentication Required | Reopen App ⚠</string>
+
+    <string name="betaUpdateAvailable">Update Available in βeta Stage</string>
+    <string name="betaUpdate">βeta Change Log</string>
+    <string name="whatsnew" translatable="false">What\'s New…</string>
+    <string name="changelog" translatable="false">
+        <![CDATA[
+            🔵 <b><big>Floating Widgets</big></b> 🔳 🔲 <br/>
+            &bull; First Select & Setup Widgets<br/>
+            &bull; then, Click on ✔ to Create Floating Widget<br/>
+            &bull; Press & Hold on ✔ to See More Options<br/>
+            🔵 <b>Fling Sensitivity</b> | <small>Floating Shortcuts/Folders Movement Enhancement</small> <br/>
+            &bull; Fling Effect on Floating Shortcuts to Move them Around Easier <br/>
+            &bull; Spring Effect on Pinned Floating Shortcuts/Folders for Fun 😉  <br/>
+            🔵 <b>Lite Preferences</b> | Optimization <br/>
+            🔵 <b>Gesture Navigation</b> | Optimization <br/>
+            🔵 <b>Press & Hold on Bottom Action Buttons to See Recovery</b> 🔁 <br/>
+            <br/><br/>
+            /* <b>Explore More Options in Preferences  ⚙️  </b>*/ <br/>
+            /* <b>Please, Go to App Page for More Details</b> ⭐👍 */
+        ]]>
+    </string>
+
+    <string name="like" translatable="false">Follow App Page</string>
+    <string name="shareit" translatable="false">Rate &amp; Share</string>
+    <string name="newupdate" translatable="false">Install Update</string>
+    <string name="updateAvailable" translatable="false">New Update Available | Click Here to Install…!</string>
+    <string name="share" translatable="false">Share It With Your Friends</string>
+    <string name="facebook" translatable="false">Like Me on…</string>
+    <string name="twitter" translatable="false">Follow Me on…</string>
+    <string name="email" translatable="false">Appreciate your Feedback</string>
+    <string name="rate" translatable="false">Please Rate &amp; Write Review</string>
+    <string name="supportEmail" translatable="false">Support@GeeksEmpire.net</string>
+    <string name="feedback_tag" translatable="false">Floating Shortcuts Direct Help | Feedback</string>
+
+    <string name="link_ad_app" translatable="false">https://play.google.com/store/apps/details?id=net.geekstools.supershortcuts.PRO</string>
+    <string name="link_alpha" translatable="false">https://play.google.com/apps/testing/</string>
+    <string name="link_xda" translatable="false">https://forum.xda-developers.com/showpost.php?p=58661916&amp;postcount=4</string>
+    <string name="link_twitter" translatable="false">https://twitter.com/GeeksEmpire</string>
+    <string name="link_facebook" translatable="false">https://www.facebook.com/GeeksEmpire</string>
+    <string name="link_facebook_app" translatable="false">https://www.facebook.com/FloatingShortcuts/</string>
+    <string name="play_store_link" translatable="false">https://play.google.com/store/apps/details?id=</string>
+
+    <string name="integerVersionCodeNewUpdatePhone" translatable="false">integer_version_code_new_update_phone</string>
+    <string name="stringVersionNameNewUpdatePhone" translatable="false">string_version_name_new_update_phone</string>
+    <string name="stringUpcomingChangeLogPhone" translatable="false">string_upcoming_change_log_phone</string>
+    <string name="stringUpcomingChangeLogSummaryPhone" translatable="false">string_upcoming_change_log_summary_phone</string>
+
+    <string name="BETAintegerVersionCodeNewUpdatePhone" translatable="false">beta_integer_version_code_new_update_phone</string>
+    <string name="BETAstringVersionNameNewUpdatePhone" translatable="false">beta_string_version_name_new_update_phone</string>
+    <string name="BETAstringUpcomingChangeLogPhone" translatable="false">beta_string_upcoming_change_log_phone</string>
+    <string name="BETAstringUpcomingChangeLogSummaryPhone" translatable="false">beta_string_upcoming_change_log_summary_phone</string>
+
+    <string name="adAppForceLoad">ad_app_force_load</string>
+    <string name="adAppForceTime">ad_app_force_time</string>
+    <string name="adAppTitle">ad_app_title</string>
+    <string name="adAppSummaries">ad_app_summaries</string>
+    <string name="adAppLink">ad_app_link</string>
+    <string name="adAppIconLink">ad_app_icon_link</string>
+
+    <string name="webClientId" translatable="false">225410713006-iom2spuegnnphdgnrs9i5fbtssus4dh9.apps.googleusercontent.com</string>
+
+</resources>

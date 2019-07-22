@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/categoryItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:paddingBottom="7dp">
+
+    <TextView
+        android:id="@+id/runCategory"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/ripple_effect_category_logo"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:padding="3dp"
+        android:text="@string/index_item"
+        android:textColor="@color/light"
+        android:textSize="50sp"
+        android:typeface="monospace" />
+
+    <EditText
+        android:id="@+id/categoryName"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:layout_toEndOf="@id/runCategory"
+        android:background="@android:color/transparent"
+        android:cursorVisible="true"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:focusable="true"
+        android:gravity="center"
+        android:hint="@string/categoryDesc"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:textColor="@color/dark"
+        android:textColorHint="@color/dark_transparent_high"
+        android:textCursorDrawable="@drawable/draw_cursoer"
+        android:textSize="17sp"
+        android:typeface="sans" />
+
+    <HorizontalScrollView
+        android:id="@+id/freqList"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_below="@id/categoryName"
+        android:layout_toEndOf="@id/runCategory"
+        android:cacheColorHint="@android:color/transparent"
+        android:fadeScrollbars="true"
+        android:fadingEdge="horizontal"
+        android:fadingEdgeLength="7dp"
+        android:paddingStart="13dp"
+        android:paddingEnd="33dp"
+        android:requiresFadingEdge="horizontal"
+        android:scrollbarSize="2dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbarThumbHorizontal="@drawable/draw_divider"
+        android:scrollbars="horizontal"
+        android:smoothScrollbar="true">
+
+        <LinearLayout
+            android:id="@+id/selectedApps"
+            android:layout_width="wrap_content"
+            android:layout_height="57dp"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal"
+            android:padding="3dp" />
+    </HorizontalScrollView>
+
+    <ImageView
+        android:id="@+id/addApps"
+        android:layout_width="23dp"
+        android:layout_height="57dp"
+        android:layout_below="@id/categoryName"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="7dp"
+        android:src="@drawable/ic_add_apps" />
+
+</RelativeLayout>

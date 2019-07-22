@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="default_color">#237DAE</color>
+    <color name="default_color_game">#ae2357</color>
+    <color name="default_color_transparent">#33237dae</color>
+    <color name="default_color_light">#008dda</color>
+    <color name="default_color_darker">#0a415e</color>
+    <color name="transparent_default">#80237dae</color>
+    <color name="red">#9b000e</color>
+    <color name="red_transparent">#4d9b000e</color>
+
+    <color name="transparent_light">#b3f2f7ff</color>
+    <color name="fifty_light_twice">#c8f2f7ff</color>
+
+    <color name="light">#f2f7ff</color>
+    <color name="lighter">#fafbff</color>
+    <color name="light_transparent">#b7f2f7ff</color>
+    <color name="light_transparent_high">#0ff2f7ff</color>
+    <color name="transparent_light_high_twice">#8BFAFBFF</color>
+
+    <color name="dark">#0a0f18</color>
+    <color name="darker">#070b12</color>
+    <color name="dark_transparent">#b30a0f18</color>
+    <color name="dark_transparent_high">#4b0a0f18</color>
+    <color name="transparent_dark_high_twice">#c80a0f18</color>
+
+</resources>

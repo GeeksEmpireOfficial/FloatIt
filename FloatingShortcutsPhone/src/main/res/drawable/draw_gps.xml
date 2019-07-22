@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/dark_transparent">
+    <item android:drawable="@drawable/shadow_circle" />
+    <item
+        android:id="@+id/backtemp"
+        android:bottom="1dp"
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/default_color" />
+        </shape>
+    </item>
+
+    <item
+        android:bottom="3dp"
+        android:drawable="@drawable/w_gps"
+        android:left="3dp"
+        android:right="3dp"
+        android:top="3dp" />
+</ripple>

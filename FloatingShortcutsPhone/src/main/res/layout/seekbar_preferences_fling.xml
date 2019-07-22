@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/seekBarView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="11dp">
+
+    <TextView
+        android:id="@+id/extraInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:padding="3dp"
+        android:textSize="12sp"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:id="@+id/iconContainer"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/extraInfo" />
+
+    <ImageView
+        android:id="@+id/transparentIcon"
+        android:layout_width="83dp"
+        android:layout_height="83dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:foregroundGravity="center"
+        android:src="@mipmap/ic_launcher" />
+
+    <SeekBar
+        android:id="@+id/seekBarPreferences"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:layout_below="@id/iconContainer"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:id="@+id/revertDefault"
+        android:layout_width="173dp"
+        android:layout_height="23dp"
+        android:layout_below="@id/seekBarPreferences"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:text="@string/revertDefault"
+        android:textStyle="bold" />
+</RelativeLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wholeMenuView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/itemMenuView"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:visibility="invisible">
+
+        <ListView
+            android:id="@+id/popupOptionsItems"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="3dp"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="recoveryErrorCategory">Press &amp; Hold on a Folder to Add It in Recovery 🔁</string>
+    <string name="recoveryErrorWidget">Press &amp; Hold on a Widget to Add It in Recovery 🔁</string>
+    <string name="recovery_center">Recovery Center</string>
+    <string name="settingTitle">Preferences</string>
+    <string name="recoveryShortcuts">Recover Floating Shortcuts</string>
+    <string name="overlayPermission">Turn On Permission, Please!</string>
+    <string name="bindDesc">Swipe Down To See More Options</string>
+    <string name="dark">Dark</string>
+    <string name="light">Light</string>
+    <string name="dynamic">Dynamic</string>
+    <string name="leftEdge">Left Edge</string>
+    <string name="rightEdge">Right Edge</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="addRecovery">Add To Recovery</string>
+    <string name="removeRecovery">Remove From Recovery</string>
+    <string name="index_item">S</string>
+    <string name="not_install">THE APP IS NOT AVAILABLE</string>
+    <string name="updating_info">Updating Applications Information</string>
+    <string name="supportCategory">Support Center</string>
+    <string name="supportTitle">Help &amp; Feedback</string>
+    <string name="alphaTitle">Thanks for Joining Beta Program. Always Appreciate your Feedback!</string>
+    <string name="signinTitle">Welcome to Geeks Empire!</string>
+    <string name="signinMessage">Thanks for Joining to Our #FloatIt 🎈 Community.</string>
+    <string name="signinFinished"> ⚡ Become Master Of Multitasking ⚡ </string>
+    <string name="thanks">Thanks in Advance 🙏 </string>
+    <string name="permTitle">
+        <![CDATA[
+            <b>Permissions Info</b>, Be Patient!
+        ]]>
+    </string>
+    <string name="permDesc">
+        <![CDATA[
+            <b>Hi</b>&#8230; &#9786;<br/>I need your Permission to create <b>Shortcuts in Floating View</b>.
+            Please Grant permission by Enabling the Switch.<br/>
+            Also to make me Smarter Please go to Preferences, Details &amp; Practical Info to Enable <b>Smart Features</b>.<br/>
+            Press Grant to Proceed to Settings.<br/>
+            <b>Thanks!</b>
+        ]]>
+    </string>
+    <string name="split_service_desc">
+        Split Floating Shortcuts | This permission gives me the ability to create Multi-Window &amp; Open Apps in Split Screen Simultaneously (Android 7 &amp; Higher)\n\n♿ How it Helps People with Disability?\nIt is difficult for people with disability to open an app Or switch between apps. I am using Accessibility Service to enter Multi-Window Mode to open two apps together.
+    </string>
+    <string name="split_service_summary">Split Floating Shortcuts | This Permission Gives me the Ability to Create Multi-Window &amp; Open Apps in Split Screen Simultaneously (Android 7 &amp; Higher)</string>
+    <string name="observeDesc">
+        <![CDATA[
+                <br/>
+                This Permission Allows Me to Create Multi-Window Mode 🗔 & Open Pair of Apps in Split Screen Simultaneously.<br/>(<big>Android 7 & Higher</big>)<br/><br/>
+                ♿ <b>How it Helps People with Disability</b>?<br/>
+                It is Difficult for People with Disability to Open an App Or Switch Between Apps.<br/>
+                So, I am Using Accessibility Service to Create Multi-Window Mode to Open Two Apps Together.<br/>
+        ]]>
+    </string>
+    <string name="freeFormInfo">
+        <![CDATA[
+                <small>
+                 <font color=#9b000e>
+                ⚠️️ <b>Disclaimer</b>  ⚠️️ <br/>
+                ⚠ Performing this Small Hack is At Your Own Risk<br/>
+                ⚠ Please, Do NOT Enable This Feature If You Are Not Familiar ADB (Android Debug Bridge)<br/>
+                </font>
+                ️<br/><br/>
+                Follow This Instructions to Enable System Settings<br/>
+                1️⃣️ Go to System Setting (<b>About</b> Section) <br/>
+                2️⃣  & Enable <b>Developer Options</b> by Clicking Few Times on <b>Build Number</b><br/>
+                3️⃣  Go to System Setting (Developer Options)<br/>
+                4️⃣  Scroll Down to Find & Enable <b>Force Activities to Be Resizable</b><br/>
+                5️⃣  Now Connect Your Device to Your Computer<br/>
+                6️⃣  Open Terminal (Command Line) & Type these Commands<br/>
+                7️⃣  <b>adb shell</b> <br/>
+                8️⃣️  <b>settings put global enable_freeform_support 1</b> && <b>exit</b><br/>
+                9️⃣  <b>adb reboot</b><br/>
+                1️⃣0️⃣  Come Back Here ⚙ & <b>Turn ON Float It</b>
+                <br/><br/><br/>
+                <b>ℹ️ <font color=#ffd800>Information</font> ℹ️ </font><br/></b>
+                ⏺ First Create Floating Shortcuts then Clear \'<b>Recent Apps</b>\' List for This Feature to Work Properly (Android Nougat & Oreo)<br/>
+                ⏺ Other Apps/Games Faulty Appearance & Functionality in FreeForm Mode is <b>NOT</b> our Fault<br/>
+                ⏺ You Can <b>Resize Apps Window</b> in FreeForm (Touch Edges of Window & Move It)<br/>
+                ⏺ If You Are Interested in This Feature & Don\'t Know What to Do, Feel Free to Contact Me via <b>Support Center</b> 👍 😉
+                </small>
+        ]]>
+    </string>
+    <string name="observeSum">Android 7.0 (Nougat) &amp; Higher</string>
+    <string name="grant">Grant Permission</string>
+    <string name="read">Read More</string>
+    <string name="grantFreeForm">Done</string>
+    <string name="confirm">Confirm</string>
+    <string name="support">Contact Support</string>
+    <string name="ui_app">App Interface</string>
+    <string name="ui_floating">Floating Interface</string>
+    <string name="pref_floating">Floating Preferences</string>
+    <string name="advance">Advanced Features</string>
+    <string name="wifi">Apps for WiFi</string>👍
+    <string name="bluetooth">Apps for Bluetooth</string>
+    <string name="gps">Apps for GPS</string>
+    <string name="nfc">Apps for NFC</string>
+    <string name="time">Apps for Time</string>
+    <string name="auto_apps">Auto Applications</string>
+    <string name="wifi_category">Folders for WiFi</string>
+    <string name="bluetooth_category">Folders for Bluetooth</string>
+    <string name="gps_category">Folders for GPS</string>
+    <string name="nfc_category">Folders for NFC</string>
+    <string name="time_category">Folders for Time</string>
+    <string name="auto_categories">Auto Folders</string>
+    <string name="retry">Please Select a Feature</string>
+    <string name="wait">Please, Be Patient!</string>
+    <string name="stable">Control Panel</string>
+    <string name="automation">Automation Features</string>
+    <string name="smartCategory">Smart Features</string>
+    <string name="smartTitle">Intelligent Services</string>
+    <string name="smartSummary">Let Me Know…</string>
+    <string name="smartPermission">
+        <![CDATA[
+            <br/>
+            This Permission Allows Me to Get List of <b>Frequently Used Application</b> to Set Quick Bar.<br/><br/>
+            Also, It is Essential for<br/>
+            1. <b>🔄 Remote Recovery of Floating Shortcuts/Folders</b> to Recognize Command…<br/>
+            2. <b>🆗 Google! Open Floating Shortcuts</b><br/>
+            3. <b>🕐 Optimizing Floating Splash</b><br/>
+        ]]>
+    </string>
+    <string name="observeTitle">Interactions Observer</string>
+    <string name="boot">Remote Recovery</string>
+    <string name="bootPermission">
+        <![CDATA[
+            <br/>
+            <big>Recover Floating Shortcuts/Folders When</big>…<br/>
+            1. <b>Saying \'🆗 Google Open Floating Shortcuts\'</b><br/>
+            2. <b>Using Popup AppShortcuts</b> | Press & Hold ⏺ on App Shortcut on Home Screen (Android 7.1.1 & Higher)<br/>
+            3. <b>Turning On 🔄 your Device</b><br/>
+            <br/>
+        ]]>
+    </string>
+    <string name="notificationEmoji">🔔</string>
+    <string name="notificationTitle">Floating Notification</string>
+    <string name="notificationSummary">Notification Dot on Floating Shortcuts</string>
+    <string name="notificationDesc">
+        <![CDATA[
+            <br/>
+            This Permission Allows Me to Get Content of <b>Unread Notification</b> 🔔<br/>
+            1️⃣ to Add a <b>Notification Dot</b> on Floating Shortcuts<br/>
+            2️⃣ & Show <b>Notification Content</b> from Floating Shortcuts Popup Menu.
+            <br/>
+        ]]>
+    </string>
+    <string name="createShortcut">Create Home Screen Shortcuts</string>
+    <string name="createAlias">Create App Drawer Shortcuts</string>
+    <string name="deleteAlias">Remove App Drawer Shortcuts</string>
+    <string name="floatingCategory">Floating Folders</string>
+    <string name="floatingWidget">Floating Widgets</string>
+    <string name="categoryHint">Floating Folders</string>
+    <string name="widgetHint">Floating Widgets</string>
+    <string name="widgetLabelHint">Type A Widget Label</string>
+    <string name="widgetPickerTitle">
+        <![CDATA[
+            <small>Choose Widgets To Configure</small><br/>
+            <big>Press & Hold</big>
+        ]]>
+    </string>
+    <string name="floatingHint">Floating Shortcuts</string>
+    <string name="recover_apps">Recover Floating Shortcuts</string>
+    <string name="recover_category">Recover Floating Folders</string>
+    <string name="recover_widgets">Recover Floating Widgets</string>
+    <string name="categoryDesc">Please Write a Folder Name</string>
+    <string name="colortext">App Theme</string>
+    <string name="themeTrans">Transparent Theme</string>
+    <string name="blurryTitle">Blurry Theme</string>
+    <string name="autotrans">Floating Transparency</string>
+    <string name="delayPressHold">Popup Menu Delay</string>
+    <string name="flingSensitivityTitle">Fling Sensitivity</string>
+    <string name="flingSensitivitySummary">Throw Floating Shortcuts Around</string>
+    <string name="delayPressHoldExtraInfo">Press &amp; Hold on Icon to Test the Delay</string>
+    <string name="revertDefault">Set Recommended Value</string>
+    <string name="splashTitle">Floating Splash</string>
+    <string name="splashDesc">Waiting Screen for Opening Apps</string>
+    <string name="shortsizepref">Floating Size</string>
+    <string name="stick">Sticky Edge</string>
+    <string name="shapesTitle">Floating Shapes</string>
+    <string name="shapedDesc">Set Shape to…</string>
+    <string name="droplet">Droplet</string>
+    <string name="circle">Circle</string>
+    <string name="square">Square</string>
+    <string name="squircle">Squircle</string>
+    <string name="noshape">No Shape</string>
+    <string name="iconPack">Packages of Icons</string>
+    <string name="defaultTheme">Set Default Theme of Icons</string>
+    <string name="customIconTitle">Theme of Icons</string>
+    <string name="shortcuts">Floating Shortcuts</string>
+    <string name="boot_warning">All</string>
+    <string name="boot_none">None</string>
+    <string name="remove_all_floatings">REMOVE ALL</string>
+    <string name="remove_all">❌ Remove All</string>
+    <string name="recover_all">✔️ Recover All</string>
+    <string name="moveEdgeLeft">⬅️️ Move To Edge</string>
+    <string name="moveEdgeRight">➡️️️ Move To Edge</string>
+    <string name="backToScreenLeft">➡️️️ Back To Screen</string>
+    <string name="backToScreenRight">⬅️️ Back To Screen️</string>
+    <string name="pin">Pin Shortcut</string>
+    <string name="unpin">Unpin Shortcut</string>
+    <string name="close">Minimize It</string>
+    <string name="remove">Remove Shortcut</string>
+    <string name="pin_category">Pin Folder</string>
+    <string name="unpin_category">Unpin Folder</string>
+    <string name="remove_category">Remove</string>
+    <string name="floatIt">Float It</string>
+    <string name="splitIt">Split It</string>
+    <string name="deleteCategory">Delete</string>
+    <string name="edit_category">Edit: </string>
+    <string name="autorecovs">Always Ready</string>
+    <string name="syscache">Load &amp; Open Apps Faster</string>
+    <string name="enableControlPanel">Control Panel Will Be Started Automatically</string>
+    <string name="freeFormTitle">Float It</string>
+    <string name="freeFormDesc">Always Open All Apps in Floating View (FreeForm)</string>
+    <string name="enable">Enable Now</string>
+    <string name="liteTitle">Lite Preferences</string>
+    <string name="liteSummary">Set Preferences to Minimum for Better Performance</string>
+    <string name="liteDesc">
+        <![CDATA[
+            Set Preferences to Minimum for Better Performance ⚡ <br/>
+            (<small>Highly Recommended for Mid-Range &amp; Low-End Smartphones</small>)
+        ]]>
+    </string>
+
+    <string name="purchase"> Purchase 💸 </string>
+    <string name="donate"> Send Gift 🎁 </string>
+    <string name="restorePurchase">ℹ Click To Restore The Item ℹ</string>
+    <string name="floatingWidgetsDemoDescriptions">
+        <![CDATA[
+            🔵 <b><big>Floating Widgets</big></b> 🔳 🔲 | Open Floating Widgets Directly from Home Screen <br/>
+            &bull; First Select & Setup Widgets<br/>
+            &bull; then, Click on ✔ to Create Floating Widget<br/>
+            &bull; Press & Hold on ✔ to See More Options & Create Shortcuts of Floating Widgets on Home Screen<br/>
+        ]]>
+    </string>
+
+    <string-array name="ContextMenu">
+        <item name="1">Small</item>
+        <item name="2">Medium</item>
+        <item name="3">Large</item>
+    </string-array>
+
+    <string-array name="ContextMenuCategory">
+        <item name="1">@string/small</item>
+        <item name="2">@string/medium</item>
+        <item name="3">@string/large</item>
+        <item name="4">@string/addRecovery</item>
+        <item name="5">@string/deleteCategory</item>
+    </string-array>
+    <string-array name="ContextMenuCategoryRemove">
+        <item name="1">@string/small</item>
+        <item name="2">@string/medium</item>
+        <item name="3">@string/large</item>
+        <item name="4">@string/removeRecovery</item>
+        <item name="5">@string/deleteCategory</item>
+    </string-array>
+
+    <string-array name="ContextMenuWidget">
+        <item name="1">@string/deleteCategory</item>
+        <item name="2">@string/addRecovery</item>
+        <item name="3">@string/createShortcut</item>
+    </string-array>
+    <string-array name="ContextMenuWidgetRemove">
+        <item name="1">@string/deleteCategory</item>
+        <item name="2">@string/removeRecovery</item>
+        <item name="3">@string/createShortcut</item>
+    </string-array>
+
+    <string-array name="STICK">
+        <item name="1">@string/leftEdge</item>
+        <item name="2">@string/rightEdge</item>
+    </string-array>
+    <string-array name="STICKValues">
+        <item name="1">1</item>
+        <item name="2">2</item>
+    </string-array>
+
+    <string-array name="Boot">
+        <item name="1">@string/boot_none</item>
+        <item name="2">@string/shortcuts</item>
+        <item name="3">@string/floatingCategory</item>
+        <item name="4">@string/boot_warning</item>
+    </string-array>
+
+    <string-array name="AppThemes">
+        <item name="1">@string/light</item>
+        <item name="2">@string/dark</item>
+        <item name="3">@string/dynamic</item>
+    </string-array>
+    <string-array name="AppThemesValues">
+        <item name="1">1</item>
+        <item name="2">2</item>
+        <item name="3">3</item>
+    </string-array>
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="29dp"
+        android:padding="3dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/purchaseItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="3dp"
+        android:layout_toStartOf="@id/icon"
+        android:ellipsize="marquee"
+        android:gravity="center_vertical|end"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:maxLines="1"
+        android:paddingStart="9dp"
+        android:paddingEnd="3dp"
+        android:scrollHorizontally="true"
+        android:shadowColor="@android:color/black"
+        android:shadowRadius="25"
+        android:text="@string/app_name"
+        android:textColor="@color/dark"
+        android:textSize="16sp" />
+
+</RelativeLayout>

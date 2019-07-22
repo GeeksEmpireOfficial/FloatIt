@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/customIconList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="7dp"
+        android:cacheColorHint="@android:color/transparent"
+        android:dividerHeight="2dp"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="13dp"
+        android:requiresFadingEdge="vertical"
+        android:scrollbarSize="0dp" />
+
+    <TextView
+        android:id="@+id/setDefault"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customIconList"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="17dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:text="@string/defaultTheme"
+        android:textColor="@color/default_color_darker"
+        android:textSize="15sp" />
+
+</RelativeLayout>

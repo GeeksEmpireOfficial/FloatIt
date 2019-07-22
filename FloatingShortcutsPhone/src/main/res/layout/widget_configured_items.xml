@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/widgetItem"
+    android:layout_width="213dp"
+    android:layout_height="213dp"
+    android:layout_margin="3dp"
+    android:background="@android:color/transparent">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/widgetLabelInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="start|center_vertical"
+        android:imeOptions="actionDone"
+        android:textColorHint="@color/default_color_light"
+        app:hintTextAppearance="@style/TextAppearance.MaterialComponents.Overline"
+        android:background="@android:color/transparent"
+        android:theme="@style/GeeksEmpire.TextInputEditText"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/default_color_light"
+        app:boxStrokeWidth="1dp"
+        app:boxCollapsedPaddingTop="7dp"
+        app:boxCornerRadiusBottomEnd="7dp"
+        app:boxCornerRadiusBottomStart="7dp"
+        app:boxCornerRadiusTopEnd="7dp"
+        app:boxCornerRadiusTopStart="7dp"
+        app:shapeAppearance="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/widgetLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="5dp"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-.1234567890@ "
+            android:imeOptions="actionDone"
+            android:inputType="textAutoComplete|textAutoCorrect"
+            android:hint="@string/widgetLabelHint"
+            android:textColorHint="@color/default_color_light"
+            android:textSize="13sp"
+            android:textColor="@color/light"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RelativeLayout
+        android:id="@+id/widgetPreview"
+        android:layout_width="213dp"
+        android:layout_height="213dp"
+        android:layout_below="@id/widgetLabelInput"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:padding="19dp"
+        android:background="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/floatTheWidget"
+        android:layout_width="213dp"
+        android:layout_height="213dp"
+        android:layout_below="@id/widgetLabelInput"
+        android:layout_centerHorizontal="true"
+        android:padding="3dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/draw_open" />
+
+</RelativeLayout>

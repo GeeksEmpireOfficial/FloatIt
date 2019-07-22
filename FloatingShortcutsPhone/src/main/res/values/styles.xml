@@ -1,0 +1,199 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="GeeksEmpire" parent="@android:style/Theme.DeviceDefault.Light">
+        <item name="android:colorPrimary">@color/default_color</item>
+        <item name="android:colorPrimaryDark">@color/default_color_darker</item>
+        <item name="android:colorAccent">@color/default_color_light</item>
+    </style>
+
+    <style name="GeeksEmpire.Material" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/default_color</item>
+        <item name="android:colorPrimaryDark">@color/default_color_darker</item>
+        <item name="android:colorAccent">@color/default_color_light</item>
+    </style>
+
+    <style name="GeeksEmpire.Preference.Light" parent="@style/GeeksEmpire">
+        <item name="android:textColorPrimary">@color/darker</item>
+        <item name="android:textColorSecondary">@color/dark_transparent</item>
+        <item name="android:alertDialogTheme">@style/GeeksEmpire.Dialogue.Light</item>
+        <item name="android:colorAccent">@color/default_color</item>
+
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <style name="GeeksEmpire.Preference.Dark" parent="@style/GeeksEmpire">
+        <item name="android:textColorPrimary">@color/light</item>
+        <item name="android:textColorSecondary">@color/light_transparent</item>
+        <item name="android:alertDialogTheme">@style/GeeksEmpire.Dialogue.Dark</item>
+        <item name="android:colorAccent">@color/default_color</item>
+
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <style name="GeeksEmpire.AutomationFeatures" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <style name="GeeksEmpire.Dialogue.Light" parent="@android:style/Theme.DeviceDefault.Dialog.Alert" tools:targetApi="22">
+        <item name="android:colorPrimary">@color/default_color_darker</item>
+        <item name="android:colorAccent">@color/default_color_darker</item>
+        <item name="android:textColorPrimary">@color/default_color_darker</item>
+        <item name="android:colorPrimaryDark">@color/default_color_darker</item>
+        <item name="android:textColorAlertDialogListItem">@color/dark</item>
+        <item name="android:background">@color/light</item>
+        <item name="android:colorControlActivated">@color/default_color_light</item>
+
+        <item name="android:popupBackground">@color/light</item>
+        <item name="android:itemTextAppearance">@style/PopupTextColor.Light</item>
+        <item name="android:popupElevation">13dp</item>
+
+        <item name="android:overlapAnchor">true</item>
+        <item name="android:dropDownVerticalOffset">0dp</item>
+        <item name="android:dropDownHorizontalOffset">107dp</item>
+    </style>
+
+    <style name="GeeksEmpire.Dialogue.Dark" parent="@android:style/Theme.DeviceDefault.Dialog.Alert" tools:targetApi="22">
+        <item name="android:colorPrimary">@color/default_color</item>
+        <item name="android:colorAccent">@color/default_color</item>
+        <item name="android:textColorPrimary">@color/default_color</item>
+        <item name="android:colorPrimaryDark">@color/default_color_light</item>
+        <item name="android:textColorAlertDialogListItem">@color/light</item>
+        <item name="android:background">@color/dark</item>
+        <item name="android:colorControlActivated">@color/default_color_darker</item>
+
+        <item name="android:popupBackground">@color/dark</item>
+        <item name="android:itemTextAppearance">@style/PopupTextColor.Dark</item>
+        <item name="android:popupElevation">13dp</item>
+
+        <item name="android:overlapAnchor">true</item>
+        <item name="android:dropDownVerticalOffset">0dp</item>
+        <item name="android:dropDownHorizontalOffset">107dp</item>
+    </style>
+
+    <style name="GeeksEmpire.Dialogue.Category.Light" parent="@android:style/Theme.DeviceDefault.Dialog.Alert" tools:targetApi="22">
+        <item name="android:colorPrimary">@color/default_color</item>
+        <item name="android:colorAccent">@color/default_color_light</item>
+        <item name="android:textColorPrimary">@color/default_color_darker</item>
+        <item name="android:colorPrimaryDark">@color/default_color_darker</item>
+        <item name="android:textColorAlertDialogListItem">@color/dark</item>
+        <item name="android:background">@color/light</item>
+        <item name="android:colorControlActivated">@color/default_color_light</item>
+
+        <item name="android:popupBackground">@color/light</item>
+        <item name="android:itemTextAppearance">@style/PopupTextColor.Light</item>
+        <item name="android:popupElevation">13dp</item>
+
+        <item name="android:overlapAnchor">true</item>
+        <item name="android:dropDownVerticalOffset">0dp</item>
+        <item name="android:dropDownHorizontalOffset">87dp</item>
+    </style>
+
+    <style name="GeeksEmpire.Dialogue.Category.Dark" parent="@android:style/Theme.DeviceDefault.Dialog.Alert" tools:targetApi="22">
+        <item name="android:colorPrimary">@color/default_color</item>
+        <item name="android:colorAccent">@color/default_color_darker</item>
+        <item name="android:textColorPrimary">@color/default_color_light</item>
+        <item name="android:colorPrimaryDark">@color/default_color_light</item>
+        <item name="android:textColorAlertDialogListItem">@color/light</item>
+        <item name="android:background">@color/dark</item>
+        <item name="android:colorControlActivated">@color/default_color_darker</item>
+
+        <item name="android:popupBackground">@color/dark</item>
+        <item name="android:itemTextAppearance">@style/PopupTextColor.Dark</item>
+        <item name="android:popupElevation">13dp</item>
+
+        <item name="android:overlapAnchor">true</item>
+        <item name="android:dropDownVerticalOffset">0dp</item>
+        <item name="android:dropDownHorizontalOffset">87dp</item>
+    </style>
+
+    <!-- IAP -->
+    <style name="GeeksEmpire.Material.IAP.DARK" parent="Theme.MaterialComponents">
+        <item name="colorAccent">@color/default_color_light</item>
+        <item name="colorPrimary">@color/default_color_light</item>
+        <item name="colorPrimaryDark">@color/default_color_light</item>
+
+        <item name="android:statusBarColor">@color/dark</item>
+        <item name="android:windowBackground">@color/dark</item>
+        <item name="android:navigationBarColor">@color/dark</item>
+    </style>
+
+    <style name="GeeksEmpire.Material.IAP.LIGHT" parent="Theme.MaterialComponents">
+        <item name="colorAccent">@color/default_color_light</item>
+        <item name="colorPrimary">@color/default_color_light</item>
+        <item name="colorPrimaryDark">@color/default_color_light</item>
+
+        <item name="android:statusBarColor">@color/light</item>
+        <item name="android:windowBackground">@color/light</item>
+        <item name="android:navigationBarColor">@color/light</item>
+    </style>
+
+    <style name="AppThemeLight" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/default_color_light</item>
+        <item name="colorPrimary">@color/default_color_light</item>
+        <item name="colorPrimaryDark">@color/default_color_light</item>
+        <item name="android:navigationBarColor">@color/light</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <item name="android:statusBarColor">@color/light</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="28">true</item>
+    </style>
+
+    <style name="AppThemeDark" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/default_color_darker</item>
+        <item name="colorPrimary">@color/default_color_darker</item>
+        <item name="colorPrimaryDark">@color/default_color_darker</item>
+        <item name="android:navigationBarColor">@color/dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <item name="android:statusBarColor">@color/dark</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="28">false</item>
+    </style>
+
+    <style name="CardViewStyle" parent="CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_marginBottom">1dp</item>
+        <item name="android:layout_marginEnd">9dp</item>
+        <item name="android:layout_marginStart">9dp</item>
+        <item name="cardCornerRadius">3dp</item>
+        <item name="cardElevation">7sp</item>
+        <item name="cardPreventCornerOverlap">false</item>
+    </style>
+    <!-- IAP -->
+
+    <style name="Transparent" parent="@android:style/Theme.DeviceDefault.Light.Dialog.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:dividerHeight">0dp</item>
+        <item name="android:divider">@null</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="PopupTextColor.Light" parent="@android:style/TextAppearance.Widget.PopupMenu.Small">
+        <item name="android:textColor">@color/dark</item>
+    </style>
+
+    <style name="PopupTextColor.Dark" parent="@android:style/TextAppearance.Widget.PopupMenu.Small">
+        <item name="android:textColor">@color/light</item>
+    </style>
+
+    <style name="GeeksEmpire.TextInputEditText" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/default_color</item>
+        <item name="colorPrimaryDark">@color/default_color_darker</item>
+        <item name="colorAccent">@color/default_color_light</item>
+        <item name="colorSecondary" tools:targetApi="n_mr1">@color/default_color_light</item>
+        <item name="colorControlNormal">@color/default_color_light</item>
+        <item name="colorControlActivated">@color/default_color_light</item>
+    </style>
+
+</resources>

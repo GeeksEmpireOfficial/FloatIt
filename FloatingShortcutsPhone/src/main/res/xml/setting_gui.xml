@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="proUpgrade"
+        android:title="@string/upgrade"
+        android:icon="@drawable/ic_launcher_layer" />
+
+    <PreferenceCategory android:title="@string/smartCategory">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/draw_smart"
+            android:key="smart"
+            android:summary="@string/smartSummary"
+            android:title="@string/smartTitle" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/draw_smart"
+            android:key="observe"
+            android:title="@string/observeTitle" />
+        <Preference
+            android:icon="@drawable/draw_smart"
+            android:key="boot"
+            android:title="@string/boot" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_floating">
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/STICK"
+            android:entryValues="@array/STICKValues"
+            android:icon="@drawable/draw_pref"
+            android:key="stick"
+            android:title="@string/stick" />
+        <Preference
+            android:defaultValue="false"
+            android:icon="@drawable/draw_pref"
+            android:key="delayPressHold"
+            android:title="@string/delayPressHold" />
+        <Preference
+            android:defaultValue="false"
+            android:icon="@drawable/draw_pref"
+            android:key="flingSensitivity"
+            android:title="@string/flingSensitivityTitle"
+            android:summary="@string/flingSensitivitySummary" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/draw_pref"
+            android:key="notification"
+            android:summary="@string/notificationSummary"
+            android:title="@string/notificationTitle" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/ui_floating">
+        <Preference
+            android:icon="@drawable/draw_pref"
+            android:key="shapes"
+            android:title="@string/shapesTitle" />
+        <Preference
+            android:defaultValue="2"
+            android:icon="@drawable/draw_pref"
+            android:key="sizes"
+            android:title="@string/shortsizepref" />
+        <Preference
+            android:icon="@drawable/draw_pref"
+            android:key="hide"
+            android:title="@string/autotrans" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/draw_pref"
+            android:key="floatingSplash"
+            android:summary="@string/splashDesc"
+            android:title="@string/splashTitle" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/ui_app">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:icon="@drawable/draw_pref"
+            android:key="transparent"
+            android:title="@string/themeTrans" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:dependency="transparent"
+            android:icon="@drawable/draw_pref"
+            android:key="blur"
+            android:title="@string/blurryTitle" />
+        <ListPreference
+            android:defaultValue="2"
+            android:entries="@array/AppThemes"
+            android:entryValues="@array/AppThemesValues"
+            android:icon="@drawable/draw_pref"
+            android:key="themeColor"
+            android:title="@string/colortext" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="advanced"
+        android:title="@string/advance">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/draw_floatit"
+            android:key="freeForm"
+            android:summary="@string/freeFormDesc"
+            android:title="@string/freeFormTitle" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:icon="@drawable/draw_pref"
+            android:key="stable"
+            android:title="@string/stable" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/draw_pref"
+            android:key="cache"
+            android:summary="@string/syscache"
+            android:title="@string/autorecovs" />
+        <Preference
+            android:icon="@drawable/draw_pref"
+            android:key="lite"
+            android:summary="@string/liteSummary"
+            android:title="@string/liteTitle" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/supportCategory">
+        <Preference
+            android:icon="@drawable/ic_launcher_layer"
+            android:key="whatsnew"
+            android:title="@string/whatsnew" />
+        <Preference
+            android:icon="@drawable/draw_support"
+            android:key="support"
+            android:title="@string/supportTitle" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/geeksempire">
+        <Preference
+            android:icon="@drawable/ic_ad_app_layer"
+            android:key="app"
+            android:summary="@string/adAppSummary"
+            android:title="@string/adApp" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
