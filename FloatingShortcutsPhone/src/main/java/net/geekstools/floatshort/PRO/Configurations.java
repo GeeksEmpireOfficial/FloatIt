@@ -12,6 +12,8 @@ import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.TypedValue;
 
+import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.core.CrashlyticsCore;
 import com.google.firebase.FirebaseApp;
 
 import net.geekstools.floatshort.PRO.Category.CategoryHandler;
@@ -26,6 +28,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import io.fabric.sdk.android.Fabric;
+
 public class Configurations extends Activity {
 
     FunctionsClass functionsClass;
@@ -38,6 +42,10 @@ public class Configurations extends Activity {
     protected void onCreate(Bundle Saved) {
         super.onCreate(Saved);
         FirebaseApp.initializeApp(getApplicationContext());
+        CrashlyticsCore crashlyticsCore = new CrashlyticsCore.Builder()
+                .disabled(BuildConfig.DEBUG)
+                .build();
+        Fabric.with(this, new Crashlytics.Builder().core(crashlyticsCore).build());
 
         functionsClass = new FunctionsClass(getApplicationContext(), Configurations.this);
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
