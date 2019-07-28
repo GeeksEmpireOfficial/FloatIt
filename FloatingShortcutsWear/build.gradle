@@ -11,8 +11,8 @@ android {
         minSdkVersion 25
         targetSdkVersion 28
 
-        versionCode 643
-        versionName "14.000.000.643_"
+        versionCode 645
+        versionName "14.000.000.645_"
     }
 
     buildTypes {
