@@ -825,6 +825,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
     public void onResume() {
         super.onResume();
         PublicVariable.inMemory = true;
+        PublicVariable.eligibleShowAds = true;
 
         firebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
         firebaseRemoteConfig.setDefaults(R.xml.remote_config_default);
@@ -882,6 +883,8 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
     @Override
     public void onPause() {
         super.onPause();
+        PublicVariable.eligibleShowAds = false;
+
         if (PublicVariable.actionCenter == true) {
             functionsClass.closeActionMenuOption(fullActionViews, actionButton);
         }

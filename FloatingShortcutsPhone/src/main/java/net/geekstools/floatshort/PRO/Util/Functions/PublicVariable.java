@@ -83,5 +83,6 @@ public class PublicVariable {
     public static String targetClassAfterAds = null;
     public static boolean interstitialAdLoaded = false;
     public static boolean AdsRewarded = false;
+    public static boolean eligibleShowAds = false;
     /*FREE*/
 }

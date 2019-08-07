@@ -256,8 +256,7 @@ public class FunctionsClass {
                         }
                         PublicVariable.interstitialAdLoaded = true;
 
-                        if (ClassName.contains(CategoryAutoFeatures.class.getSimpleName())
-                                || ClassName.contains(AppAutoFeatures.class.getSimpleName())) {
+                        if (PublicVariable.eligibleShowAds) {
                             interstitialAdApps.show();
                         }
                     }
@@ -389,10 +388,12 @@ public class FunctionsClass {
 
                     @Override
                     public void onAdOpened() {
+
                     }
 
                     @Override
                     public void onAdLeftApplication() {
+
                     }
 
                     @Override

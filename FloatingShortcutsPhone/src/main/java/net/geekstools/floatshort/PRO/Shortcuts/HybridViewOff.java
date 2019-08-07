@@ -848,6 +848,7 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
     public void onResume() {
         super.onResume();
         PublicVariable.inMemory = true;
+        PublicVariable.eligibleShowAds = true;
 
         firebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
         firebaseRemoteConfig.setDefaults(R.xml.remote_config_default);
@@ -906,6 +907,8 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
     @Override
     public void onPause() {
         super.onPause();
+        PublicVariable.eligibleShowAds = false;
+
         functionsClass.addAppShortcuts();
         functionsClass.savePreference("LoadView", "LoadViewPosition", recyclerViewLayoutManager.findFirstVisibleItemPosition());
         if (PublicVariable.actionCenter == true) {

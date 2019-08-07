@@ -255,6 +255,7 @@ public class AppAutoFeatures extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onResume() {
         super.onResume();
+        PublicVariable.eligibleShowAds = true;
 
         if (PublicVariable.themeLightDark) {
             color = PublicVariable.themeColor;
@@ -509,6 +510,8 @@ public class AppAutoFeatures extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onPause() {
         super.onPause();
+        PublicVariable.eligibleShowAds = false;
+
         functionsClass.CheckSystemRAM(AppAutoFeatures.this);
     }
 

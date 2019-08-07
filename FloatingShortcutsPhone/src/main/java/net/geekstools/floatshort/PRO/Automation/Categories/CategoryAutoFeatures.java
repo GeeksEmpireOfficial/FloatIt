@@ -240,6 +240,7 @@ public class CategoryAutoFeatures extends AppCompatActivity implements View.OnCl
     @Override
     public void onResume() {
         super.onResume();
+        PublicVariable.eligibleShowAds = true;
 
         if (PublicVariable.themeLightDark) {
             color = PublicVariable.themeColor;
@@ -494,6 +495,8 @@ public class CategoryAutoFeatures extends AppCompatActivity implements View.OnCl
     @Override
     public void onPause() {
         super.onPause();
+        PublicVariable.eligibleShowAds = false;
+
         functionsClass.CheckSystemRAM(CategoryAutoFeatures.this);
     }
 
