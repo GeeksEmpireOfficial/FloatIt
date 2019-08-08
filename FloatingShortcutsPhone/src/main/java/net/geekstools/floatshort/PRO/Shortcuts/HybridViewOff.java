@@ -802,6 +802,7 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
                                     "<small><font color='" + PublicVariable.colorLightDarkOpposite + "'>" + getString(R.string.signinMessage) + "</font></small>"));
                     progressDialog.setCancelable(false);
                     progressDialog.show();
+                    PublicVariable.eligibleShowAds = false;
                 }
             }
         } catch (Exception e) {
@@ -1036,6 +1037,7 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
                                                                     @Override
                                                                     public void run() {
                                                                         progressDialog.dismiss();
+                                                                        PublicVariable.eligibleShowAds = true;
                                                                     }
                                                                 }, 777);
                                                             } catch (Exception e) {
@@ -1049,6 +1051,7 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
                                                             functionsClass.Toast(getString(R.string.signinFinished), Gravity.TOP);
                                                             try {
                                                                 progressDialog.dismiss();
+                                                                PublicVariable.eligibleShowAds = true;
                                                             } catch (Exception e) {
                                                                 e.printStackTrace();
                                                             }

@@ -779,6 +779,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
                                     "<small><font color='" + PublicVariable.colorLightDarkOpposite + "'>" + getString(R.string.signinMessage) + "</font></small>"));
                     progressDialog.setCancelable(false);
                     progressDialog.show();
+                    PublicVariable.eligibleShowAds = false;
                 }
             }
         } catch (Exception e) {
@@ -1000,6 +1001,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
                                                                     @Override
                                                                     public void run() {
                                                                         progressDialog.dismiss();
+                                                                        PublicVariable.eligibleShowAds = true;
                                                                     }
                                                                 }, 777);
                                                             } catch (Exception e) {
@@ -1013,6 +1015,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
                                                             functionsClass.Toast(getString(R.string.signinFinished), Gravity.TOP);
                                                             try {
                                                                 progressDialog.dismiss();
+                                                                PublicVariable.eligibleShowAds = true;
                                                             } catch (Exception e) {
                                                                 e.printStackTrace();
                                                             }
