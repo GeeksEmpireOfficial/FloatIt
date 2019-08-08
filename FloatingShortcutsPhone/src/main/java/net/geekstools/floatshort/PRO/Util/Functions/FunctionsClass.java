@@ -2770,11 +2770,11 @@ public class FunctionsClass {
         return API;
     }
 
-    public boolean appInstalledOrNot(String packName) {
+    public boolean appIsInstalled(String packageName) {
         PackageManager pm = context.getPackageManager();
         boolean app_installed = false;
         try {
-            pm.getPackageInfo(packName, 0);
+            pm.getPackageInfo(packageName, 0);
             app_installed = true;
         } catch (PackageManager.NameNotFoundException e) {
             app_installed = false;
@@ -2897,7 +2897,7 @@ public class FunctionsClass {
     }
 
     public void openApplicationFromActivity(String packageName) {
-        if (appInstalledOrNot(packageName) == true) {
+        if (appIsInstalled(packageName) == true) {
             try {
                 Toast(appName(packageName), Gravity.BOTTOM);
 
@@ -2921,7 +2921,7 @@ public class FunctionsClass {
     }
 
     public void openApplicationFromActivity(String packageName, String className) {
-        if (appInstalledOrNot(packageName) == true) {
+        if (appIsInstalled(packageName) == true) {
             try {
                 Toast(String.valueOf(context.getPackageManager().getActivityInfo(new ComponentName(packageName, className), 0).loadLabel(context.getPackageManager())), Gravity.BOTTOM);
 
@@ -4856,8 +4856,8 @@ public class FunctionsClass {
 
     public void widgetToHomeScreen(Class className, String packageName, String shortcutName, Drawable widgetPreviewDrawable, int shortcutId) throws Exception {
         Intent differentIntent = new Intent(context, className);
-        differentIntent.setAction(Intent.ACTION_MAIN);
-        differentIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+        differentIntent.setAction("CREATE_FLOATING_WIDGET_HOME_SCREEN_SHORTCUTS");
+        differentIntent.addCategory(Intent.CATEGORY_DEFAULT);
         differentIntent.putExtra("ShortcutsId", shortcutId);
         differentIntent.putExtra("ShortcutLabel", shortcutName);
 
@@ -6191,7 +6191,7 @@ public class FunctionsClass {
                     String aPackageName = queryUsageStats.get(i).getPackageName();
                     try {
                         if (!aPackageName.equals(context.getPackageName())) {
-                            if (appInstalledOrNot(aPackageName)) {
+                            if (appIsInstalled(aPackageName)) {
                                 if (!ifSystem(aPackageName)) {
                                     if (!isDefaultLauncher(aPackageName)) {
                                         if (canLaunch(aPackageName)) {

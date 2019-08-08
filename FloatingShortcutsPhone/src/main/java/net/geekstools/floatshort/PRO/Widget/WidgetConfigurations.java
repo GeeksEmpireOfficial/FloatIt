@@ -1230,40 +1230,49 @@ public class WidgetConfigurations extends Activity implements SimpleGestureFilte
                 for (WidgetDataModel widgetDataModel : widgetDataModels) {
                     try {
                         int appWidgetId = widgetDataModel.getWidgetId();
-
-                        AppWidgetProviderInfo appWidgetProviderInfo = appWidgetManager.getAppWidgetInfo(appWidgetId);
                         String packageName = widgetDataModel.getPackageName();
-                        String newAppName = functionsClass.appName(packageName);
-                        Drawable appIcon = functionsClass.loadCustomIcons() ? loadCustomIcons.getDrawableIconForPackage(packageName, functionsClass.shapedAppIcon(packageName)) : functionsClass.shapedAppIcon(packageName);
 
-                        if (widgetIndex == 0) {
-                            configuredWidgetsSections.add(new WidgetSectionedGridRecyclerViewAdapter.Section(widgetIndex, newAppName, appIcon));
-                            indexListConfigured.add(newAppName.substring(0, 1).toUpperCase());
-                        } else {
-                            if (!oldAppName.equals(newAppName)) {
+                        if (functionsClass.appIsInstalled(packageName)) {
+                            AppWidgetProviderInfo appWidgetProviderInfo = appWidgetManager.getAppWidgetInfo(appWidgetId);
+                            String newAppName = functionsClass.appName(packageName);
+                            Drawable appIcon = functionsClass.loadCustomIcons() ? loadCustomIcons.getDrawableIconForPackage(packageName, functionsClass.shapedAppIcon(packageName)) : functionsClass.shapedAppIcon(packageName);
+
+                            if (widgetIndex == 0) {
                                 configuredWidgetsSections.add(new WidgetSectionedGridRecyclerViewAdapter.Section(widgetIndex, newAppName, appIcon));
                                 indexListConfigured.add(newAppName.substring(0, 1).toUpperCase());
+                            } else {
+                                if (!oldAppName.equals(newAppName)) {
+                                    configuredWidgetsSections.add(new WidgetSectionedGridRecyclerViewAdapter.Section(widgetIndex, newAppName, appIcon));
+                                    indexListConfigured.add(newAppName.substring(0, 1).toUpperCase());
+                                }
                             }
+
+                            oldAppName = functionsClass.appName(packageName);
+
+                            indexListConfigured.add(newAppName.substring(0, 1).toUpperCase());
+                            configuredWidgetsNavDrawerItems.add(new NavDrawerItem(
+                                    newAppName,
+                                    packageName,
+                                    widgetDataModel.getWidgetLabel(),
+                                    appIcon,
+                                    appWidgetProviderInfo,
+                                    appWidgetId,
+                                    widgetDataModel.getRecovery()
+                            ));
+
+                            widgetIndex++;
+                        } else {
+                            widgetDataInterface.initDataAccessObject().deleteByWidgetId(appWidgetId);
                         }
-
-                        oldAppName = functionsClass.appName(packageName);
-
-                        indexListConfigured.add(newAppName.substring(0, 1).toUpperCase());
-                        configuredWidgetsNavDrawerItems.add(new NavDrawerItem(
-                                newAppName,
-                                packageName,
-                                widgetDataModel.getWidgetLabel(),
-                                appIcon,
-                                appWidgetProviderInfo,
-                                appWidgetId,
-                                widgetDataModel.getRecovery()
-                        ));
-
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+                }
 
-                    widgetIndex++;
+                if (configuredWidgetsNavDrawerItems.size() > 0) {
+                    configuredWidgetAvailable = true;
+                } else {
+                    return false;
                 }
 
                 configuredWidgetsRecyclerViewAdapter = new ConfiguredWidgetsAdapter(WidgetConfigurations.this, getApplicationContext(), configuredWidgetsNavDrawerItems, appWidgetManager, appWidgetHost);

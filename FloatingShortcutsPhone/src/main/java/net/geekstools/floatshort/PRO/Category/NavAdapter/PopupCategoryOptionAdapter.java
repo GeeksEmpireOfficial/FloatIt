@@ -267,7 +267,7 @@ public class PopupCategoryOptionAdapter extends BaseAdapter {
                                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                     } else {
                         PublicVariable.splitSinglePackage = navDrawerItems.get(position).getPackageName();
-                        if (functionsClass.appInstalledOrNot(PublicVariable.splitSinglePackage)) {
+                        if (functionsClass.appIsInstalled(PublicVariable.splitSinglePackage)) {
                             final AccessibilityManager accessibilityManager = (AccessibilityManager) context.getSystemService(ACCESSIBILITY_SERVICE);
                             AccessibilityEvent event = AccessibilityEvent.obtain();
                             event.setSource(view);

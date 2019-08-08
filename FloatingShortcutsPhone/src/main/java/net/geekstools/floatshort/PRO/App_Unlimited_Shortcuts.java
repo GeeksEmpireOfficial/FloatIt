@@ -206,7 +206,7 @@ public class App_Unlimited_Shortcuts extends Service {
         }
 
         mapPackageNameStartId.put(packages[startId], startId);
-        if (functionsClass.appInstalledOrNot(packages[startId]) == false) {
+        if (functionsClass.appIsInstalled(packages[startId]) == false) {
             return START_NOT_STICKY;
         }
         functionsClass.saveUnlimitedShortcutsService(packages[startId]);

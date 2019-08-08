@@ -203,7 +203,7 @@ public class App_Unlimited_Bluetooth extends Service {
             return START_NOT_STICKY;
         }
         mapPackageNameStartId.put(packages[startId], startId);
-        if (functionsClass.appInstalledOrNot(packages[startId]) == false) {
+        if (functionsClass.appIsInstalled(packages[startId]) == false) {
             return START_NOT_STICKY;
         }
 
