@@ -141,11 +141,6 @@ public class WidgetConfigurations extends Activity implements SimpleGestureFilte
         super.onCreate(bundle);
         setContentView(R.layout.widget_configurations_views);
 
-        /*
-         * CHECK Duplicated Call on FunctionsClass (Activity Instance)
-         * */
-
-
         functionsClass = new FunctionsClass(getApplicationContext(), WidgetConfigurations.this);
 
         wholeWidget = (RelativeLayout) findViewById(R.id.wholeWidget);
