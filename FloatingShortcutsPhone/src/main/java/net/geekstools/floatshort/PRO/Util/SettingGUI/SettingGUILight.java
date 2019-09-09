@@ -913,6 +913,8 @@ public class SettingGUILight extends PreferenceActivity implements OnSharedPrefe
     @Override
     public void onResume() {
         super.onResume();
+        PublicVariable.eligibleShowAds = true;
+
         getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
 
         LayerDrawable drawSmart = (LayerDrawable) getDrawable(R.drawable.draw_smart);
@@ -1043,6 +1045,8 @@ public class SettingGUILight extends PreferenceActivity implements OnSharedPrefe
     @Override
     public void onPause() {
         super.onPause();
+        PublicVariable.eligibleShowAds = false;
+
         functionsClass.loadSavedColor();
         getPreferenceScreen().getSharedPreferences()
                 .unregisterOnSharedPreferenceChangeListener(this);

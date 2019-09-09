@@ -490,7 +490,7 @@ public class FunctionsClass {
         switch (AdsPlace) {
             case InterstitialAdPlace.AppsList: {
                 if (interstitialAdApps != null) {
-                    if (interstitialAdApps.isLoaded()) {
+                    if (interstitialAdApps.isLoaded() && PublicVariable.eligibleShowAds) {
                         interstitialAdApps.show();
                     }
                 }
@@ -499,7 +499,7 @@ public class FunctionsClass {
             }
             case InterstitialAdPlace.SettingGUI: {
                 if (interstitialAdSettingsGUI != null) {
-                    if (interstitialAdSettingsGUI.isLoaded()) {
+                    if (interstitialAdSettingsGUI.isLoaded() && PublicVariable.eligibleShowAds) {
                         interstitialAdSettingsGUI.show();
                     }
                 }
@@ -514,7 +514,7 @@ public class FunctionsClass {
         switch (AdsPlace) {
             case InterstitialAdPlace.AppsList: {
                 if (interstitialAdApps != null) {
-                    if (interstitialAdApps.isLoaded()) {
+                    if (interstitialAdApps.isLoaded() && PublicVariable.eligibleShowAds) {
                         interstitialAdApps.show();
                     }
                 }
@@ -523,7 +523,7 @@ public class FunctionsClass {
             }
             case InterstitialAdPlace.SettingGUI: {
                 if (interstitialAdSettingsGUI != null) {
-                    if (interstitialAdSettingsGUI.isLoaded()) {
+                    if (interstitialAdSettingsGUI.isLoaded() && PublicVariable.eligibleShowAds) {
                         interstitialAdSettingsGUI.show();
                     }
                 }
@@ -4713,10 +4713,10 @@ public class FunctionsClass {
                             shortcutNameWidget = widgetLabel;
                             widgetPreviewDrawable = widgetPreview;
                             shortcutIdWidget = appWidgetId;
+
                             interstitialAdWidgetShortcuts.show();
                         } else {
                             try {
-
                                 widgetToHomeScreen(FloatingWidgetHomeScreenShortcuts.class, packageName, widgetLabel, widgetPreview, appWidgetId);
                             } catch (Exception e) {
                                 e.printStackTrace();

@@ -916,6 +916,8 @@ public class SettingGUIDark extends PreferenceActivity implements OnSharedPrefer
     @Override
     public void onResume() {
         super.onResume();
+        PublicVariable.eligibleShowAds = true;
+
         getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
 
         LayerDrawable drawSmart = (LayerDrawable) getDrawable(R.drawable.draw_smart);
@@ -1046,6 +1048,8 @@ public class SettingGUIDark extends PreferenceActivity implements OnSharedPrefer
     @Override
     public void onPause() {
         super.onPause();
+        PublicVariable.eligibleShowAds = false;
+
         functionsClass.loadSavedColor();
         getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
 
