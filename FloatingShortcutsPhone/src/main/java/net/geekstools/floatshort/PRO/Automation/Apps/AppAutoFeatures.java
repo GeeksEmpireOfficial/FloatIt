@@ -88,6 +88,7 @@ public class AppAutoFeatures extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle Saved) {
         super.onCreate(Saved);
         setContentView(R.layout.auto_apps);
+        PublicVariable.eligibleLoadShowAds = true;
 
         listView = (ListView) findViewById(R.id.listFav);
         indexView = (LinearLayout) findViewById(R.id.side_index);
@@ -255,7 +256,7 @@ public class AppAutoFeatures extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onResume() {
         super.onResume();
-        PublicVariable.eligibleShowAds = true;
+        PublicVariable.eligibleLoadShowAds = true;
 
         if (PublicVariable.themeLightDark) {
             color = PublicVariable.themeColor;
@@ -510,7 +511,7 @@ public class AppAutoFeatures extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onPause() {
         super.onPause();
-        PublicVariable.eligibleShowAds = false;
+        PublicVariable.eligibleLoadShowAds = false;
 
         functionsClass.CheckSystemRAM(AppAutoFeatures.this);
     }

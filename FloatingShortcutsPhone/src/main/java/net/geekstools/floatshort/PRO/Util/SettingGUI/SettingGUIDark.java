@@ -102,6 +102,8 @@ public class SettingGUIDark extends PreferenceActivity implements OnSharedPrefer
     protected void onCreate(Bundle saved) {
         super.onCreate(saved);
         addPreferencesFromResource(R.xml.setting_gui);
+        PublicVariable.eligibleLoadShowAds = true;
+
         try {
             getActionBar().setDisplayHomeAsUpEnabled(true);
         } catch (Exception e) {
@@ -916,7 +918,7 @@ public class SettingGUIDark extends PreferenceActivity implements OnSharedPrefer
     @Override
     public void onResume() {
         super.onResume();
-        PublicVariable.eligibleShowAds = true;
+        PublicVariable.eligibleLoadShowAds = true;
 
         getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
 
@@ -1048,7 +1050,7 @@ public class SettingGUIDark extends PreferenceActivity implements OnSharedPrefer
     @Override
     public void onPause() {
         super.onPause();
-        PublicVariable.eligibleShowAds = false;
+        PublicVariable.eligibleLoadShowAds = false;
 
         functionsClass.loadSavedColor();
         getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
@@ -1067,28 +1069,32 @@ public class SettingGUIDark extends PreferenceActivity implements OnSharedPrefer
     @Override
     public void onBackPressed() {
         try {
-            if (FromWidgetsConfigurations) {
-                Intent intent = new Intent(getApplicationContext(), WidgetConfigurations.class);
-                startActivity(intent);
+            if (PublicVariable.interstitialAdLoaded) {
+                functionsClass.ShowAds(FunctionsClass.InterstitialAdPlace.SettingGUI);
             } else {
-                if (PublicVariable.forceReload) {
-                    PublicVariable.forceReload = false;
-                    functionsClass.overrideBackPressToMain(SettingGUIDark.this);
+                if (FromWidgetsConfigurations) {
+                    Intent intent = new Intent(getApplicationContext(), WidgetConfigurations.class);
+                    startActivity(intent);
+                } else {
+                    if (PublicVariable.forceReload) {
+                        PublicVariable.forceReload = false;
+                        functionsClass.overrideBackPressToMain(SettingGUIDark.this);
+                    }
                 }
+
+                float finalRadius = (int) Math.hypot(functionsClass.displayX(), functionsClass.displayY());
+                Animator circularReveal = ViewAnimationUtils.createCircularReveal(
+                        rootLayout, (functionsClass.displayX() / 2), (functionsClass.displayY() / 2), finalRadius, 0);
+
+                circularReveal.setDuration(213);
+                circularReveal.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        rootLayout.setVisibility(View.INVISIBLE);
+                    }
+                });
+                circularReveal.start();
             }
-
-            float finalRadius = (int) Math.hypot(functionsClass.displayX(), functionsClass.displayY());
-            Animator circularReveal = ViewAnimationUtils.createCircularReveal(
-                    rootLayout, (functionsClass.displayX() / 2), (functionsClass.displayY() / 2), finalRadius, 0);
-
-            circularReveal.setDuration(213);
-            circularReveal.addListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    rootLayout.setVisibility(View.INVISIBLE);
-                }
-            });
-            circularReveal.start();
         } catch (Exception e) {
             e.printStackTrace();
         }

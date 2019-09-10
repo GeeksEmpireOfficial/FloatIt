@@ -160,6 +160,7 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.off_hybrid_view);
+        PublicVariable.eligibleLoadShowAds = true;
 
         nestedScrollView = (ScrollView) findViewById(R.id.nestedScrollView);
         nestedIndexScrollView = (ScrollView) findViewById(R.id.nestedIndexScrollView);
@@ -255,14 +256,16 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
 
         rewardedVideoAdInstance = MobileAds.getRewardedVideoAdInstance(getApplicationContext());
         rewardedVideoAdInstance.setImmersiveMode(true);
-        rewardedVideoAdInstance.loadAd(getString(R.string.AdUnitReward), new AdRequest.Builder()
-                .addTestDevice("CDCAA1F20B5C9C948119E886B31681DE")
-                .addTestDevice("D101234A6C1CF51023EE5815ABC285BD")
-                .addTestDevice("65B5827710CBE90F4A99CE63099E524C")
-                .addTestDevice("5901E5EE74F9B6652E05621140664A54")
-                .addTestDevice("DD428143B4772EC7AA87D1E2F9DA787C")
-                .addTestDevice("F54D998BCE077711A17272B899B44798")
-                .build());
+        if (PublicVariable.eligibleLoadShowAds) {
+            rewardedVideoAdInstance.loadAd(getString(R.string.AdUnitReward), new AdRequest.Builder()
+                    .addTestDevice("CDCAA1F20B5C9C948119E886B31681DE")
+                    .addTestDevice("D101234A6C1CF51023EE5815ABC285BD")
+                    .addTestDevice("65B5827710CBE90F4A99CE63099E524C")
+                    .addTestDevice("5901E5EE74F9B6652E05621140664A54")
+                    .addTestDevice("DD428143B4772EC7AA87D1E2F9DA787C")
+                    .addTestDevice("F54D998BCE077711A17272B899B44798")
+                    .build());
+        }
         rewardedVideoAdInstance.setRewardedVideoAdListener(new RewardedVideoAdListener() {
             @Override
             public void onRewardedVideoAdLoaded() {
@@ -295,12 +298,14 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
                         e.printStackTrace();
                     }
                 } else {
-                    rewardedVideoAdInstance.loadAd(getString(R.string.AdUnitReward), new AdRequest.Builder()
-                            .addTestDevice("CDCAA1F20B5C9C948119E886B31681DE")
-                            .addTestDevice("D101234A6C1CF51023EE5815ABC285BD")
-                            .addTestDevice("65B5827710CBE90F4A99CE63099E524C")
-                            .addTestDevice("F54D998BCE077711A17272B899B44798")
-                            .build());
+                    if (PublicVariable.eligibleLoadShowAds) {
+                        rewardedVideoAdInstance.loadAd(getString(R.string.AdUnitReward), new AdRequest.Builder()
+                                .addTestDevice("CDCAA1F20B5C9C948119E886B31681DE")
+                                .addTestDevice("D101234A6C1CF51023EE5815ABC285BD")
+                                .addTestDevice("65B5827710CBE90F4A99CE63099E524C")
+                                .addTestDevice("F54D998BCE077711A17272B899B44798")
+                                .build());
+                    }
                 }
             }
 
@@ -316,12 +321,14 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
 
             @Override
             public void onRewardedVideoAdFailedToLoad(int failedCode) {
-                rewardedVideoAdInstance.loadAd(getString(R.string.AdUnitReward), new AdRequest.Builder()
-                        .addTestDevice("CDCAA1F20B5C9C948119E886B31681DE")
-                        .addTestDevice("D101234A6C1CF51023EE5815ABC285BD")
-                        .addTestDevice("65B5827710CBE90F4A99CE63099E524C")
-                        .addTestDevice("F54D998BCE077711A17272B899B44798")
-                        .build());
+                if (PublicVariable.eligibleLoadShowAds) {
+                    rewardedVideoAdInstance.loadAd(getString(R.string.AdUnitReward), new AdRequest.Builder()
+                            .addTestDevice("CDCAA1F20B5C9C948119E886B31681DE")
+                            .addTestDevice("D101234A6C1CF51023EE5815ABC285BD")
+                            .addTestDevice("65B5827710CBE90F4A99CE63099E524C")
+                            .addTestDevice("F54D998BCE077711A17272B899B44798")
+                            .build());
+                }
             }
 
             @Override
@@ -808,7 +815,7 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
                                     "<small><font color='" + PublicVariable.colorLightDarkOpposite + "'>" + getString(R.string.signinMessage) + "</font></small>"));
                     progressDialog.setCancelable(false);
                     progressDialog.show();
-                    PublicVariable.eligibleShowAds = false;
+                    PublicVariable.eligibleLoadShowAds = false;
                 }
             }
         } catch (Exception e) {
@@ -855,7 +862,7 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
     public void onResume() {
         super.onResume();
         PublicVariable.inMemory = true;
-        PublicVariable.eligibleShowAds = true;
+        PublicVariable.eligibleLoadShowAds = true;
 
         firebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
         firebaseRemoteConfig.setDefaults(R.xml.remote_config_default);
@@ -914,7 +921,7 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
     @Override
     public void onPause() {
         super.onPause();
-        PublicVariable.eligibleShowAds = false;
+        PublicVariable.eligibleLoadShowAds = false;
 
         functionsClass.addAppShortcuts();
         functionsClass.savePreference("LoadView", "LoadViewPosition", recyclerViewLayoutManager.findFirstVisibleItemPosition());
@@ -1048,7 +1055,7 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
                                                                     @Override
                                                                     public void run() {
                                                                         progressDialog.dismiss();
-                                                                        PublicVariable.eligibleShowAds = true;
+                                                                        PublicVariable.eligibleLoadShowAds = true;
                                                                     }
                                                                 }, 777);
                                                             } catch (Exception e) {
@@ -1062,7 +1069,7 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
                                                             functionsClass.Toast(getString(R.string.signinFinished), Gravity.TOP);
                                                             try {
                                                                 progressDialog.dismiss();
-                                                                PublicVariable.eligibleShowAds = true;
+                                                                PublicVariable.eligibleLoadShowAds = true;
                                                             } catch (Exception e) {
                                                                 e.printStackTrace();
                                                             }

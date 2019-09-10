@@ -140,6 +140,7 @@ public class WidgetConfigurations extends Activity implements SimpleGestureFilte
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.widget_configurations_views);
+        PublicVariable.eligibleLoadShowAds = true;
 
         functionsClass = new FunctionsClass(getApplicationContext(), WidgetConfigurations.this);
 
@@ -845,7 +846,7 @@ public class WidgetConfigurations extends Activity implements SimpleGestureFilte
     @Override
     public void onResume() {
         super.onResume();
-        PublicVariable.eligibleShowAds = true;
+        PublicVariable.eligibleLoadShowAds = true;
 
         firebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
         firebaseRemoteConfig.setDefaults(R.xml.remote_config_default);
@@ -878,7 +879,7 @@ public class WidgetConfigurations extends Activity implements SimpleGestureFilte
     @Override
     public void onPause() {
         super.onPause();
-        PublicVariable.eligibleShowAds = false;
+        PublicVariable.eligibleLoadShowAds = false;
 
         if (PublicVariable.actionCenter == true) {
             functionsClass.closeActionMenuOption(fullActionViews, actionButton);

@@ -134,6 +134,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.category_handler);
+        PublicVariable.eligibleLoadShowAds = true;
 
         wholeCategory = (RelativeLayout) findViewById(R.id.wholeCategory);
         categorylist = (RecyclerView) findViewById(R.id.categorylist);
@@ -231,14 +232,16 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
 
         rewardedVideoAdInstance = MobileAds.getRewardedVideoAdInstance(getApplicationContext());
         rewardedVideoAdInstance.setImmersiveMode(true);
-        rewardedVideoAdInstance.loadAd(getString(R.string.AdUnitReward), new AdRequest.Builder()
-                .addTestDevice("CDCAA1F20B5C9C948119E886B31681DE")
-                .addTestDevice("D101234A6C1CF51023EE5815ABC285BD")
-                .addTestDevice("65B5827710CBE90F4A99CE63099E524C")
-                .addTestDevice("5901E5EE74F9B6652E05621140664A54")
-                .addTestDevice("DD428143B4772EC7AA87D1E2F9DA787C")
-                .addTestDevice("F54D998BCE077711A17272B899B44798")
-                .build());
+        if (PublicVariable.eligibleLoadShowAds) {
+            rewardedVideoAdInstance.loadAd(getString(R.string.AdUnitReward), new AdRequest.Builder()
+                    .addTestDevice("CDCAA1F20B5C9C948119E886B31681DE")
+                    .addTestDevice("D101234A6C1CF51023EE5815ABC285BD")
+                    .addTestDevice("65B5827710CBE90F4A99CE63099E524C")
+                    .addTestDevice("5901E5EE74F9B6652E05621140664A54")
+                    .addTestDevice("DD428143B4772EC7AA87D1E2F9DA787C")
+                    .addTestDevice("F54D998BCE077711A17272B899B44798")
+                    .build());
+        }
         rewardedVideoAdInstance.setRewardedVideoAdListener(new RewardedVideoAdListener() {
             @Override
             public void onRewardedVideoAdLoaded() {
@@ -271,12 +274,14 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
                         e.printStackTrace();
                     }
                 } else {
-                    rewardedVideoAdInstance.loadAd(getString(R.string.AdUnitReward), new AdRequest.Builder()
-                            .addTestDevice("CDCAA1F20B5C9C948119E886B31681DE")
-                            .addTestDevice("D101234A6C1CF51023EE5815ABC285BD")
-                            .addTestDevice("65B5827710CBE90F4A99CE63099E524C")
-                            .addTestDevice("F54D998BCE077711A17272B899B44798")
-                            .build());
+                    if (PublicVariable.eligibleLoadShowAds) {
+                        rewardedVideoAdInstance.loadAd(getString(R.string.AdUnitReward), new AdRequest.Builder()
+                                .addTestDevice("CDCAA1F20B5C9C948119E886B31681DE")
+                                .addTestDevice("D101234A6C1CF51023EE5815ABC285BD")
+                                .addTestDevice("65B5827710CBE90F4A99CE63099E524C")
+                                .addTestDevice("F54D998BCE077711A17272B899B44798")
+                                .build());
+                    }
                 }
             }
 
@@ -292,12 +297,14 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
 
             @Override
             public void onRewardedVideoAdFailedToLoad(int failedCode) {
-                rewardedVideoAdInstance.loadAd(getString(R.string.AdUnitReward), new AdRequest.Builder()
-                        .addTestDevice("CDCAA1F20B5C9C948119E886B31681DE")
-                        .addTestDevice("D101234A6C1CF51023EE5815ABC285BD")
-                        .addTestDevice("65B5827710CBE90F4A99CE63099E524C")
-                        .addTestDevice("F54D998BCE077711A17272B899B44798")
-                        .build());
+                if (PublicVariable.eligibleLoadShowAds) {
+                    rewardedVideoAdInstance.loadAd(getString(R.string.AdUnitReward), new AdRequest.Builder()
+                            .addTestDevice("CDCAA1F20B5C9C948119E886B31681DE")
+                            .addTestDevice("D101234A6C1CF51023EE5815ABC285BD")
+                            .addTestDevice("65B5827710CBE90F4A99CE63099E524C")
+                            .addTestDevice("F54D998BCE077711A17272B899B44798")
+                            .build());
+                }
             }
 
             @Override
@@ -783,7 +790,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
                                     "<small><font color='" + PublicVariable.colorLightDarkOpposite + "'>" + getString(R.string.signinMessage) + "</font></small>"));
                     progressDialog.setCancelable(false);
                     progressDialog.show();
-                    PublicVariable.eligibleShowAds = false;
+                    PublicVariable.eligibleLoadShowAds = false;
                 }
             }
         } catch (Exception e) {
@@ -830,7 +837,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
     public void onResume() {
         super.onResume();
         PublicVariable.inMemory = true;
-        PublicVariable.eligibleShowAds = true;
+        PublicVariable.eligibleLoadShowAds = true;
 
         firebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
         firebaseRemoteConfig.setDefaults(R.xml.remote_config_default);
@@ -888,7 +895,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
     @Override
     public void onPause() {
         super.onPause();
-        PublicVariable.eligibleShowAds = false;
+        PublicVariable.eligibleLoadShowAds = false;
 
         if (PublicVariable.actionCenter == true) {
             functionsClass.closeActionMenuOption(fullActionViews, actionButton);
@@ -1015,7 +1022,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
                                                                     @Override
                                                                     public void run() {
                                                                         progressDialog.dismiss();
-                                                                        PublicVariable.eligibleShowAds = true;
+                                                                        PublicVariable.eligibleLoadShowAds = true;
                                                                     }
                                                                 }, 777);
                                                             } catch (Exception e) {
@@ -1029,7 +1036,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
                                                             functionsClass.Toast(getString(R.string.signinFinished), Gravity.TOP);
                                                             try {
                                                                 progressDialog.dismiss();
-                                                                PublicVariable.eligibleShowAds = true;
+                                                                PublicVariable.eligibleLoadShowAds = true;
                                                             } catch (Exception e) {
                                                                 e.printStackTrace();
                                                             }

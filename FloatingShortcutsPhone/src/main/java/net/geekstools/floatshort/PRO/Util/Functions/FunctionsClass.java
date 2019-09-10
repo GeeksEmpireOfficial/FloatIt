@@ -251,34 +251,37 @@ public class FunctionsClass {
                 interstitialAdApps = new InterstitialAd(context);
                 interstitialAdApps.setImmersiveMode(true);
                 interstitialAdApps.setAdUnitId(context.getString(R.string.AdUnitActivities));
-                interstitialAdApps.loadAd(adRequestinterstitialAd);
+                if (PublicVariable.eligibleLoadShowAds) {
+                    interstitialAdApps.loadAd(adRequestinterstitialAd);
+                }
                 interstitialAdApps.setAdListener(new AdListener() {
                     @Override
                     public void onAdLoaded() {
-                        if (BuildConfig.DEBUG) {
-                            System.out.println("*** InterstitialAd Loaded | Activities ***");
-                        }
-                        PublicVariable.interstitialAdLoaded = true;
+                        FunctionsClassDebug.Companion.PrintDebug("*** InterstitialAd Loaded | Activities ***");
 
-                        if (PublicVariable.eligibleShowAds) {
+                        PublicVariable.interstitialAdLoaded = true;
+                        if (PublicVariable.eligibleLoadShowAds) {
                             interstitialAdApps.show();
                         }
                     }
 
                     @Override
                     public void onAdFailedToLoad(int errorCodeAdRequest) {
-                        if (BuildConfig.DEBUG) {
-                            System.out.println("*** AdFailedToLoad " + errorCodeAdRequest + " | Activities ***");
+                        FunctionsClassDebug.Companion.PrintDebug("*** AdFailedToLoad " + errorCodeAdRequest + " | Activities ***");
+
+                        if (PublicVariable.eligibleLoadShowAds) {
+                            interstitialAdApps.loadAd(adRequestinterstitialAd);
                         }
-                        interstitialAdApps.loadAd(adRequestinterstitialAd);
                     }
 
                     @Override
                     public void onAdOpened() {
+
                     }
 
                     @Override
                     public void onAdLeftApplication() {
+
                     }
 
                     @Override
@@ -379,22 +382,24 @@ public class FunctionsClass {
                         .build();
                 interstitialAdSettingsGUI.setImmersiveMode(false);
                 interstitialAdSettingsGUI.setAdUnitId(context.getString(R.string.AdUnitSettingGUI));
-                interstitialAdSettingsGUI.loadAd(adRequestinterstitialAd);
+                if (PublicVariable.eligibleLoadShowAds) {
+                    interstitialAdSettingsGUI.loadAd(adRequestinterstitialAd);
+                }
                 interstitialAdSettingsGUI.setAdListener(new AdListener() {
                     @Override
                     public void onAdLoaded() {
-                        if (BuildConfig.DEBUG) {
-                            System.out.println("*** InterstitialAd Loaded | SettingGUI ***");
-                        }
+                        FunctionsClassDebug.Companion.PrintDebug("*** InterstitialAd Loaded | SettingGUI ***");
+
                         PublicVariable.interstitialAdLoaded = true;
                     }
 
                     @Override
                     public void onAdFailedToLoad(int errorCodeAdRequest) {
-                        if (BuildConfig.DEBUG) {
-                            System.out.println("*** AdFailedToLoad " + errorCodeAdRequest + " | SettingGUI ***");
+                        FunctionsClassDebug.Companion.PrintDebug("*** AdFailedToLoad " + errorCodeAdRequest + " | SettingGUI ***");
+
+                        if (PublicVariable.eligibleLoadShowAds) {
+                            interstitialAdSettingsGUI.loadAd(adRequestinterstitialAd);
                         }
-                        interstitialAdSettingsGUI.loadAd(adRequestinterstitialAd);
                     }
 
                     @Override
@@ -435,21 +440,22 @@ public class FunctionsClass {
             interstitialAdWidgetShortcuts = new InterstitialAd(context);
             interstitialAdWidgetShortcuts.setImmersiveMode(true);
             interstitialAdWidgetShortcuts.setAdUnitId(context.getString(R.string.AdUnitFloatingWidgetShortcuts));
-            interstitialAdWidgetShortcuts.loadAd(adRequestinterstitialAd);
+            if (PublicVariable.eligibleLoadShowAds) {
+                interstitialAdWidgetShortcuts.loadAd(adRequestinterstitialAd);
+            }
             interstitialAdWidgetShortcuts.setAdListener(new AdListener() {
                 @Override
                 public void onAdLoaded() {
-                    if (BuildConfig.DEBUG) {
-                        System.out.println("*** InterstitialAd Loaded | WidgetConfigurations ***");
-                    }
+                    FunctionsClassDebug.Companion.PrintDebug("*** InterstitialAd Loaded | WidgetConfigurations ***");
                 }
 
                 @Override
                 public void onAdFailedToLoad(int errorCodeAdRequest) {
-                    if (BuildConfig.DEBUG) {
-                        System.out.println("*** AdFailedToLoad " + errorCodeAdRequest + " | WidgetConfigurations ***");
+                    FunctionsClassDebug.Companion.PrintDebug("*** AdFailedToLoad " + errorCodeAdRequest + " | WidgetConfigurations ***");
+
+                    if (PublicVariable.eligibleLoadShowAds) {
+                        interstitialAdWidgetShortcuts.loadAd(adRequestinterstitialAd);
                     }
-                    interstitialAdWidgetShortcuts.loadAd(adRequestinterstitialAd);
                 }
 
                 @Override
@@ -464,7 +470,9 @@ public class FunctionsClass {
 
                 @Override
                 public void onAdClosed() {
-                    interstitialAdWidgetShortcuts.loadAd(adRequestinterstitialAd);
+                    if (PublicVariable.eligibleLoadShowAds) {
+                        interstitialAdWidgetShortcuts.loadAd(adRequestinterstitialAd);
+                    }
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -491,7 +499,7 @@ public class FunctionsClass {
         switch (AdsPlace) {
             case InterstitialAdPlace.AppsList: {
                 if (interstitialAdApps != null) {
-                    if (interstitialAdApps.isLoaded() && PublicVariable.eligibleShowAds) {
+                    if (interstitialAdApps.isLoaded() && PublicVariable.eligibleLoadShowAds) {
                         interstitialAdApps.show();
                     }
                 }
@@ -500,7 +508,7 @@ public class FunctionsClass {
             }
             case InterstitialAdPlace.SettingGUI: {
                 if (interstitialAdSettingsGUI != null) {
-                    if (interstitialAdSettingsGUI.isLoaded() && PublicVariable.eligibleShowAds) {
+                    if (interstitialAdSettingsGUI.isLoaded() && PublicVariable.eligibleLoadShowAds) {
                         interstitialAdSettingsGUI.show();
                     }
                 }
@@ -515,7 +523,7 @@ public class FunctionsClass {
         switch (AdsPlace) {
             case InterstitialAdPlace.AppsList: {
                 if (interstitialAdApps != null) {
-                    if (interstitialAdApps.isLoaded() && PublicVariable.eligibleShowAds) {
+                    if (interstitialAdApps.isLoaded() && PublicVariable.eligibleLoadShowAds) {
                         interstitialAdApps.show();
                     }
                 }
@@ -524,7 +532,7 @@ public class FunctionsClass {
             }
             case InterstitialAdPlace.SettingGUI: {
                 if (interstitialAdSettingsGUI != null) {
-                    if (interstitialAdSettingsGUI.isLoaded() && PublicVariable.eligibleShowAds) {
+                    if (interstitialAdSettingsGUI.isLoaded() && PublicVariable.eligibleLoadShowAds) {
                         interstitialAdSettingsGUI.show();
                     }
                 }
@@ -563,9 +571,8 @@ public class FunctionsClass {
 
                     @Override
                     public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
-                        if (BuildConfig.DEBUG) {
-                            System.out.println("### " + request.getMethod() + " ### " + error.getDescription() + " # " + error.getErrorCode());
-                        }
+                        FunctionsClassDebug.Companion.PrintDebug("### " + request.getMethod() + " ### " + error.getDescription() + " # " + error.getErrorCode());
+
                         if (error.getDescription().equals("net::ERR_CONNECTION_REFUSED") || error.getErrorCode() == WebViewClient.ERROR_CONNECT) {
                             adBlockDialogue(activity);
                         }
@@ -744,9 +751,8 @@ public class FunctionsClass {
             ignore.printStackTrace();
             infoPrice = context.getString(R.string.minimumLocalPrice);
         }
-        if (BuildConfig.DEBUG) {
-            System.out.println("*** " + getCountryIso() + " | " + infoPrice + " ***");
-        }
+
+        FunctionsClassDebug.Companion.PrintDebug("*** " + getCountryIso() + " | " + infoPrice + " ***");
         return infoPrice;
     }
 
@@ -773,28 +779,25 @@ public class FunctionsClass {
         preferencesView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (PublicVariable.interstitialAdLoaded) {
-                    ShowAds(InterstitialAdPlace.AppsList, PublicVariable.themeLightDark ? SettingGUILight.class.getSimpleName() : SettingGUIDark.class.getSimpleName());
-                } else {
-                    PublicVariable.actionCenter = false;
-                    PublicVariable.recoveryCenter = false;
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.
-                                    makeSceneTransitionAnimation(activity, preferencesView, "transition");
-                            Intent intent = new Intent();
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                PublicVariable.actionCenter = false;
+                PublicVariable.recoveryCenter = false;
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.
+                                makeSceneTransitionAnimation(activity, preferencesView, "transition");
+                        Intent intent = new Intent();
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.setClass(activity, SettingGUIDark.class);
+                        if (PublicVariable.themeLightDark) {
+                            intent.setClass(activity, SettingGUILight.class);
+                        } else if (!PublicVariable.themeLightDark) {
                             intent.setClass(activity, SettingGUIDark.class);
-                            if (PublicVariable.themeLightDark) {
-                                intent.setClass(activity, SettingGUILight.class);
-                            } else if (!PublicVariable.themeLightDark) {
-                                intent.setClass(activity, SettingGUIDark.class);
-                            }
-                            activity.startActivity(intent, activityOptionsCompat.toBundle());
                         }
-                    }, 113);
-                }
+                        activity.startActivity(intent, activityOptionsCompat.toBundle());
+                    }
+                }, 113);
             }
         });
     }
@@ -4709,7 +4712,7 @@ public class FunctionsClass {
                         break;
                     }
                     case 2: {
-                        if (PublicVariable.eligibleShowAds && interstitialAdWidgetShortcuts.isLoaded()) {
+                        if (PublicVariable.eligibleLoadShowAds && interstitialAdWidgetShortcuts.isLoaded()) {
                             packageNameWidget = packageName;
                             shortcutNameWidget = widgetLabel;
                             widgetPreviewDrawable = widgetPreview;

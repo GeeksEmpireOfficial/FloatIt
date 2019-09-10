@@ -77,6 +77,7 @@ public class CategoryAutoFeatures extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle Saved) {
         super.onCreate(Saved);
         setContentView(R.layout.auto_categories);
+        PublicVariable.eligibleLoadShowAds = true;
 
         categorylist = (RecyclerView) findViewById(R.id.listFav);
         autoIdentifier = (LinearLayout) findViewById(R.id.autoid);
@@ -240,7 +241,7 @@ public class CategoryAutoFeatures extends AppCompatActivity implements View.OnCl
     @Override
     public void onResume() {
         super.onResume();
-        PublicVariable.eligibleShowAds = true;
+        PublicVariable.eligibleLoadShowAds = true;
 
         if (PublicVariable.themeLightDark) {
             color = PublicVariable.themeColor;
@@ -495,7 +496,7 @@ public class CategoryAutoFeatures extends AppCompatActivity implements View.OnCl
     @Override
     public void onPause() {
         super.onPause();
-        PublicVariable.eligibleShowAds = false;
+        PublicVariable.eligibleLoadShowAds = false;
 
         functionsClass.CheckSystemRAM(CategoryAutoFeatures.this);
     }

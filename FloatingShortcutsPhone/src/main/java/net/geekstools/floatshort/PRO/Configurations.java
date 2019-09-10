@@ -253,7 +253,7 @@ public class Configurations extends Activity {
             }, 333);
         }
 
-        PublicVariable.eligibleShowAds = true;
+        PublicVariable.eligibleLoadShowAds = true;
         finish();
     }
 
