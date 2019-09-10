@@ -126,6 +126,10 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
 
     private FirebaseAuth firebaseAuth;
 
+    /*Rewarded Ads for Floating Widgets*/
+    RewardedVideoAd rewardedVideoAdInstance;
+    /*Rewarded Ads for Floating Widgets*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -225,7 +229,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
         /*Rewarded Ads for Floating Widgets*/
         MobileAds.initialize(getApplicationContext(), getString(R.string.AdAppId));
 
-        final RewardedVideoAd rewardedVideoAdInstance = MobileAds.getRewardedVideoAdInstance(getApplicationContext());
+        rewardedVideoAdInstance = MobileAds.getRewardedVideoAdInstance(getApplicationContext());
         rewardedVideoAdInstance.setImmersiveMode(true);
         rewardedVideoAdInstance.loadAd(getString(R.string.AdUnitReward), new AdRequest.Builder()
                 .addTestDevice("CDCAA1F20B5C9C948119E886B31681DE")
@@ -939,8 +943,18 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
             }
             case SimpleGestureFilterSwitch.SWIPE_LEFT: {
                 try {
-                    functionsClass.navigateToClass(WidgetConfigurations.class,
-                            ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.slide_from_right, R.anim.slide_to_left));
+
+
+                    if (rewardedVideoAdInstance.isLoaded()) {
+                        rewardedVideoAdInstance.show();
+                    } else {
+                        try {
+                            functionsClass.navigateToClass(WidgetConfigurations.class,
+                                    ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.slide_from_right, R.anim.slide_to_left));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

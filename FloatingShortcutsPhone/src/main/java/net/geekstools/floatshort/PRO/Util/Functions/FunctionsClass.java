@@ -218,8 +218,6 @@ public class FunctionsClass {
     public static Drawable widgetPreviewDrawable;
     public static int shortcutIdWidget;
 
-    public static PopupMenu popupMenuFloatingWidgets;
-
     public FunctionsClass(final Context context, final Activity activity) {
         this.context = context;
         this.activity = activity;
@@ -444,7 +442,6 @@ public class FunctionsClass {
                     if (BuildConfig.DEBUG) {
                         System.out.println("*** InterstitialAd Loaded | WidgetConfigurations ***");
                     }
-                    context.sendBroadcast(new Intent("SHOW_ADS_ICON_FORCE_RELOAD"));
                 }
 
                 @Override
@@ -457,7 +454,7 @@ public class FunctionsClass {
 
                 @Override
                 public void onAdOpened() {
-                    context.sendBroadcast(new Intent("HIDE_ADS_ICON_FORCE_RELOAD"));
+
                 }
 
                 @Override
@@ -472,11 +469,13 @@ public class FunctionsClass {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            if (popupMenuFloatingWidgets != null) {
-                                popupMenuFloatingWidgets.show();
+                            try {
+                                widgetToHomeScreen(FloatingWidgetHomeScreenShortcuts.class, packageNameWidget, shortcutNameWidget, widgetPreviewDrawable, shortcutIdWidget);
+                            } catch (Exception e) {
+                                e.printStackTrace();
                             }
                         }
-                    }, 333);
+                    }, 555);
                 }
             });
         }
@@ -4588,11 +4587,11 @@ public class FunctionsClass {
     }
 
     public void popupOptionWidget(final Context context, View anchorView, String packageName, final int appWidgetId, String widgetLabel, Drawable widgetPreview, boolean addedWidgetRecovery) {
-        popupMenuFloatingWidgets = new PopupMenu(context, anchorView, Gravity.CENTER);
+        PopupMenu popupMenu = new PopupMenu(context, anchorView, Gravity.CENTER);
         if (PublicVariable.themeLightDark == true) {
-            popupMenuFloatingWidgets = new PopupMenu(context, anchorView, Gravity.CENTER, 0, R.style.GeeksEmpire_Dialogue_Category_Light);
+            popupMenu = new PopupMenu(context, anchorView, Gravity.CENTER, 0, R.style.GeeksEmpire_Dialogue_Category_Light);
         } else if (PublicVariable.themeLightDark == false) {
-            popupMenuFloatingWidgets = new PopupMenu(context, anchorView, Gravity.CENTER, 0, R.style.GeeksEmpire_Dialogue_Category_Dark);
+            popupMenu = new PopupMenu(context, anchorView, Gravity.CENTER, 0, R.style.GeeksEmpire_Dialogue_Category_Dark);
         }
         String[] menuItems;
         if (addedWidgetRecovery) {
@@ -4604,32 +4603,40 @@ public class FunctionsClass {
         Drawable popupItemIcon = returnAPI() >= 28 ? resizeDrawable(context.getDrawable(R.drawable.w_pref_popup), 100, 100) : context.getDrawable(R.drawable.w_pref_popup);
         popupItemIcon.setTint(extractVibrantColor(appIcon(packageName)));
 
-        for (int itemId = 0; itemId < menuItems.length; itemId++) {
-            popupMenuFloatingWidgets.getMenu()
-                    .add(Menu.NONE, itemId, itemId,
-                            Html.fromHtml("<font color='" + PublicVariable.colorLightDarkOpposite + "'>" + menuItems[itemId] + "</font>"))
-                    .setIcon(popupItemIcon);
-        }
-
-        try {
-            Field[] fields = popupMenuFloatingWidgets.getClass().getDeclaredFields();
-            for (Field field : fields) {
-                if ("mPopup".equals(field.getName())) {
-                    field.setAccessible(true);
-                    Object menuPopupHelper = field.get(popupMenuFloatingWidgets);
-                    Class<?> classPopupHelper = Class.forName(menuPopupHelper
-                            .getClass().getName());
-                    Method setForceIcons = classPopupHelper.getMethod(
-                            "setForceShowIcon", boolean.class);
-                    setForceIcons.invoke(menuPopupHelper, true);
-                    break;
-                }
+        if (interstitialAdWidgetShortcuts.isLoaded()) {
+            for (int itemId = 0; itemId < menuItems.length; itemId++) {
+                popupMenu.getMenu()
+                        .add(Menu.NONE, itemId, itemId,
+                                Html.fromHtml("<font color='" + PublicVariable.colorLightDarkOpposite + "'>" + menuItems[itemId] + (interstitialAdWidgetShortcuts.isLoaded() ? " 📺 " : "") + "</font>"));
             }
-        } catch (Throwable e) {
-            e.printStackTrace();
+        } else {
+            for (int itemId = 0; itemId < menuItems.length; itemId++) {
+                popupMenu.getMenu()
+                        .add(Menu.NONE, itemId, itemId,
+                                Html.fromHtml("<font color='" + PublicVariable.colorLightDarkOpposite + "'>" + menuItems[itemId] + "</font>"))
+                        .setIcon(popupItemIcon);
+            }
+
+            try {
+                Field[] fields = popupMenu.getClass().getDeclaredFields();
+                for (Field field : fields) {
+                    if ("mPopup".equals(field.getName())) {
+                        field.setAccessible(true);
+                        Object menuPopupHelper = field.get(popupMenu);
+                        Class<?> classPopupHelper = Class.forName(menuPopupHelper
+                                .getClass().getName());
+                        Method setForceIcons = classPopupHelper.getMethod(
+                                "setForceShowIcon", boolean.class);
+                        setForceIcons.invoke(menuPopupHelper, true);
+                        break;
+                    }
+                }
+            } catch (Throwable e) {
+                e.printStackTrace();
+            }
         }
 
-        popupMenuFloatingWidgets.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
@@ -4702,10 +4709,24 @@ public class FunctionsClass {
                         break;
                     }
                     case 2: {
-                        try {
-                            widgetToHomeScreen(FloatingWidgetHomeScreenShortcuts.class, packageName, widgetLabel, widgetPreview, appWidgetId);
-                        } catch (Exception e) {
-                            e.printStackTrace();
+                        if (PublicVariable.eligibleShowAds && interstitialAdWidgetShortcuts.isLoaded()) {
+                            packageNameWidget = packageName;
+                            shortcutNameWidget = widgetLabel;
+                            widgetPreviewDrawable = widgetPreview;
+                            shortcutIdWidget = appWidgetId;
+
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    interstitialAdWidgetShortcuts.show();
+                                }
+                            }, 333);
+                        } else {
+                            try {
+                                widgetToHomeScreen(FloatingWidgetHomeScreenShortcuts.class, packageName, widgetLabel, widgetPreview, appWidgetId);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
                         }
 
                         break;
@@ -4714,17 +4735,7 @@ public class FunctionsClass {
                 return true;
             }
         });
-
-        if (PublicVariable.eligibleShowAds && interstitialAdWidgetShortcuts.isLoaded()) {
-            packageNameWidget = packageName;
-            shortcutNameWidget = widgetLabel;
-            widgetPreviewDrawable = widgetPreview;
-            shortcutIdWidget = appWidgetId;
-
-            interstitialAdWidgetShortcuts.show();
-        } else {
-            popupMenuFloatingWidgets.show();
-        }
+        popupMenu.show();
     }
 
     public void setSizeBack() {

@@ -152,6 +152,10 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
 
     private FirebaseAuth firebaseAuth;
 
+    /*Rewarded Ads for Floating Widgets*/
+    RewardedVideoAd rewardedVideoAdInstance;
+    /*Rewarded Ads for Floating Widgets*/
+
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -249,7 +253,7 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
         /*Rewarded Ads for Floating Widgets*/
         MobileAds.initialize(getApplicationContext(), getString(R.string.AdAppId));
 
-        final RewardedVideoAd rewardedVideoAdInstance = MobileAds.getRewardedVideoAdInstance(getApplicationContext());
+        rewardedVideoAdInstance = MobileAds.getRewardedVideoAdInstance(getApplicationContext());
         rewardedVideoAdInstance.setImmersiveMode(true);
         rewardedVideoAdInstance.loadAd(getString(R.string.AdUnitReward), new AdRequest.Builder()
                 .addTestDevice("CDCAA1F20B5C9C948119E886B31681DE")
@@ -271,10 +275,12 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
 
             @Override
             public void onRewardedVideoAdOpened() {
+
             }
 
             @Override
             public void onRewardedVideoStarted() {
+
             }
 
             @Override
@@ -965,12 +971,17 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
     public void onSwipe(int direction) {
         switch (direction) {
             case SimpleGestureFilterSwitch.SWIPE_RIGHT: {
-                try {
-                    functionsClass.navigateToClass(WidgetConfigurations.class,
-                            ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.slide_from_left, R.anim.slide_to_right));
-                } catch (Exception e) {
-                    e.printStackTrace();
+                if (rewardedVideoAdInstance.isLoaded()) {
+                    rewardedVideoAdInstance.show();
+                } else {
+                    try {
+                        functionsClass.navigateToClass(WidgetConfigurations.class,
+                                ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.slide_from_left, R.anim.slide_to_right));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
+
                 break;
             }
             case SimpleGestureFilterSwitch.SWIPE_LEFT: {
