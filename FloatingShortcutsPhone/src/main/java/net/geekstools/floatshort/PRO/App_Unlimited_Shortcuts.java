@@ -171,7 +171,6 @@ public class App_Unlimited_Shortcuts extends Service {
                                 PublicVariable.floatingCounter = PublicVariable.floatingCounter - 1;
 
                                 if (PublicVariable.floatingCounter == 0) {
-                                    PublicVariable.eligibleLoadShowAdsFORCE = true;
 
                                     if (PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
                                             .getBoolean("stable", false) == false) {
@@ -180,7 +179,6 @@ public class App_Unlimited_Shortcuts extends Service {
                                 }
                             }
                         } else if (PublicVariable.floatingCounter == 0) {
-                            PublicVariable.eligibleLoadShowAdsFORCE = false;
 
                             if (PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
                                     .getBoolean("stable", false) == false) {
@@ -541,7 +539,6 @@ public class App_Unlimited_Shortcuts extends Service {
                             PublicVariable.shortcutsCounter = PublicVariable.shortcutsCounter - 1;
 
                             if (PublicVariable.floatingCounter == 0) {
-                                PublicVariable.eligibleLoadShowAdsFORCE = true;
 
                                 if (PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
                                         .getBoolean("stable", false) == false) {
@@ -751,7 +748,6 @@ public class App_Unlimited_Shortcuts extends Service {
                             PublicVariable.shortcutsCounter = PublicVariable.shortcutsCounter - 1;
 
                             if (PublicVariable.floatingCounter == 0) {
-                                PublicVariable.eligibleLoadShowAdsFORCE = true;
 
                                 if (PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
                                         .getBoolean("stable", false) == false) {

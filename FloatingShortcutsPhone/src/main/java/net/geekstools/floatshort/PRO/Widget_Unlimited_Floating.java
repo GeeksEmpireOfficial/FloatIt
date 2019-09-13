@@ -92,7 +92,6 @@ public class Widget_Unlimited_Floating extends Service {
                                     PublicVariable.floatingCounter = PublicVariable.floatingCounter - 1;
 
                                     if (PublicVariable.floatingCounter == 0) {
-                                        PublicVariable.eligibleLoadShowAdsFORCE = true;
 
                                         if (PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
                                                 .getBoolean("stable", false) == false) {
@@ -101,7 +100,6 @@ public class Widget_Unlimited_Floating extends Service {
                                     }
                                 }
                             } else if (PublicVariable.floatingCounter == 0) {
-                                PublicVariable.eligibleLoadShowAdsFORCE = true;
 
                                 if (PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
                                         .getBoolean("stable", false) == false) {
@@ -307,7 +305,6 @@ public class Widget_Unlimited_Floating extends Service {
                     PublicVariable.widgetsCounter = PublicVariable.widgetsCounter - 1;
 
                     if (PublicVariable.floatingCounter == 0) {
-                        PublicVariable.eligibleLoadShowAdsFORCE = true;
 
                         if (PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
                                 .getBoolean("stable", false) == false) {

@@ -185,7 +185,6 @@ public class App_Unlimited_HIS extends Service {
                                 PublicVariable.floatingCounter = PublicVariable.floatingCounter - 1;
 
                                 if (PublicVariable.floatingCounter == 0) {
-                                    PublicVariable.eligibleLoadShowAdsFORCE = true;
 
                                     if (PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
                                             .getBoolean("stable", false) == false) {
@@ -194,7 +193,6 @@ public class App_Unlimited_HIS extends Service {
                                 }
                             }
                         } else if (PublicVariable.floatingCounter == 0) {
-                            PublicVariable.eligibleLoadShowAdsFORCE = true;
 
                             if (PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
                                     .getBoolean("stable", false) == false) {
@@ -554,7 +552,6 @@ public class App_Unlimited_HIS extends Service {
                             PublicVariable.floatingCounter = PublicVariable.floatingCounter - 1;
 
                             if (PublicVariable.floatingCounter == 0) {
-                                PublicVariable.eligibleLoadShowAdsFORCE = true;
 
                                 if (PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
                                         .getBoolean("stable", false) == false) {
@@ -772,7 +769,6 @@ public class App_Unlimited_HIS extends Service {
                             PublicVariable.floatingCounter = PublicVariable.floatingCounter - 1;
 
                             if (PublicVariable.floatingCounter == 0) {
-                                PublicVariable.eligibleLoadShowAdsFORCE = true;
 
                                 if (PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
                                         .getBoolean("stable", false) == false) {

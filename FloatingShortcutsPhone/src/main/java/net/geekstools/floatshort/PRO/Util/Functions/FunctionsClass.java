@@ -237,6 +237,24 @@ public class FunctionsClass {
                     adBlockerDetection(activity);
                 }
 
+                if (interstitialAdSettingsGUI == null) {
+                    interstitialAdSettingsGUI = new InterstitialAd(context);
+                    interstitialAdSettingsGUI.setImmersiveMode(true);
+                    interstitialAdSettingsGUI.setAdUnitId(context.getString(R.string.AdUnitActivities));
+                }
+                if (interstitialAdSettingsGUI.isLoaded() && PublicVariable.eligibleLoadShowAdsFORCE) {
+
+                } else {
+                    interstitialAdSettingsGUI.loadAd(new AdRequest.Builder()
+                            .addTestDevice("CDCAA1F20B5C9C948119E886B31681DE")
+                            .addTestDevice("D101234A6C1CF51023EE5815ABC285BD")
+                            .addTestDevice("65B5827710CBE90F4A99CE63099E524C")
+                            .addTestDevice("5901E5EE74F9B6652E05621140664A54")
+                            .addTestDevice("DD428143B4772EC7AA87D1E2F9DA787C")
+                            .addTestDevice("F54D998BCE077711A17272B899B44798")
+                            .build());
+                }
+
                 FunctionsClassDebug.Companion.PrintDebug("*** ClassName == " + ClassName + " ***");
                 MobileAds.initialize(context, context.getString(R.string.AdAppId));
                 final AdRequest adRequestinterstitialAd = new AdRequest.Builder()
@@ -252,12 +270,15 @@ public class FunctionsClass {
                     interstitialAdApps.setImmersiveMode(true);
                     interstitialAdApps.setAdUnitId(context.getString(R.string.AdUnitActivities));
                 }
-                if (PublicVariable.eligibleLoadShowAds) {
-                    if (interstitialAdApps.isLoaded() && PublicVariable.eligibleLoadShowAdsFORCE) {
-                        interstitialAdApps.show();
-                    } else {
-                        interstitialAdApps.loadAd(adRequestinterstitialAd);
-                    }
+                if (interstitialAdApps.isLoaded() && PublicVariable.eligibleLoadShowAdsFORCE) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            interstitialAdApps.show();
+                        }
+                    }, 313);
+                } else {
+                    interstitialAdApps.loadAd(adRequestinterstitialAd);
                 }
                 interstitialAdApps.setAdListener(new AdListener() {
                     @Override
@@ -278,6 +299,7 @@ public class FunctionsClass {
 
                     @Override
                     public void onAdOpened() {
+                        FunctionsClassDebug.Companion.PrintDebug("*** OnAdOpened | Activities ***");
 
                     }
 
@@ -375,7 +397,6 @@ public class FunctionsClass {
                 FunctionsClassDebug.Companion.PrintDebug("*** ClassName == " + ClassName + " ***");
                 MobileAds.initialize(context, context.getString(R.string.AdAppId));
 
-                interstitialAdSettingsGUI = new InterstitialAd(context);
                 final AdRequest adRequestinterstitialAd = new AdRequest.Builder()
                         .addTestDevice("CDCAA1F20B5C9C948119E886B31681DE")
                         .addTestDevice("D101234A6C1CF51023EE5815ABC285BD")
@@ -384,11 +405,23 @@ public class FunctionsClass {
                         .addTestDevice("DD428143B4772EC7AA87D1E2F9DA787C")
                         .addTestDevice("F54D998BCE077711A17272B899B44798")
                         .build();
-                interstitialAdSettingsGUI.setImmersiveMode(false);
-                interstitialAdSettingsGUI.setAdUnitId(context.getString(R.string.AdUnitSettingGUI));
-                if (PublicVariable.eligibleLoadShowAds) {
+
+                if (interstitialAdSettingsGUI == null) {
+                    interstitialAdSettingsGUI = new InterstitialAd(context);
+                    interstitialAdSettingsGUI.setImmersiveMode(true);
+                    interstitialAdSettingsGUI.setAdUnitId(context.getString(R.string.AdUnitActivities));
+                }
+                if (interstitialAdSettingsGUI.isLoaded() && PublicVariable.eligibleLoadShowAdsFORCE) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            interstitialAdSettingsGUI.show();
+                        }
+                    }, 313);
+                } else {
                     interstitialAdSettingsGUI.loadAd(adRequestinterstitialAd);
                 }
+
                 interstitialAdSettingsGUI.setAdListener(new AdListener() {
                     @Override
                     public void onAdLoaded() {
@@ -408,7 +441,7 @@ public class FunctionsClass {
 
                     @Override
                     public void onAdOpened() {
-
+                        FunctionsClassDebug.Companion.PrintDebug("*** OnAdOpened | SettingGUI ***");
                     }
 
                     @Override
@@ -419,11 +452,6 @@ public class FunctionsClass {
                     @Override
                     public void onAdClosed() {
                         PublicVariable.interstitialAdLoaded = false;
-                        try {
-                            overrideBackPress(activity);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
                     }
                 });
             }
@@ -444,9 +472,7 @@ public class FunctionsClass {
             interstitialAdWidgetShortcuts = new InterstitialAd(context);
             interstitialAdWidgetShortcuts.setImmersiveMode(true);
             interstitialAdWidgetShortcuts.setAdUnitId(context.getString(R.string.AdUnitFloatingWidgetShortcuts));
-            if (PublicVariable.eligibleLoadShowAds) {
-                interstitialAdWidgetShortcuts.loadAd(adRequestinterstitialAd);
-            }
+            interstitialAdWidgetShortcuts.loadAd(adRequestinterstitialAd);
             interstitialAdWidgetShortcuts.setAdListener(new AdListener() {
                 @Override
                 public void onAdLoaded() {
@@ -783,29 +809,25 @@ public class FunctionsClass {
         preferencesView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (PublicVariable.interstitialAdLoaded) {
-                    ShowAds(InterstitialAdPlace.AppsList, PublicVariable.themeLightDark ? SettingGUILight.class.getSimpleName() : SettingGUIDark.class.getSimpleName());
-                } else {
-                    PublicVariable.actionCenter = false;
-                    PublicVariable.recoveryCenter = false;
+                PublicVariable.actionCenter = false;
+                PublicVariable.recoveryCenter = false;
 
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.
-                                    makeSceneTransitionAnimation(activity, preferencesView, "transition");
-                            Intent intent = new Intent();
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.
+                                makeSceneTransitionAnimation(activity, preferencesView, "transition");
+                        Intent intent = new Intent();
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.setClass(activity, SettingGUIDark.class);
+                        if (PublicVariable.themeLightDark) {
+                            intent.setClass(activity, SettingGUILight.class);
+                        } else if (!PublicVariable.themeLightDark) {
                             intent.setClass(activity, SettingGUIDark.class);
-                            if (PublicVariable.themeLightDark) {
-                                intent.setClass(activity, SettingGUILight.class);
-                            } else if (!PublicVariable.themeLightDark) {
-                                intent.setClass(activity, SettingGUIDark.class);
-                            }
-                            activity.startActivity(intent, activityOptionsCompat.toBundle());
                         }
-                    }, 113);
-                }
+                        activity.startActivity(intent, activityOptionsCompat.toBundle());
+                    }
+                }, 113);
             }
         });
     }
@@ -1086,7 +1108,6 @@ public class FunctionsClass {
 
     /*Unlimited Shortcuts Function*/
     public void runUnlimitedShortcutsService(String packageName) {
-        PublicVariable.eligibleLoadShowAdsFORCE = false;
 
         if (API > 22) {
             if (!Settings.canDrawOverlays(context)) {
@@ -1142,7 +1163,6 @@ public class FunctionsClass {
     }
 
     public void runUnlimitedWifi(String packageName) {
-        PublicVariable.eligibleLoadShowAdsFORCE = false;
 
         if (API > 22) {
             if (!Settings.canDrawOverlays(context)) {
@@ -1166,7 +1186,6 @@ public class FunctionsClass {
     }
 
     public void runUnlimitedBluetooth(String packageName) {
-        PublicVariable.eligibleLoadShowAdsFORCE = false;
 
         if (API > 22) {
             if (!Settings.canDrawOverlays(context)) {
@@ -1190,7 +1209,6 @@ public class FunctionsClass {
     }
 
     public void runUnlimitedGps(String packageName) {
-        PublicVariable.eligibleLoadShowAdsFORCE = false;
 
         if (API > 22) {
             if (!Settings.canDrawOverlays(context)) {
@@ -1214,7 +1232,6 @@ public class FunctionsClass {
     }
 
     public void runUnlimitedNfc(String packageName) {
-        PublicVariable.eligibleLoadShowAdsFORCE = false;
 
         if (API > 22) {
             if (!Settings.canDrawOverlays(context)) {
@@ -1238,7 +1255,6 @@ public class FunctionsClass {
     }
 
     public void runUnlimitedTime(String packageName) {
-        PublicVariable.eligibleLoadShowAdsFORCE = false;
 
         if (API > 22) {
             if (!Settings.canDrawOverlays(context)) {
@@ -1262,7 +1278,6 @@ public class FunctionsClass {
     }
 
     public void runUnlimitedShortcutsServiceHIS(String packageName, String className) {
-        PublicVariable.eligibleLoadShowAdsFORCE = false;
 
         if (API > 22) {
             if (!Settings.canDrawOverlays(context)) {
@@ -1355,7 +1370,6 @@ public class FunctionsClass {
 
     /*Category Function*/
     public void runUnlimitedCategoryService(String categoryName) {
-        PublicVariable.eligibleLoadShowAdsFORCE = false;
 
         if (API > 22) {
             if (!Settings.canDrawOverlays(context)) {
@@ -1391,7 +1405,6 @@ public class FunctionsClass {
     }
 
     public void runUnlimitedCategoryWifi(String categoryName, String[] categoryNamePackages) {
-        PublicVariable.eligibleLoadShowAdsFORCE = false;
 
         if (API > 22) {
             if (!Settings.canDrawOverlays(context)) {
@@ -1417,7 +1430,6 @@ public class FunctionsClass {
     }
 
     public void runUnlimitedCategoryBluetooth(String categoryName, String[] categoryNamePackages) {
-        PublicVariable.eligibleLoadShowAdsFORCE = false;
 
         if (API > 22) {
             if (!Settings.canDrawOverlays(context)) {
@@ -1443,7 +1455,6 @@ public class FunctionsClass {
     }
 
     public void runUnlimitedCategoryGps(String categoryName, String[] categoryNamePackages) {
-        PublicVariable.eligibleLoadShowAdsFORCE = false;
 
         if (API > 22) {
             if (!Settings.canDrawOverlays(context)) {
@@ -1469,7 +1480,6 @@ public class FunctionsClass {
     }
 
     public void runUnlimitedCategoryNfc(String categoryName, String[] categoryNamePackages) {
-        PublicVariable.eligibleLoadShowAdsFORCE = false;
 
         if (API > 22) {
             if (!Settings.canDrawOverlays(context)) {
@@ -1495,7 +1505,6 @@ public class FunctionsClass {
     }
 
     public void runUnlimitedCategoryTime(String categoryName, String[] categoryNamePackages) {
-        PublicVariable.eligibleLoadShowAdsFORCE = false;
 
         if (API > 22) {
             if (!Settings.canDrawOverlays(context)) {
@@ -1598,7 +1607,6 @@ public class FunctionsClass {
 
     /*Floating Widgets Function*/
     public void runUnlimitedWidgetService(int WidgetId, String widgetLabel) {
-        PublicVariable.eligibleLoadShowAdsFORCE = false;
 
         if (API > 22) {
             if (!Settings.canDrawOverlays(context)) {
@@ -2851,6 +2859,8 @@ public class FunctionsClass {
             if (activityManager != null) {
                 activityManager.getMemoryInfo(memoryInfo);
                 if (memoryInfo.lowMemory) {
+                    FunctionsClassDebug.Companion.PrintDebug("*** SYSTEM RAM LOW | Finishing... " + activityToHandle + " ***");
+
                     activityToHandle.finish();
                 }
             }

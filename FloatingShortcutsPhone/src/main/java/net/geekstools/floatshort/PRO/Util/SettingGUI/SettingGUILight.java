@@ -238,7 +238,6 @@ public class SettingGUILight extends PreferenceActivity implements OnSharedPrefe
                         startService(new Intent(getApplicationContext(), BindServices.class));
                     } else if (sharedPreferences.getBoolean("cache", true) == false) {
                         if (PublicVariable.floatingCounter == 0) {
-                            PublicVariable.eligibleLoadShowAdsFORCE = true;
 
                             stopService(new Intent(getApplicationContext(), BindServices.class));
                         }
@@ -258,7 +257,6 @@ public class SettingGUILight extends PreferenceActivity implements OnSharedPrefe
                 } else if (sharedPreferences.getBoolean("stable", false) == false) {
                     PublicVariable.Stable = false;
                     if (PublicVariable.floatingCounter == 0) {
-                        PublicVariable.eligibleLoadShowAdsFORCE = true;
 
                         stopService(new Intent(getApplicationContext(), BindServices.class));
                     }
@@ -1071,32 +1069,28 @@ public class SettingGUILight extends PreferenceActivity implements OnSharedPrefe
     @Override
     public void onBackPressed() {
         try {
-            if (PublicVariable.interstitialAdLoaded) {
-                functionsClass.ShowAds(FunctionsClass.InterstitialAdPlace.SettingGUI);
+            if (FromWidgetsConfigurations) {
+                Intent intent = new Intent(getApplicationContext(), WidgetConfigurations.class);
+                startActivity(intent);
             } else {
-                if (FromWidgetsConfigurations) {
-                    Intent intent = new Intent(getApplicationContext(), WidgetConfigurations.class);
-                    startActivity(intent);
-                } else {
-                    if (PublicVariable.forceReload) {
-                        PublicVariable.forceReload = false;
-                        functionsClass.overrideBackPressToMain(SettingGUILight.this);
-                    }
+                if (PublicVariable.forceReload) {
+                    PublicVariable.forceReload = false;
+                    functionsClass.overrideBackPressToMain(SettingGUILight.this);
                 }
-
-                float finalRadius = (int) Math.hypot(functionsClass.displayX(), functionsClass.displayY());
-                Animator circularReveal = ViewAnimationUtils.createCircularReveal(
-                        rootLayout, (functionsClass.displayX() / 2), (functionsClass.displayY() / 2), finalRadius, 0);
-
-                circularReveal.setDuration(213);
-                circularReveal.addListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-                        rootLayout.setVisibility(View.INVISIBLE);
-                    }
-                });
-                circularReveal.start();
             }
+
+            float finalRadius = (int) Math.hypot(functionsClass.displayX(), functionsClass.displayY());
+            Animator circularReveal = ViewAnimationUtils.createCircularReveal(
+                    rootLayout, (functionsClass.displayX() / 2), (functionsClass.displayY() / 2), finalRadius, 0);
+
+            circularReveal.setDuration(213);
+            circularReveal.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    rootLayout.setVisibility(View.INVISIBLE);
+                }
+            });
+            circularReveal.start();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -1152,27 +1146,23 @@ public class SettingGUILight extends PreferenceActivity implements OnSharedPrefe
             }
             case android.R.id.home: {
                 try {
-                    if (PublicVariable.interstitialAdLoaded) {
-                        functionsClass.ShowAds(FunctionsClass.InterstitialAdPlace.SettingGUI);
-                    } else {
-                        if (PublicVariable.forceReload) {
-                            PublicVariable.forceReload = false;
-                            functionsClass.overrideBackPressToMain(SettingGUILight.this);
-                        }
-
-                        float finalRadius = (int) Math.hypot(functionsClass.displayX(), functionsClass.displayY());
-                        Animator circularReveal = ViewAnimationUtils.createCircularReveal(
-                                rootLayout, (functionsClass.displayX() / 2), (functionsClass.displayY() / 2), finalRadius, 0);
-
-                        circularReveal.setDuration(213);
-                        circularReveal.addListener(new AnimatorListenerAdapter() {
-                            @Override
-                            public void onAnimationEnd(Animator animation) {
-                                rootLayout.setVisibility(View.INVISIBLE);
-                            }
-                        });
-                        circularReveal.start();
+                    if (PublicVariable.forceReload) {
+                        PublicVariable.forceReload = false;
+                        functionsClass.overrideBackPressToMain(SettingGUILight.this);
                     }
+
+                    float finalRadius = (int) Math.hypot(functionsClass.displayX(), functionsClass.displayY());
+                    Animator circularReveal = ViewAnimationUtils.createCircularReveal(
+                            rootLayout, (functionsClass.displayX() / 2), (functionsClass.displayY() / 2), finalRadius, 0);
+
+                    circularReveal.setDuration(213);
+                    circularReveal.addListener(new AnimatorListenerAdapter() {
+                        @Override
+                        public void onAnimationEnd(Animator animation) {
+                            rootLayout.setVisibility(View.INVISIBLE);
+                        }
+                    });
+                    circularReveal.start();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
