@@ -399,7 +399,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
             public void onClick(View view) {
                 try {
                     if (functionsClass.networkConnection() && firebaseAuth.getCurrentUser() != null) {
-                        if (rewardedVideoAdInstance.isLoaded() && PublicVariable.eligibleLoadShowAdsFORCE) {
+                        if (rewardedVideoAdInstance.isLoaded()) {
                             rewardedVideoAdInstance.show();
                         } else {
                             try {
@@ -955,7 +955,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
                 try {
 
 
-                    if (rewardedVideoAdInstance.isLoaded() && PublicVariable.eligibleLoadShowAdsFORCE) {
+                    if (rewardedVideoAdInstance.isLoaded()) {
                         rewardedVideoAdInstance.show();
                     } else {
                         try {

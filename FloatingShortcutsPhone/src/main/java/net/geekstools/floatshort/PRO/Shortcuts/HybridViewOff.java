@@ -424,7 +424,7 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
             public void onClick(View view) {
                 try {
                     if (functionsClass.networkConnection() && firebaseAuth.getCurrentUser() != null) {
-                        if (rewardedVideoAdInstance.isLoaded() && PublicVariable.eligibleLoadShowAdsFORCE) {
+                        if (rewardedVideoAdInstance.isLoaded()) {
                             rewardedVideoAdInstance.show();
                         } else {
                             try {
@@ -982,7 +982,7 @@ public class HybridViewOff extends Activity implements View.OnClickListener, Vie
     public void onSwipe(int direction) {
         switch (direction) {
             case SimpleGestureFilterSwitch.SWIPE_RIGHT: {
-                if (rewardedVideoAdInstance.isLoaded() && PublicVariable.eligibleLoadShowAdsFORCE) {
+                if (rewardedVideoAdInstance.isLoaded()) {
                     rewardedVideoAdInstance.show();
                 } else {
                     try {

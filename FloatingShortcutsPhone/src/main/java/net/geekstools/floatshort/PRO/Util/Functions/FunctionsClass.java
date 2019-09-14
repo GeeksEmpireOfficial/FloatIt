@@ -242,7 +242,7 @@ public class FunctionsClass {
                     interstitialAdSettingsGUI.setImmersiveMode(true);
                     interstitialAdSettingsGUI.setAdUnitId(context.getString(R.string.AdUnitActivities));
                 }
-                if (interstitialAdSettingsGUI.isLoaded() && PublicVariable.eligibleLoadShowAdsFORCE) {
+                if (interstitialAdSettingsGUI.isLoaded()) {
 
                 } else {
                     interstitialAdSettingsGUI.loadAd(new AdRequest.Builder()
@@ -270,7 +270,7 @@ public class FunctionsClass {
                     interstitialAdApps.setImmersiveMode(true);
                     interstitialAdApps.setAdUnitId(context.getString(R.string.AdUnitActivities));
                 }
-                if (interstitialAdApps.isLoaded() && PublicVariable.eligibleLoadShowAdsFORCE) {
+                if (interstitialAdApps.isLoaded()) {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -411,7 +411,7 @@ public class FunctionsClass {
                     interstitialAdSettingsGUI.setImmersiveMode(true);
                     interstitialAdSettingsGUI.setAdUnitId(context.getString(R.string.AdUnitActivities));
                 }
-                if (interstitialAdSettingsGUI.isLoaded() && PublicVariable.eligibleLoadShowAdsFORCE) {
+                if (interstitialAdSettingsGUI.isLoaded()) {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -529,7 +529,7 @@ public class FunctionsClass {
         switch (AdsPlace) {
             case InterstitialAdPlace.AppsList: {
                 if (interstitialAdApps != null) {
-                    if (interstitialAdApps.isLoaded() && PublicVariable.eligibleLoadShowAds && PublicVariable.eligibleLoadShowAdsFORCE) {
+                    if (interstitialAdApps.isLoaded() && PublicVariable.eligibleLoadShowAds) {
                         interstitialAdApps.show();
                     }
                 }
@@ -538,7 +538,7 @@ public class FunctionsClass {
             }
             case InterstitialAdPlace.SettingGUI: {
                 if (interstitialAdSettingsGUI != null) {
-                    if (interstitialAdSettingsGUI.isLoaded() && PublicVariable.eligibleLoadShowAds && PublicVariable.eligibleLoadShowAdsFORCE) {
+                    if (interstitialAdSettingsGUI.isLoaded() && PublicVariable.eligibleLoadShowAds) {
                         interstitialAdSettingsGUI.show();
                     }
                 }
@@ -553,7 +553,7 @@ public class FunctionsClass {
         switch (AdsPlace) {
             case InterstitialAdPlace.AppsList: {
                 if (interstitialAdApps != null) {
-                    if (interstitialAdApps.isLoaded() && PublicVariable.eligibleLoadShowAds && PublicVariable.eligibleLoadShowAdsFORCE) {
+                    if (interstitialAdApps.isLoaded() && PublicVariable.eligibleLoadShowAds) {
                         interstitialAdApps.show();
                     }
                 }
@@ -562,7 +562,7 @@ public class FunctionsClass {
             }
             case InterstitialAdPlace.SettingGUI: {
                 if (interstitialAdSettingsGUI != null) {
-                    if (interstitialAdSettingsGUI.isLoaded() && PublicVariable.eligibleLoadShowAds && PublicVariable.eligibleLoadShowAdsFORCE) {
+                    if (interstitialAdSettingsGUI.isLoaded() && PublicVariable.eligibleLoadShowAds) {
                         interstitialAdSettingsGUI.show();
                     }
                 }
@@ -4758,7 +4758,7 @@ public class FunctionsClass {
                         break;
                     }
                     case 2: {
-                        if (PublicVariable.eligibleLoadShowAdsFORCE && PublicVariable.eligibleLoadShowAds && interstitialAdWidgetShortcuts.isLoaded()) {
+                        if (PublicVariable.eligibleLoadShowAds && interstitialAdWidgetShortcuts.isLoaded()) {
                             packageNameWidget = packageName;
                             shortcutNameWidget = widgetLabel;
                             widgetPreviewDrawable = widgetPreview;
