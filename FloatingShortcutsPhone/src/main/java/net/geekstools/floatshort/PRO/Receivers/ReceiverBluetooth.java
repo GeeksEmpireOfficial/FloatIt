@@ -10,6 +10,7 @@ import net.geekstools.floatshort.PRO.Automation.RecoveryBluetooth;
 import net.geekstools.floatshort.PRO.Category_Unlimited_Bluetooth;
 import net.geekstools.floatshort.PRO.R;
 import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClass;
+import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClassDebug;
 import net.geekstools.floatshort.PRO.Util.Functions.PublicVariable;
 import net.geekstools.floatshort.PRO.Util.UI.CustomIconManager.LoadCustomIcons;
 
@@ -25,7 +26,7 @@ public class ReceiverBluetooth extends BroadcastReceiver {
             if (functionsClass.loadCustomIcons()) {
                 LoadCustomIcons loadCustomIcons = new LoadCustomIcons(context, functionsClass.customIconPackageName());
                 loadCustomIcons.load();
-                FunctionsClass.println("*** Total Custom Icon ::: " + loadCustomIcons.getTotalIcons());
+                FunctionsClassDebug.Companion.PrintDebug("*** Total Custom Icon ::: " + loadCustomIcons.getTotalIcons());
             }
 
             final BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();

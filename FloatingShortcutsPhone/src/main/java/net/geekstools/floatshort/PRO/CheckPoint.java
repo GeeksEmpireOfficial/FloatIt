@@ -18,6 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClass;
+import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClassDebug;
 import net.geekstools.floatshort.PRO.Util.Functions.PublicVariable;
 
 import java.util.ArrayList;
@@ -102,7 +103,7 @@ public class CheckPoint extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 666) {
             if (Settings.canDrawOverlays(getApplicationContext())) {
-                FunctionsClass.println("*** Overlay Permission Granted ***");
+                FunctionsClassDebug.Companion.PrintDebug("*** Overlay Permission Granted ***");
 
                 startActivity(new Intent(getApplicationContext(), Configurations.class),
                         ActivityOptions.makeCustomAnimation(getApplicationContext(), android.R.anim.fade_in, android.R.anim.fade_out).toBundle());

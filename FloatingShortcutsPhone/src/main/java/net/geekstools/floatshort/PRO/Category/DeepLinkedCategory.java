@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.TypedValue;
 
 import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClass;
+import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClassDebug;
 import net.geekstools.floatshort.PRO.Util.Functions.PublicVariable;
 
 
@@ -25,7 +26,7 @@ public class DeepLinkedCategory extends Activity {
 
         try {
             String incomingURI = getIntent().getDataString();
-            FunctionsClass.println("URI >> " + incomingURI);
+            FunctionsClassDebug.Companion.PrintDebug("URI >> " + incomingURI);
             CategoryName = incomingURI.substring(incomingURI.lastIndexOf(htmlSymbol) + 1);
             CategoryName = CategoryName.replace(htmlSymbolDelete, "");
 

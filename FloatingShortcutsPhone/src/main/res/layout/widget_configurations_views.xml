@@ -103,7 +103,7 @@
         android:background="@android:color/transparent"
         android:weightSum="2">
 
-        <com.google.android.material.button.MaterialButton
+        <com.google.android.material.button.MaterialButton xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/switchCategories"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -121,7 +121,7 @@
             app:cornerRadius="7dp"
             app:backgroundTint="@color/default_color" />
 
-        <com.google.android.material.button.MaterialButton
+        <com.google.android.material.button.MaterialButton xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/switchApps"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -141,7 +141,7 @@
 
     </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
+    <com.google.android.material.button.MaterialButton xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/recoveryAction"
         android:layout_width="247dp"
         android:layout_height="49dp"
@@ -250,7 +250,7 @@
         android:background="@color/transparent_light"
         android:visibility="invisible">
 
-        <com.google.android.material.button.MaterialButton
+        <com.google.android.material.button.MaterialButton xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/automationAction"
             android:layout_width="247dp"
             android:layout_height="49dp"

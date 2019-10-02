@@ -65,6 +65,7 @@ import net.geekstools.floatshort.PRO.Category.CategoryHandler;
 import net.geekstools.floatshort.PRO.R;
 import net.geekstools.floatshort.PRO.Shortcuts.HybridViewOff;
 import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClass;
+import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClassDebug;
 import net.geekstools.floatshort.PRO.Util.Functions.PublicVariable;
 import net.geekstools.floatshort.PRO.Util.NavAdapter.NavDrawerItem;
 import net.geekstools.floatshort.PRO.Util.NavAdapter.RecycleViewSmoothLayoutGrid;
@@ -1215,7 +1216,7 @@ public class WidgetConfigurations extends Activity implements SimpleGestureFilte
             try {
                 if (functionsClass.loadCustomIcons()) {
                     loadCustomIcons.load();
-                    FunctionsClass.println("*** Total Custom Icon ::: " + loadCustomIcons.getTotalIcons());
+                    FunctionsClassDebug.Companion.PrintDebug("*** Total Custom Icon ::: " + loadCustomIcons.getTotalIcons());
                 }
 
                 WidgetDataInterface widgetDataInterface = Room.databaseBuilder(getApplicationContext(), WidgetDataInterface.class, PublicVariable.WIDGET_DATA_DATABASE_NAME)
@@ -1372,7 +1373,8 @@ public class WidgetConfigurations extends Activity implements SimpleGestureFilte
 
                 if (functionsClass.loadCustomIcons()) {
                     loadCustomIcons.load();
-                    FunctionsClass.println("*** Total Custom Icon ::: " + loadCustomIcons.getTotalIcons());
+                    FunctionsClassDebug.Companion.PrintDebug("*** Total Custom Icon ::: " + loadCustomIcons.getTotalIcons());
+                    FunctionsClassDebug.Companion.PrintDebug("*** Total Custom Icon ::: " + loadCustomIcons.getTotalIcons());
                 }
 
                 String oldAppName = "";
@@ -1686,6 +1688,7 @@ public class WidgetConfigurations extends Activity implements SimpleGestureFilte
     }
 
 
+
     /*Free Functions*/
     public class LoadConfiguredWidgetsWithShowAdsIcon extends AsyncTask<Void, Void, Void> {
 
@@ -1708,7 +1711,7 @@ public class WidgetConfigurations extends Activity implements SimpleGestureFilte
             try {
                 if (functionsClass.loadCustomIcons()) {
                     loadCustomIcons.load();
-                    FunctionsClass.println("*** Total Custom Icon ::: " + loadCustomIcons.getTotalIcons());
+                    FunctionsClassDebug.Companion.PrintDebug("*** Total Custom Icon ::: " + loadCustomIcons.getTotalIcons());
                 }
 
                 WidgetDataInterface widgetDataInterface = Room.databaseBuilder(getApplicationContext(), WidgetDataInterface.class, PublicVariable.WIDGET_DATA_DATABASE_NAME)
@@ -1813,7 +1816,7 @@ public class WidgetConfigurations extends Activity implements SimpleGestureFilte
             try {
                 if (functionsClass.loadCustomIcons()) {
                     loadCustomIcons.load();
-                    FunctionsClass.println("*** Total Custom Icon ::: " + loadCustomIcons.getTotalIcons());
+                    FunctionsClassDebug.Companion.PrintDebug("*** Total Custom Icon ::: " + loadCustomIcons.getTotalIcons());
                 }
 
                 WidgetDataInterface widgetDataInterface = Room.databaseBuilder(getApplicationContext(), WidgetDataInterface.class, PublicVariable.WIDGET_DATA_DATABASE_NAME)
@@ -1897,6 +1900,7 @@ public class WidgetConfigurations extends Activity implements SimpleGestureFilte
         }
     }
     /*Free Functions*/
+
 
     public static void createWidget(Context context, ViewGroup widgetView, AppWidgetManager appWidgetManager, AppWidgetHost appWidgetHost, AppWidgetProviderInfo appWidgetProviderInfo, int widgetId) {
         try {

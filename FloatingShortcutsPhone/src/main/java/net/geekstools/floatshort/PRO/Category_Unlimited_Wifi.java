@@ -29,6 +29,7 @@ import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
 
 import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClass;
+import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClassDebug;
 import net.geekstools.floatshort.PRO.Util.Functions.PublicVariable;
 import net.geekstools.floatshort.PRO.Util.InteractionObserver.InteractionObserver;
 import net.geekstools.floatshort.PRO.Util.UI.CustomIconManager.LoadCustomIcons;
@@ -129,7 +130,7 @@ public class Category_Unlimited_Wifi extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, final int startId) {
-        FunctionsClass.println(this.getClass().getSimpleName() + " ::: StartId ::: " + startId);
+        FunctionsClassDebug.Companion.PrintDebug(this.getClass().getSimpleName() + " ::: StartId ::: " + startId);
         startIdCounter = startId;
 
         if (functionsClass.loadCustomIcons()) {
@@ -321,7 +322,7 @@ public class Category_Unlimited_Wifi extends Service {
             @Override
             public void onReceive(Context context, Intent intent) {
                 if (intent.getAction().equals("Split_Apps_Pair_" + className) && PublicVariable.splitScreen == true) {
-                    FunctionsClass.println("Split Apps Pair");
+                    FunctionsClassDebug.Companion.PrintDebug("Split Apps Pair");
                     PublicVariable.splitScreen = false;
 
                     final String packageNameSplitOne, packageNameSplitTwo;
@@ -373,7 +374,7 @@ public class Category_Unlimited_Wifi extends Service {
                         }
                     }, 700);
                 } else if (intent.getAction().equals("Split_Apps_Single_" + className) && PublicVariable.splitScreen == true) {
-                    FunctionsClass.println("Split Apps Single");
+                    FunctionsClassDebug.Companion.PrintDebug("Split Apps Single");
                     PublicVariable.splitScreen = false;
 
                     new Handler().postDelayed(new Runnable() {
@@ -687,7 +688,7 @@ public class Category_Unlimited_Wifi extends Service {
                         if (allowMove[startId] == true) {
                             layoutParamsOnTouch.x = initialX + (int) (motionEvent.getRawX() - initialTouchX);
                             layoutParamsOnTouch.y = initialY + (int) (motionEvent.getRawY() - initialTouchY);
-                            FunctionsClass.println("X :: " + layoutParamsOnTouch.x + "\n" + " Y :: " + layoutParamsOnTouch.y);
+                            FunctionsClassDebug.Companion.PrintDebug("X :: " + layoutParamsOnTouch.x + "\n" + " Y :: " + layoutParamsOnTouch.y);
 
                             String nameForPosition = categoryName[startId];
                             SharedPreferences sharedPrefPosition = getSharedPreferences(nameForPosition, MODE_PRIVATE);

@@ -97,7 +97,7 @@ public class ConfiguredWidgetsAdapter extends RecyclerView.Adapter<ConfiguredWid
             public boolean onLongClick(View view) {
                 functionsClass.doVibrate(77);
 
-                functionsClass.popupOptionWidget(context, view,
+                functionsClass.popupOptionWidget(activity, context, view,
                         navDrawerItems.get(position).getPackageName(),
                         navDrawerItems.get(position).getAppWidgetId(),
                         navDrawerItems.get(position).getWidgetLabel(),

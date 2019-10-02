@@ -44,6 +44,7 @@ import net.geekstools.floatshort.PRO.Automation.Categories.CategoryAutoFeatures;
 import net.geekstools.floatshort.PRO.BindServices;
 import net.geekstools.floatshort.PRO.R;
 import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClass;
+import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClassDebug;
 import net.geekstools.floatshort.PRO.Util.Functions.PublicVariable;
 import net.geekstools.floatshort.PRO.Util.NavAdapter.NavDrawerItem;
 import net.geekstools.floatshort.PRO.Util.UI.CustomIconManager.LoadCustomIcons;
@@ -558,12 +559,12 @@ public class AppAutoFeatures extends AppCompatActivity implements View.OnClickLi
     public void onSwipe(int direction) {
         switch (direction) {
             case SimpleGestureFilterFull.SWIPE_RIGHT: {
-                FunctionsClass.println("Swipe Right");
+                FunctionsClassDebug.Companion.PrintDebug("Swipe Right");
 
                 break;
             }
             case SimpleGestureFilterFull.SWIPE_LEFT: {
-                FunctionsClass.println("Swipe Left");
+                FunctionsClassDebug.Companion.PrintDebug("Swipe Left");
                 try {
                     functionsClass.navigateToClass(CategoryAutoFeatures.class,
                             ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.slide_from_right, R.anim.slide_to_left));
@@ -575,7 +576,7 @@ public class AppAutoFeatures extends AppCompatActivity implements View.OnClickLi
                 break;
             }
             case SimpleGestureFilterFull.SWIPE_UP: {
-                FunctionsClass.println("SWIPE UP");
+                FunctionsClassDebug.Companion.PrintDebug("SWIPE UP");
 
                 break;
             }
@@ -696,7 +697,7 @@ public class AppAutoFeatures extends AppCompatActivity implements View.OnClickLi
 
                 if (functionsClass.loadCustomIcons()) {
                     loadCustomIcons.load();
-                    FunctionsClass.println("*** Total Custom Icon ::: " + loadCustomIcons.getTotalIcons());
+                    FunctionsClassDebug.Companion.PrintDebug("*** Total Custom Icon ::: " + loadCustomIcons.getTotalIcons());
                 }
 
                 for (int appInfo = 0; appInfo < applicationInfoList.size(); appInfo++) {

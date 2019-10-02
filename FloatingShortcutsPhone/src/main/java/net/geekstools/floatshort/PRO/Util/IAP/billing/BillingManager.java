@@ -16,6 +16,7 @@ import com.android.billingclient.api.SkuDetailsParams;
 import com.android.billingclient.api.SkuDetailsResponseListener;
 
 import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClass;
+import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClassDebug;
 import net.geekstools.floatshort.PRO.Util.IAP.InAppBilling;
 
 import java.util.Arrays;
@@ -59,13 +60,13 @@ public class BillingManager implements PurchasesUpdatedListener {
                 if (billingResponse == BillingClient.BillingResponse.OK) {
                     List<Purchase> purchasesItems = billingClient.queryPurchases(BillingClient.SkuType.INAPP).getPurchasesList();
                     for (Purchase purchase : purchasesItems) {
-                        FunctionsClass.println("*** Purchased Item: " + purchase + " ***");
+                        FunctionsClassDebug.Companion.PrintDebug("*** Purchased Item: " + purchase + " ***");
                         functionsClass.savePreference(".PurchasedItem", purchase.getSku(), true);
                     }
 
                     List<Purchase> subscribedItem = billingClient.queryPurchases(BillingClient.SkuType.SUBS).getPurchasesList();
                     for (Purchase purchase : subscribedItem) {
-                        FunctionsClass.println("*** Subscribed Item: " + purchase + " ***");
+                        FunctionsClassDebug.Companion.PrintDebug("*** Subscribed Item: " + purchase + " ***");
                         functionsClass.savePreference(".SubscribedItem", purchase.getSku(), true);
                     }
                 }

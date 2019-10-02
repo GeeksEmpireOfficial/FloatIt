@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 
 import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClass;
+import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClassDebug;
 
 public class ColorReceiver extends BroadcastReceiver {
     Context context;
@@ -13,7 +14,7 @@ public class ColorReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context colorContext, Intent intent) {
         context = colorContext;
-        FunctionsClass.println("Wallpaper Changed".toUpperCase());
+        FunctionsClassDebug.Companion.PrintDebug("Wallpaper Changed".toUpperCase());
 
         new ExtractColor().execute();
     }

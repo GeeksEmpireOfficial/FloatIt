@@ -77,7 +77,7 @@
             android:typeface="monospace"
             android:background="@android:color/transparent" />
 
-        <com.google.android.material.button.MaterialButton
+        <com.google.android.material.button.MaterialButton xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/purchaseItemButton"
             android:layout_width="match_parent"
             android:layout_height="41dp"

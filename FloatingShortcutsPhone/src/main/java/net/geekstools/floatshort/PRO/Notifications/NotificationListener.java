@@ -13,6 +13,7 @@ import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
 
 import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClass;
+import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClassDebug;
 import net.geekstools.floatshort.PRO.Util.Functions.PublicVariable;
 
 public class NotificationListener extends NotificationListenerService {
@@ -71,16 +72,16 @@ public class NotificationListener extends NotificationListenerService {
                         try {
                             notificationIcon = statusBarNotification.getNotification().getLargeIcon().loadDrawable(getApplicationContext());
 
-                            FunctionsClass.println("getLargeIcon");
+                            FunctionsClassDebug.Companion.PrintDebug("getLargeIcon");
                         } catch (Exception e) {
                             try {
                                 notificationIcon = statusBarNotification.getNotification().getSmallIcon().loadDrawable(getApplicationContext());
 
-                                FunctionsClass.println("getSmallIcon");
+                                FunctionsClassDebug.Companion.PrintDebug("getSmallIcon");
                             } catch (Exception e1) {
                                 notificationIcon = functionsClass.appIcon(notificationPackage);
 
-                                FunctionsClass.println("appIcon");
+                                FunctionsClassDebug.Companion.PrintDebug("appIcon");
                             }
                         }
                     } else {
@@ -92,11 +93,11 @@ public class NotificationListener extends NotificationListenerService {
                     }
                 }
 
-                FunctionsClass.println("::: Package ::: " + notificationPackage);
-                FunctionsClass.println("::: Key ::: " + notificationId);
-                FunctionsClass.println("::: Title ::: " + notificationTitle);
-                FunctionsClass.println("::: Text ::: " + notificationText);
-                FunctionsClass.println("::: Time ::: " + notificationTime);
+                FunctionsClassDebug.Companion.PrintDebug("::: Package ::: " + notificationPackage);
+                FunctionsClassDebug.Companion.PrintDebug("::: Key ::: " + notificationId);
+                FunctionsClassDebug.Companion.PrintDebug("::: Title ::: " + notificationTitle);
+                FunctionsClassDebug.Companion.PrintDebug("::: Text ::: " + notificationText);
+                FunctionsClassDebug.Companion.PrintDebug("::: Time ::: " + notificationTime);
 
                 /*Save Temp Notification Files*/
                 functionsClass.saveFileAppendLine(notificationPackage + "_" + "Notification" + "Package", notificationTime);
@@ -119,9 +120,9 @@ public class NotificationListener extends NotificationListenerService {
                                     String notificationPackage = intent.getStringExtra("notification_package");
                                     String notificationTime = intent.getStringExtra("notification_time");
 
-                                    FunctionsClass.println("::: Remove Package ::: " + notificationPackage);
-                                    FunctionsClass.println("::: Remove Time ::: " + notificationTime);
-                                    FunctionsClass.println("::: Broadcast Remove Key ::: " + intent.getStringExtra("notification_key"));
+                                    FunctionsClassDebug.Companion.PrintDebug("::: Remove Package ::: " + notificationPackage);
+                                    FunctionsClassDebug.Companion.PrintDebug("::: Remove Time ::: " + notificationTime);
+                                    FunctionsClassDebug.Companion.PrintDebug("::: Broadcast Remove Key ::: " + intent.getStringExtra("notification_key"));
 
                                     deleteFile(notificationTime + "_" + "Notification" + "Key");
                                     deleteFile(notificationTime + "_" + "Notification" + "Title");
@@ -168,8 +169,8 @@ public class NotificationListener extends NotificationListenerService {
                 String notificationPackage = statusBarNotification.getPackageName();
                 String notificationTime = String.valueOf(statusBarNotification.getPostTime());
 
-                FunctionsClass.println("::: Remove Package ::: " + notificationPackage);
-                FunctionsClass.println("::: Remove Time ::: " + notificationTime);
+                FunctionsClassDebug.Companion.PrintDebug("::: Remove Package ::: " + notificationPackage);
+                FunctionsClassDebug.Companion.PrintDebug("::: Remove Time ::: " + notificationTime);
 
                 deleteFile(notificationTime + "_" + "Notification" + "Key");
                 deleteFile(notificationTime + "_" + "Notification" + "Title");

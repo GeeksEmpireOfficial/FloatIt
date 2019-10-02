@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.TimePicker;
 
 import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClass;
+import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClassDebug;
 
 import java.util.Calendar;
 
@@ -38,7 +39,7 @@ public class TimeDialogue extends Activity {
                         newAlarmTime.set(Calendar.SECOND, 13);
 
                         String setTime = hours + ":" + minutes;
-                        FunctionsClass.println("*** " + setTime);
+                        FunctionsClassDebug.Companion.PrintDebug("*** " + setTime);
                         functionsClass.saveFile(
                                 content + ".Time",
                                 setTime);

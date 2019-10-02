@@ -685,7 +685,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
 
                             List<Purchase> purchases = billingClient.queryPurchases(BillingClient.SkuType.SUBS).getPurchasesList();
                             for (Purchase purchase : purchases) {
-                                FunctionsClass.println("*** Subscribed Item: " + purchase + " ***");
+                                FunctionsClassDebug.Companion.PrintDebug("*** Subscribed Item: " + purchase + " ***");
                                 functionsClass.savePreference(".SubscribedItem", purchase.getSku(), true);
                             }
                         }
@@ -1035,7 +1035,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
                                                     }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                                                         @Override
                                                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                                            FunctionsClass.println("Firebase Activities Done Successfully");
+                                                            FunctionsClassDebug.Companion.PrintDebug("Firebase Activities Done Successfully");
                                                             functionsClass.Toast(getString(R.string.signinFinished), Gravity.TOP);
                                                             try {
                                                                 progressDialog.dismiss();
@@ -1104,7 +1104,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
 
                 if (functionsClass.loadCustomIcons()) {
                     loadCustomIcons.load();
-                    FunctionsClass.println("*** Total Custom Icon ::: " + loadCustomIcons.getTotalIcons());
+                    FunctionsClassDebug.Companion.PrintDebug("*** Total Custom Icon ::: " + loadCustomIcons.getTotalIcons());
                 }
 
                 if (getFileStreamPath(".categoryInfo").exists() && functionsClass.countLineInnerFile(".categoryInfo") > 0) {
@@ -1201,7 +1201,7 @@ public class CategoryHandler extends Activity implements View.OnClickListener, V
                     e.printStackTrace();
                 }
                 for (ResolveInfo resolveInfo : resolveInfos) {
-                    FunctionsClass.println("CustomIconPackages ::: " + resolveInfo.activityInfo.packageName);
+                    FunctionsClassDebug.Companion.PrintDebug("CustomIconPackages ::: " + resolveInfo.activityInfo.packageName);
                     PublicVariable.customIconsPackages.add(resolveInfo.activityInfo.packageName);
                 }
 

@@ -31,6 +31,7 @@ import com.google.android.material.button.MaterialButton;
 
 import net.geekstools.floatshort.PRO.R;
 import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClass;
+import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClassDebug;
 import net.geekstools.floatshort.PRO.Util.Functions.PublicVariable;
 import net.geekstools.floatshort.PRO.Util.IAP.billing.BillingProvider;
 import net.geekstools.floatshort.PRO.Util.IAP.skulist.SkusAdapter;
@@ -64,8 +65,6 @@ public class AcquireFragment extends DialogFragment implements View.OnClickListe
     TreeMap<Integer, Uri> mapIndexURI = new TreeMap<Integer, Uri>();
 
     RequestManager requestManager;
-
-    int screenshotsNumber = 6, glideLoadCounter = 0;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -188,7 +187,7 @@ public class AcquireFragment extends DialogFragment implements View.OnClickListe
                     public void onSkuDetailsResponse(int responseCode, List<SkuDetails> skuDetailsList) {
                         if (responseCode == BillingClient.BillingResponse.OK && skuDetailsList != null) {
                             for (SkuDetails skuDetails : skuDetailsList) {
-                                FunctionsClass.println("*** SKU List ::: " + skuDetails + " ***");
+                                FunctionsClassDebug.Companion.PrintDebug("*** SKU List ::: " + skuDetails + " ***");
                                 if (skuDetails.getSku().equals("remove.ads") && functionsClass.removeAdsPurchased()) {
                                     itemDemoList.setVisibility(View.INVISIBLE);
                                     itemDemo.setVisibility(View.INVISIBLE);
@@ -226,7 +225,7 @@ public class AcquireFragment extends DialogFragment implements View.OnClickListe
                                         public void onSkuDetailsResponse(int responseCode, List<SkuDetails> skuDetailsList) {
                                             if (responseCode == BillingClient.BillingResponse.OK && skuDetailsList != null) {
                                                 for (SkuDetails skuDetails : skuDetailsList) {
-                                                    FunctionsClass.println("*** SKU List ::: " + skuDetails + " ***");
+                                                    FunctionsClassDebug.Companion.PrintDebug("*** SKU List ::: " + skuDetails + " ***");
                                                     if (skuDetails.getSku().equals("remove.ads") && functionsClass.removeAdsPurchased()) {
                                                         itemDemoList.setVisibility(View.INVISIBLE);
                                                         itemDemo.setVisibility(View.INVISIBLE);

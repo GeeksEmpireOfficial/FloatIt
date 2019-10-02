@@ -70,6 +70,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import net.geekstools.floatshort.PRO.BindServices;
 import net.geekstools.floatshort.PRO.R;
 import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClass;
+import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClassDebug;
 import net.geekstools.floatshort.PRO.Util.Functions.PublicVariable;
 import net.geekstools.floatshort.PRO.Util.IAP.InAppBilling;
 import net.geekstools.floatshort.PRO.Util.InteractionObserver.InteractionObserver;
@@ -743,7 +744,7 @@ public class SettingGUILight extends PreferenceActivity implements OnSharedPrefe
                                             /*
                                              *
                                              */
-                                            FunctionsClass.println("*** millis delay ::: " + functionsClass.readDefaultPreference("delayPressHold", 333));
+                                            FunctionsClassDebug.Companion.PrintDebug("*** millis delay ::: " + functionsClass.readDefaultPreference("delayPressHold", 333));
                                         }
                                     }
                                 };
@@ -899,7 +900,7 @@ public class SettingGUILight extends PreferenceActivity implements OnSharedPrefe
                                             }
                                         });
 
-                                        FunctionsClass.println("*** " + firebaseRemoteConfig.getLong(getString(R.string.adAppForceTime)) + " ***");
+                                        FunctionsClassDebug.Companion.PrintDebug("*** " + firebaseRemoteConfig.getLong(getString(R.string.adAppForceTime)) + " ***");
                                         if (firebaseRemoteConfig.getLong(getString(R.string.adAppForceTime)) > functionsClass.readPreference(".AdApp", "FetchTime", Long.valueOf(0))) {
                                             SettingGUILight.this.getListView().smoothScrollToPosition(SettingGUILight.this.getListView().getBottom());
                                             functionsClass.savePreference(".AdApp", "FetchTime", firebaseRemoteConfig.getLong(getString(R.string.adAppForceTime)));
