@@ -81,6 +81,7 @@ public class BindServices extends Service {
                 intentFilter.addAction("android.net.wifi.WIFI_STATE_CHANGED");
                 intentFilter.addAction("android.location.PROVIDERS_CHANGED");
                 intentFilter.addAction("android.nfc.action.ADAPTER_STATE_CHANGED");
+                intentFilter.addAction("REMOVE_SELF");
                 broadcastReceiverAction = new BroadcastReceiver() {
                     @Override
                     public void onReceive(Context context, Intent intent) {
@@ -163,6 +164,9 @@ public class BindServices extends Service {
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
+                        } else if (intent.getAction().equals("REMOVE_SELF")) {
+                            stopForeground(true);
+                            stopSelf();
                         }
                     }
                 };
@@ -208,6 +212,12 @@ public class BindServices extends Service {
                 }
             } else {
                 unregisterReceiver(broadcastReceiverONOFF);
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    stopForeground(Service.STOP_FOREGROUND_REMOVE);
+                    stopForeground(true);
+                }
+                stopSelf();
             }
         } catch (Exception e) {
             e.printStackTrace();

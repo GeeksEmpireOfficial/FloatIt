@@ -3,6 +3,7 @@ package net.geekstools.floatshort.PRO.Util.RemoteTask
 import android.app.ActivityOptions
 import android.app.Service
 import android.content.Intent
+import android.os.Build
 import android.os.IBinder
 import android.widget.Toast
 import androidx.preference.PreferenceManager
@@ -104,9 +105,22 @@ class RecoveryWidgets : Service() {
 
     override fun onCreate() {
         super.onCreate()
+
         functionsClass = FunctionsClass(applicationContext)
-        if (functionsClass.returnAPI() >= 26) {
-            startForeground(333, functionsClass.bindServiceNotification())
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForegroundService(Intent(applicationContext, BindServices::class.java))
+        } else {
+            startService(Intent(applicationContext, BindServices::class.java))
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            stopForeground(Service.STOP_FOREGROUND_REMOVE)
+            stopForeground(true)
+        }
+        stopSelf()
     }
 }
