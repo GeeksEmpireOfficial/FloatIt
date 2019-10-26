@@ -2,12 +2,12 @@
 <resources>
 
     <!-- Free String -->
-    <string name="pro_version" translatable="false">Floating Shortcuts ᴾᴿᴼ</string>
+    <string name="pro_version" translatable="false">Float It ᴾᴿᴼ</string>
     <string name="upgradeNow" translatable="false">Upgrade</string>
-    <string name="upgrade" translatable="false">Upgrade to Floating Shortcuts ᴾᴿᴼ</string>
+    <string name="upgrade" translatable="false">Upgrade to Float It ᴾᴿᴼ</string>
     <string name="upgradeDesc" translatable="false">
         <![CDATA[
-            <b>Unlimited Floating Shortcuts</b>…!<br/>
+            <b>Unlimited Floating Shortcuts/Folders/Widgets</b>…!<br/>
             Get The Newest Stable Features & Enhanced Graphical Interface (No Ads)
         ]]>
     </string>
@@ -35,7 +35,7 @@
             <b>Please, Consider following Solutions</b>&#8230;<br/>
             1. Let Me Showing Ads <b>...</b><br/>
             2. Go to Preferences & Select <b>Remove All Ads</b> <b>🛑</b><br/>
-            3. Purchase Floating Shortcuts ᴾᴿᴼ from Google Play Store <big>💳</big><br/>
+            3. Purchase Float It ᴾᴿᴼ from Google Play Store <big>💳</big><br/>
             4. Always Ready to Help, Contact me! <big>📧</big></small>
         ]]>
     </string>
@@ -278,7 +278,7 @@
         ]]>
     </string>
 
-    <string name="app_name" translatable="false">Floating Shortcuts</string>
+    <string name="app_name" translatable="false">Float It</string>
     <string name="geeksempire" translatable="false">Geeks Empire</string>
 
     <string name="visibilityActionAdvance" translatable="false">VISIBILITY_ACTION_ADVANCE</string>
@@ -313,9 +313,9 @@
         <![CDATA[
             <br/>
             <b>Hi</b>&#8230; &#9786;<br/>
-            <small>Floating Shortcuts has been installed illegally & It can cause Security Risk ⚠️<br/><br/>
+            <small>Float It has been installed illegally & It can cause Security Risk ⚠️<br/><br/>
             <b>Please, Consider following Solutions</b>&#8230;<br/>
-            1. Purchase Floating Shortcuts ᴾᴿᴼ from Google Play Store <big>💳</big><br/>
+            1. Purchase Float It ᴾᴿᴼ from Google Play Store <big>💳</big><br/>
             2. Install Free Edition from Google Play Store <big>🆓</big><br/>
             3. Always Ready to Help, Contact me! <big>📧</big></small>
         ]]>
@@ -349,7 +349,7 @@
     <string name="email" translatable="false">Appreciate your Feedback</string>
     <string name="rate" translatable="false">Please Rate &amp; Write Review</string>
     <string name="supportEmail" translatable="false">Support@GeeksEmpire.net</string>
-    <string name="feedback_tag" translatable="false">Floating Shortcuts Direct Help | Feedback</string>
+    <string name="feedback_tag" translatable="false">Float It Direct Help | Feedback</string>
 
     <string name="link_ad_app" translatable="false">https://play.google.com/store/apps/details?id=net.geekstools.supershortcuts.PRO</string>
     <string name="link_alpha" translatable="false">https://play.google.com/apps/testing/</string>

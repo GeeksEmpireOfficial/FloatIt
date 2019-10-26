@@ -110,7 +110,6 @@ public class SettingGUIDark extends PreferenceActivity implements OnSharedPrefer
             e.printStackTrace();
         }
 
-        PublicVariable.activityStatic = SettingGUIDark.this;
         functionsClass = new FunctionsClass(getApplicationContext(), SettingGUIDark.this);
 
         this.getListView().setCacheColorHint(Color.TRANSPARENT);
@@ -833,7 +832,7 @@ public class SettingGUIDark extends PreferenceActivity implements OnSharedPrefer
 
                                     functionsClass.saveFileEmpty(".LitePreferenceCheckpoint");
                                 }
-                            }, 333);
+                            }, 555);
                         }
                     }, 333);
                 }

@@ -14,8 +14,8 @@ android {
         minSdkVersion 23
         targetSdkVersion 29
 
-        versionCode 686
-        versionName "${majorVersion} | " + getDateMonth() + "." + getDateDay() + "." + getDateYear() + "{${versionCode}}" + "-"
+        versionCode 688
+        versionName "${majorVersion} | " + getDateMonth() + "." + getDateDay() + "." + getDateYear() + "-{${versionCode}}" + "-"
 
         wearAppUnbundled true
     }
@@ -40,12 +40,12 @@ android {
         releaseConfig {
             dimension "FloatingShortcutsFree"
 
-            versionNameSuffix 'FREE[Android][Phone]'
+            versionNameSuffix '[FREE][Android][Phone]'
         }
         betaConfig {
             dimension "FloatingShortcutsFree"
 
-            versionNameSuffix 'FREE[Android][Phone][BETA]'
+            versionNameSuffix '[FREE][Android][Phone][BETA]'
         }
     }
 
@@ -88,26 +88,27 @@ dependencies {
     implementation 'androidx.preference:preference-ktx:1.1.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.palette:palette:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0-beta05'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0-rc01'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
 
-    implementation 'com.google.android.material:material:1.1.0-beta01'
+    implementation 'com.google.android.material:material:1.2.0-alpha01'
 
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
 
-    implementation 'com.google.firebase:firebase-core:17.2.0'
+    implementation 'com.google.firebase:firebase-core:17.2.1'
     implementation 'com.google.firebase:firebase-appindexing:19.0.0'
     implementation 'com.google.firebase:firebase-messaging:20.0.0'
     implementation 'com.google.firebase:firebase-config:19.0.3'
     implementation 'com.google.firebase:firebase-auth:19.1.0'
     implementation 'com.google.firebase:firebase-storage:19.1.0'
+    implementation 'com.google.firebase:firebase-analytics:17.2.1'
 
     implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
 
-    implementation 'androidx.room:room-runtime:2.2.0'
-    annotationProcessor 'androidx.room:room-compiler:2.2.0'
-    kapt 'androidx.room:room-compiler:2.2.0'
+    implementation 'androidx.room:room-runtime:2.2.1'
+    annotationProcessor 'androidx.room:room-compiler:2.2.1'
+    kapt 'androidx.room:room-compiler:2.2.1'
 
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.50'
 

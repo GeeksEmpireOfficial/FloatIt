@@ -110,7 +110,6 @@ public class SettingGUILight extends PreferenceActivity implements OnSharedPrefe
             e.printStackTrace();
         }
 
-        PublicVariable.activityStatic = SettingGUILight.this;
         functionsClass = new FunctionsClass(getApplicationContext(), SettingGUILight.this);
 
         this.getListView().setCacheColorHint(Color.TRANSPARENT);

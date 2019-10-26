@@ -3,7 +3,7 @@
 
     <string name="settingTitle">Preferences</string>
     <string name="overlayset">Turn On Permission, Please!</string>
-    <string name="bindTitle">Floating Shortcuts | Steady Mode</string>
+    <string name="bindTitle">Float It | Steady Mode</string>
     <string name="bindDesc">It will Stop Automatically</string>
     <string name="shapesTitle">Floating Shapes</string>
     <string name="dark">Dark</string>

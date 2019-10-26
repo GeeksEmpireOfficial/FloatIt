@@ -1,6 +1,5 @@
 package net.geekstools.floatshort.PRO.Util.Functions;
 
-import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Context;
 
@@ -11,7 +10,6 @@ import java.util.Map;
 
 public class PublicVariable {
 
-    public static Activity activityStatic;
     public static Context contextStatic;
 
     public static int appInfoCount = 0;

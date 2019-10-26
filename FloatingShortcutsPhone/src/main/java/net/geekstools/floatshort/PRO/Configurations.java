@@ -16,6 +16,7 @@ import android.util.TypedValue;
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.core.CrashlyticsCore;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import net.geekstools.floatshort.PRO.Category.FoldersHandler;
 import net.geekstools.floatshort.PRO.Shortcuts.HybridViewOff;
@@ -43,10 +44,15 @@ public class Configurations extends Activity {
     protected void onCreate(Bundle Saved) {
         super.onCreate(Saved);
         FirebaseApp.initializeApp(getApplicationContext());
+
         CrashlyticsCore crashlyticsCore = new CrashlyticsCore.Builder()
                 .disabled(BuildConfig.DEBUG)
                 .build();
         Fabric.with(this, new Crashlytics.Builder().core(crashlyticsCore).build());
+
+        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(getApplicationContext());
+
+        PublicVariable.contextStatic = getApplicationContext();
 
         functionsClass = new FunctionsClass(getApplicationContext(), Configurations.this);
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);

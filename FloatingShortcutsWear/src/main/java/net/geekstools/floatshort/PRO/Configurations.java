@@ -9,6 +9,7 @@ import android.support.wearable.activity.WearableActivity;
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.core.CrashlyticsCore;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import net.geekstools.floatshort.PRO.Shortcuts.ListViewOff;
 import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClass;
@@ -22,11 +23,14 @@ public class Configurations extends WearableActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FirebaseApp.initializeApp(getApplicationContext());
+
         CrashlyticsCore crashlyticsCore = new CrashlyticsCore.Builder()
                 .disabled(BuildConfig.DEBUG)
                 .build();
         Fabric.with(this, new Crashlytics.Builder().core(crashlyticsCore).build());
-        FirebaseApp.initializeApp(getApplicationContext());
+
+        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(getApplicationContext());
 
         setAmbientEnabled();
         functionsClass = new FunctionsClass(getApplicationContext(), Configurations.this);

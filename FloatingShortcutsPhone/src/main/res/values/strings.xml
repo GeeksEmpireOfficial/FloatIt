@@ -43,9 +43,9 @@
         ]]>
     </string>
     <string name="split_service_desc">
-        Split Floating Shortcuts | This permission gives me the ability to create Multi-Window &amp; Open Apps in Split Screen Simultaneously (Android 7 &amp; Higher)\n\n♿ How it Helps People with Disability?\nIt is difficult for people with disability to open an app Or switch between apps. I am using Accessibility Service to enter Multi-Window Mode to open two apps together.
+        Split Float It | This permission gives me the ability to create Multi-Window &amp; Open Apps in Split Screen Simultaneously (Android 7 &amp; Higher)\n\n♿ How it Helps People with Disability?\nIt is difficult for people with disability to open an app Or switch between apps. I am using Accessibility Service to enter Multi-Window Mode to open two apps together.
     </string>
-    <string name="split_service_summary">Split Floating Shortcuts | This Permission Gives me the Ability to Create Multi-Window &amp; Open Apps in Split Screen Simultaneously (Android 7 &amp; Higher)</string>
+    <string name="split_service_summary">Split Float It | This Permission Gives me the Ability to Create Multi-Window &amp; Open Apps in Split Screen Simultaneously (Android 7 &amp; Higher)</string>
     <string name="observeDesc">
         <![CDATA[
                 <br/>
@@ -119,7 +119,7 @@
             This Permission Allows Me to Get List of <b>Frequently Used Application</b> to Set Quick Bar.<br/><br/>
             Also, It is Essential for<br/>
             1. <b>🔄 Remote Recovery of Floating Shortcuts/Folders</b> to Recognize Command…<br/>
-            2. <b>🆗 Google! Open Floating Shortcuts</b><br/>
+            2. <b>🆗 Google! Open Float It</b><br/>
             3. <b>🕐 Optimizing Floating Splash</b><br/>
         ]]>
     </string>
@@ -129,7 +129,7 @@
         <![CDATA[
             <br/>
             <big>Recover Floating Shortcuts/Folders When</big>…<br/>
-            1. <b>Saying \'🆗 Google Open Floating Shortcuts\'</b><br/>
+            1. <b>Saying \'🆗 Google Open Float It\'</b><br/>
             2. <b>Using Popup AppShortcuts</b> | Press & Hold ⏺ on App Shortcut on Home Screen (Android 7.1.1 & Higher)<br/>
             3. <b>Turning On 🔄 your Device</b><br/>
             <br/>
@@ -137,13 +137,13 @@
     </string>
     <string name="notificationEmoji">🔔</string>
     <string name="notificationTitle">Floating Notification</string>
-    <string name="notificationSummary">Notification Dot on Floating Shortcuts</string>
+    <string name="notificationSummary">Notification Dot on Floating Shortcuts/Folders</string>
     <string name="notificationDesc">
         <![CDATA[
             <br/>
             This Permission Allows Me to Get Content of <b>Unread Notification</b> 🔔<br/>
-            1️⃣ to Add a <b>Notification Dot</b> on Floating Shortcuts<br/>
-            2️⃣ & Show <b>Notification Content</b> from Floating Shortcuts Popup Menu.
+            1️⃣ to Add a <b>Notification Dot</b> on Floating Shortcuts/Folders<br/>
+            2️⃣ & Show <b>Notification Content</b> from Floating Shortcuts/Folders.
             <br/>
         ]]>
     </string>
