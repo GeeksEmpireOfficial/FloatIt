@@ -1,2 +1,2 @@
-include ':FloatingShortcutsPhone', ':FloatingShortcutsWear', ':ShapesCustomImageViewLibrary', ':LoadingSpin'
+include ':FloatItPhone', ':FloatItWatch', ':ShapesCustomImageViewLibrary', ':LoadingSpin'
 include ':LicenseLibrary'
