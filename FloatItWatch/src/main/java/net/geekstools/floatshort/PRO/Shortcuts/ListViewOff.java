@@ -27,7 +27,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 
 import net.geekstools.floatshort.PRO.Automation.RecoveryShortcuts;
@@ -86,6 +89,20 @@ public class ListViewOff extends WearableActivity implements View.OnClickListene
 
         LoadApplicationsOffInit loadApplicationsOffInit = new LoadApplicationsOffInit();
         loadApplicationsOffInit.execute();
+
+        if (BuildConfig.VERSION_NAME.contains("[BETA]") && !functionsClass.readPreference(".UserInformation", "SubscribeToBeta", false)) {
+            FirebaseMessaging.getInstance().subscribeToTopic("BETA").addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    functionsClass.savePreference(".UserInformation", "SubscribeToBeta", true);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+
+                }
+            });
+        }
     }
 
     @Override

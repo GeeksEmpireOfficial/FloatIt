@@ -2966,7 +2966,7 @@ public class FunctionsClass {
     /*FreeForm*/
     public boolean addFloatItItem() {
         boolean forceFloatIt = false;
-        if (!FreeForm()) {
+        if (FreeForm()) {
             if (freeFormSupport(context)) {
                 forceFloatIt = true;
             }

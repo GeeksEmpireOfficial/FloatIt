@@ -90,6 +90,12 @@
         </activity>
 
         <service
+            android:name=".BindServices"
+            android:foregroundServiceType="dataSync"/>
+        <service
+            android:name=".LicenseValidator"
+            android:foregroundServiceType="dataSync"/>
+        <service
             android:name=".Automation.RecoveryShortcuts"
             android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
@@ -98,11 +104,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
-        <service android:name=".LicenseValidator" />
+        <!-- Float It -->
         <service android:name=".App_Unlimited_Shortcuts" />
         <service android:name=".App_Unlimited_HIS" />
         <service android:name=".Category_Unlimited_Category" />
-        <service android:name=".BindServices" />
+        <!-- Float It -->
         <service
             android:name=".CloudNotificationHandler"
             android:icon="@drawable/ic_launcher">
