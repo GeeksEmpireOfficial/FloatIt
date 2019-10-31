@@ -392,9 +392,13 @@
         </activity-alias>
 
         <service
+            android:name=".BindServices"
+            android:foregroundServiceType="dataSync"/>
+        <service
             android:name=".Util.RemoteTask.RecoveryShortcuts"
             android:exported="true"
-            android:theme="@android:style/Theme.NoDisplay">
+            android:theme="@android:style/Theme.NoDisplay"
+            android:foregroundServiceType="dataSync">
             <intent-filter>
                 <action android:name="net.geekstools.floatshort.pro.LAUNCH_BACKGROUND" />
 
@@ -404,7 +408,8 @@
         <service
             android:name=".Util.RemoteTask.RecoveryFolders"
             android:exported="true"
-            android:theme="@android:style/Theme.NoDisplay" />
+            android:theme="@android:style/Theme.NoDisplay"
+            android:foregroundServiceType="dataSync"/>
         <service
             android:name=".Util.RemoteTask.RecoveryWidgets"
             android:exported="true"
@@ -412,7 +417,8 @@
         <service
             android:name=".Util.RemoteTask.RecoveryAll"
             android:exported="true"
-            android:theme="@android:style/Theme.NoDisplay" />
+            android:theme="@android:style/Theme.NoDisplay"
+            android:foregroundServiceType="dataSync"/>
         <service
             android:name=".Automation.RecoveryWifi"
             android:theme="@android:style/Theme.NoDisplay" />
@@ -429,21 +435,39 @@
             android:name=".Util.RemoteTask.RemoveAll"
             android:exported="true"
             android:theme="@android:style/Theme.NoDisplay" />
-        <service android:name=".Automation.Alarms.SetupAlarms" />
-        <service android:name=".App_Unlimited_Shortcuts" />
-        <service android:name=".App_Unlimited_Wifi" />
-        <service android:name=".App_Unlimited_Bluetooth" />
-        <service android:name=".App_Unlimited_Gps" />
-        <service android:name=".App_Unlimited_Nfc" />
-        <service android:name=".App_Unlimited_Time" />
-        <service android:name=".Category_Unlimited_Floating" />
-        <service android:name=".Category_Unlimited_Wifi" />
-        <service android:name=".Category_Unlimited_Bluetooth" />
-        <service android:name=".Category_Unlimited_Gps" />
-        <service android:name=".Category_Unlimited_Nfc" />
-        <service android:name=".Category_Unlimited_Time" />
-        <service android:name=".Widget_Unlimited_Floating" />
-        <service android:name=".App_Unlimited_HIS" />
+        <service
+            android:name=".Automation.Alarms.SetupAlarms"
+            android:foregroundServiceType="dataSync"/>
+        <!-- Float It -->
+        <service
+            android:name=".App_Unlimited_Shortcuts"/>
+        <service
+            android:name=".App_Unlimited_Wifi"/>
+        <service
+            android:name=".App_Unlimited_Bluetooth"/>
+        <service
+            android:name=".App_Unlimited_Gps"/>
+        <service
+            android:name=".App_Unlimited_Nfc"/>
+        <service
+            android:name=".App_Unlimited_Time"/>
+        <service
+            android:name=".Folders_Unlimited_Floating" />
+        <service
+            android:name=".Folders_Unlimited_Wifi" />
+        <service
+            android:name=".Folders_Unlimited_Bluetooth" />
+        <service
+            android:name=".Folders_Unlimited_Gps" />
+        <service
+            android:name=".Folders_Unlimited_Nfc" />
+        <service
+            android:name=".Folders_Unlimited_Time" />
+        <service
+            android:name=".Widget_Unlimited_Floating"/>
+        <service
+            android:name=".App_Unlimited_HIS"/>
+        <!-- Float It -->
         <service android:name=".Util.CloudNotificationHandler">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -463,8 +487,9 @@
         <service
             android:name=".Util.RemoteTask.RemoteController"
             android:theme="@android:style/Theme.NoDisplay" />
-        <service android:name=".BindServices" />
-        <service android:name=".Util.LicenseValidator" />
+        <service
+            android:name=".Util.LicenseValidator"
+            android:foregroundServiceType="dataSync"/>
         <service
             android:name=".Notifications.NotificationListener"
             android:label="@string/app_name"

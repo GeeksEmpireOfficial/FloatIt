@@ -143,15 +143,15 @@ import net.geekstools.floatshort.PRO.Automation.Apps.AppAutoFeatures;
 import net.geekstools.floatshort.PRO.Automation.Categories.CategoryAutoFeatures;
 import net.geekstools.floatshort.PRO.BindServices;
 import net.geekstools.floatshort.PRO.BuildConfig;
-import net.geekstools.floatshort.PRO.Category_Unlimited_Bluetooth;
-import net.geekstools.floatshort.PRO.Category_Unlimited_Floating;
-import net.geekstools.floatshort.PRO.Category_Unlimited_Gps;
-import net.geekstools.floatshort.PRO.Category_Unlimited_Nfc;
-import net.geekstools.floatshort.PRO.Category_Unlimited_Time;
-import net.geekstools.floatshort.PRO.Category_Unlimited_Wifi;
 import net.geekstools.floatshort.PRO.CheckPoint;
 import net.geekstools.floatshort.PRO.Configurations;
 import net.geekstools.floatshort.PRO.Folders.FoldersHandler;
+import net.geekstools.floatshort.PRO.Folders_Unlimited_Bluetooth;
+import net.geekstools.floatshort.PRO.Folders_Unlimited_Floating;
+import net.geekstools.floatshort.PRO.Folders_Unlimited_Gps;
+import net.geekstools.floatshort.PRO.Folders_Unlimited_Nfc;
+import net.geekstools.floatshort.PRO.Folders_Unlimited_Time;
+import net.geekstools.floatshort.PRO.Folders_Unlimited_Wifi;
 import net.geekstools.floatshort.PRO.Notifications.NavAdapter.PopupShortcutsNotification;
 import net.geekstools.floatshort.PRO.Notifications.NotificationListener;
 import net.geekstools.floatshort.PRO.R;
@@ -1382,7 +1382,7 @@ public class FunctionsClass {
             PublicVariable.FloatingCategories.add(PublicVariable.categoriesCounter, categoryName);
         }
 
-        Intent c = new Intent(context, Category_Unlimited_Floating.class);
+        Intent c = new Intent(context, Folders_Unlimited_Floating.class);
         c.putExtra("categoryName", categoryName);
         c.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startService(c);
@@ -1406,7 +1406,7 @@ public class FunctionsClass {
         PublicVariable.floatingCounter++;
         PublicVariable.floatingCategoryCounter_wifi++;
 
-        Intent c = new Intent(context, Category_Unlimited_Wifi.class);
+        Intent c = new Intent(context, Folders_Unlimited_Wifi.class);
         c.putExtra("categoryName", categoryName);
         c.putExtra("categoryNamePackages", categoryNamePackages);
         c.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -1431,7 +1431,7 @@ public class FunctionsClass {
         PublicVariable.floatingCounter++;
         PublicVariable.floatingCategoryCounter_bluetooth++;
 
-        Intent c = new Intent(context, Category_Unlimited_Bluetooth.class);
+        Intent c = new Intent(context, Folders_Unlimited_Bluetooth.class);
         c.putExtra("categoryName", categoryName);
         c.putExtra("categoryNamePackages", categoryNamePackages);
         c.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -1456,7 +1456,7 @@ public class FunctionsClass {
         PublicVariable.floatingCounter++;
         PublicVariable.floatingCategoryCounter_gps++;
 
-        Intent c = new Intent(context, Category_Unlimited_Gps.class);
+        Intent c = new Intent(context, Folders_Unlimited_Gps.class);
         c.putExtra("categoryName", categoryName);
         c.putExtra("categoryNamePackages", categoryNamePackages);
         c.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -1481,7 +1481,7 @@ public class FunctionsClass {
         PublicVariable.floatingCounter++;
         PublicVariable.floatingCategoryCounter_nfc++;
 
-        Intent c = new Intent(context, Category_Unlimited_Nfc.class);
+        Intent c = new Intent(context, Folders_Unlimited_Nfc.class);
         c.putExtra("categoryName", categoryName);
         c.putExtra("categoryNamePackages", categoryNamePackages);
         c.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -1506,7 +1506,7 @@ public class FunctionsClass {
         PublicVariable.floatingCounter++;
         PublicVariable.floatingCategoryCounter_time++;
 
-        Intent c = new Intent(context, Category_Unlimited_Time.class);
+        Intent c = new Intent(context, Folders_Unlimited_Time.class);
         c.putExtra("categoryName", categoryName);
         c.putExtra("categoryNamePackages", categoryNamePackages);
         c.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

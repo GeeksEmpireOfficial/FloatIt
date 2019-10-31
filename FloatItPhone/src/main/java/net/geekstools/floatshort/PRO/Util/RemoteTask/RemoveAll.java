@@ -6,7 +6,12 @@ import android.os.IBinder;
 
 import androidx.annotation.Nullable;
 
-import net.geekstools.floatshort.PRO.Category_Unlimited_Floating;
+import net.geekstools.floatshort.PRO.Folders_Unlimited_Bluetooth;
+import net.geekstools.floatshort.PRO.Folders_Unlimited_Floating;
+import net.geekstools.floatshort.PRO.Folders_Unlimited_Gps;
+import net.geekstools.floatshort.PRO.Folders_Unlimited_Nfc;
+import net.geekstools.floatshort.PRO.Folders_Unlimited_Time;
+import net.geekstools.floatshort.PRO.Folders_Unlimited_Wifi;
 import net.geekstools.floatshort.PRO.R;
 import net.geekstools.floatshort.PRO.Util.Functions.FunctionsClass;
 
@@ -41,27 +46,27 @@ public class RemoveAll extends Service {
         App_Unlimited_Time.putExtra("pack", getString(R.string.remove_all_floatings));
         startService(App_Unlimited_Time);
         /*Categories*/
-        Intent Category_Unlimited_Category = new Intent(getApplicationContext(), Category_Unlimited_Floating.class);
+        Intent Category_Unlimited_Category = new Intent(getApplicationContext(), Folders_Unlimited_Floating.class);
         Category_Unlimited_Category.putExtra("categoryName", getString(R.string.remove_all_floatings));
         startService(Category_Unlimited_Category);
 
-        Intent Category_Unlimited_Wifi = new Intent(getApplicationContext(), net.geekstools.floatshort.PRO.Category_Unlimited_Wifi.class);
+        Intent Category_Unlimited_Wifi = new Intent(getApplicationContext(), Folders_Unlimited_Wifi.class);
         Category_Unlimited_Wifi.putExtra("categoryName", getString(R.string.remove_all_floatings));
         startService(Category_Unlimited_Wifi);
 
-        Intent Category_Unlimited_Bluetooth = new Intent(getApplicationContext(), net.geekstools.floatshort.PRO.Category_Unlimited_Bluetooth.class);
+        Intent Category_Unlimited_Bluetooth = new Intent(getApplicationContext(), Folders_Unlimited_Bluetooth.class);
         Category_Unlimited_Bluetooth.putExtra("categoryName", getString(R.string.remove_all_floatings));
         startService(Category_Unlimited_Bluetooth);
 
-        Intent Category_Unlimited_Gps = new Intent(getApplicationContext(), net.geekstools.floatshort.PRO.Category_Unlimited_Gps.class);
+        Intent Category_Unlimited_Gps = new Intent(getApplicationContext(), Folders_Unlimited_Gps.class);
         Category_Unlimited_Gps.putExtra("categoryName", getString(R.string.remove_all_floatings));
         startService(Category_Unlimited_Gps);
 
-        Intent Category_Unlimited_Nfc = new Intent(getApplicationContext(), net.geekstools.floatshort.PRO.Category_Unlimited_Nfc.class);
+        Intent Category_Unlimited_Nfc = new Intent(getApplicationContext(), Folders_Unlimited_Nfc.class);
         Category_Unlimited_Nfc.putExtra("categoryName", getString(R.string.remove_all_floatings));
         startService(Category_Unlimited_Nfc);
 
-        Intent Category_Unlimited_Time = new Intent(getApplicationContext(), net.geekstools.floatshort.PRO.Category_Unlimited_Time.class);
+        Intent Category_Unlimited_Time = new Intent(getApplicationContext(), Folders_Unlimited_Time.class);
         Category_Unlimited_Time.putExtra("categoryName", getString(R.string.remove_all_floatings));
         startService(Category_Unlimited_Time);
         /*HIS*/
