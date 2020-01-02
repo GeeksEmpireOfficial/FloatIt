@@ -8,7 +8,6 @@ import android.content.IntentFilter;
 import android.location.LocationManager;
 import android.net.wifi.WifiManager;
 import android.nfc.NfcManager;
-import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.util.TypedValue;
@@ -197,30 +196,5 @@ public class BindServices extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-
-        try {
-            unregisterReceiver(broadcastReceiverAction);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        try {
-            if (functionsClass.SystemCache() || functionsClass.automationFeatureEnable()) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    startForegroundService(new Intent(getApplicationContext(), BindServices.class));
-                } else {
-                    startService(new Intent(getApplicationContext(), BindServices.class));
-                }
-            } else {
-                unregisterReceiver(broadcastReceiverONOFF);
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    stopForeground(Service.STOP_FOREGROUND_REMOVE);
-                    stopForeground(true);
-                }
-                stopSelf();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }

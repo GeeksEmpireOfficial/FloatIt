@@ -73,7 +73,7 @@ public class SkusAdapter extends RecyclerView.Adapter<RowViewHolder> implements 
     @Override
     public void onButtonClicked(int position) {
         SkuRowData skuRowData = getData(position);
-        billingProvider.getBillingManager().startPurchaseFlow(skuRowData.getSkuDetails(), skuRowData.getSku(), skuRowData.getBillingType());
+        billingProvider.getBillingManager().startPurchaseFlow(skuRowData.getSkuDetails());
 
     }
 

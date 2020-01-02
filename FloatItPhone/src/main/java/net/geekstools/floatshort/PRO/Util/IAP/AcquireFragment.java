@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.billingclient.api.BillingClient;
+import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.SkuDetails;
 import com.android.billingclient.api.SkuDetailsResponseListener;
 import com.bumptech.glide.Glide;
@@ -184,8 +185,8 @@ public class AcquireFragment extends DialogFragment implements View.OnClickListe
                 inAppSkus,
                 new SkuDetailsResponseListener() {
                     @Override
-                    public void onSkuDetailsResponse(int responseCode, List<SkuDetails> skuDetailsList) {
-                        if (responseCode == BillingClient.BillingResponse.OK && skuDetailsList != null) {
+                    public void onSkuDetailsResponse(BillingResult billingResult, List<SkuDetails> skuDetailsList) {
+                        if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK && skuDetailsList != null) {
                             for (SkuDetails skuDetails : skuDetailsList) {
                                 FunctionsClassDebug.Companion.PrintDebug("*** SKU List ::: " + skuDetails + " ***");
                                 if (skuDetails.getSku().equals("remove.ads") && functionsClass.removeAdsPurchased()) {
@@ -222,8 +223,8 @@ public class AcquireFragment extends DialogFragment implements View.OnClickListe
                                     subsSkus,
                                     new SkuDetailsResponseListener() {
                                         @Override
-                                        public void onSkuDetailsResponse(int responseCode, List<SkuDetails> skuDetailsList) {
-                                            if (responseCode == BillingClient.BillingResponse.OK && skuDetailsList != null) {
+                                        public void onSkuDetailsResponse(BillingResult billingResult, List<SkuDetails> skuDetailsList) {
+                                            if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK && skuDetailsList != null) {
                                                 for (SkuDetails skuDetails : skuDetailsList) {
                                                     FunctionsClassDebug.Companion.PrintDebug("*** SKU List ::: " + skuDetails + " ***");
                                                     if (skuDetails.getSku().equals("remove.ads") && functionsClass.removeAdsPurchased()) {

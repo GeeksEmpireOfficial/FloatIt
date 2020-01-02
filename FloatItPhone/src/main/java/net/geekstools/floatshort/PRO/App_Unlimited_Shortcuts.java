@@ -242,6 +242,12 @@ public class App_Unlimited_Shortcuts extends Service {
             flingAnimationY[startId] = new FlingAnimation(new FloatValueHolder())
                     .setFriction(functionsClass.readPreference("FlingSensitivity", "FlingSensitivityValue", 3.0f));
 
+            flingAnimationX[startId].setMaxValue(functionsClass.displayX() - PublicVariable.HW);
+            flingAnimationX[startId].setMinValue(0);
+
+            flingAnimationY[startId].setMaxValue(functionsClass.displayY() - PublicVariable.HW);
+            flingAnimationY[startId].setMinValue(0);
+
             simpleOnGestureListener[startId] = new GestureDetector.SimpleOnGestureListener() {
                 @Override
                 public boolean onFling(MotionEvent motionEventFirst, MotionEvent motionEventLast, float velocityX, float velocityY) {

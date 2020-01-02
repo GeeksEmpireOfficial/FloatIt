@@ -413,7 +413,8 @@
         <service
             android:name=".Util.RemoteTask.RecoveryWidgets"
             android:exported="true"
-            android:theme="@android:style/Theme.NoDisplay" />
+            android:theme="@android:style/Theme.NoDisplay"
+            android:foregroundServiceType="dataSync"/>
         <service
             android:name=".Util.RemoteTask.RecoveryAll"
             android:exported="true"

@@ -39,12 +39,12 @@ public class InAppBilling extends FragmentActivity implements BillingProvider {
 
         billingManager = new BillingManager(InAppBilling.this, getIntent().hasExtra("UserEmailAddress") ? getIntent().getStringExtra("UserEmailAddress") : null);
 
-        new Handler().postDelayed(new Runnable() {
+        new Handler().post(new Runnable() {
             @Override
             public void run() {
                 proceedToPurchaseFragment();
             }
-        }, 777);
+        });
 
         showRefreshedUi();
     }
