@@ -15,7 +15,6 @@ import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -63,9 +62,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import net.geekstools.floatshort.PRO.Automation.Categories.CategoryAutoFeatures;
 import net.geekstools.floatshort.PRO.BindServices;
@@ -89,7 +85,6 @@ import net.geekstools.floatshort.PRO.Util.UI.CustomIconManager.LoadCustomIcons;
 import net.geekstools.floatshort.PRO.Util.UI.SimpleGestureFilterSwitch;
 import net.geekstools.floatshort.PRO.Widget.WidgetConfigurations;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -920,59 +915,51 @@ public class FoldersHandler extends AppCompatActivity implements View.OnClickLis
                                     if (firebaseUser != null) {
                                         functionsClass.savePreference(".UserInformation", "userEmail", firebaseUser.getEmail());
 
+                                        FunctionsClassDebug.Companion.PrintDebug("Firebase Activities Done Successfully");
+                                        functionsClass.Toast(getString(R.string.signinFinished), Gravity.TOP);
+                                        try {
+                                            progressDialog.dismiss();
+                                            PublicVariable.eligibleLoadShowAds = true;
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                    } else {
+                                        try {
+                                            progressDialog.setMessage(Html.fromHtml(
+                                                    "<big><font color='" + PublicVariable.colorLightDarkOpposite + "'>" + getString(R.string.error) + "</font></big>"
+                                                            + "<br/>" +
+                                                            "<small><font color='" + PublicVariable.colorLightDarkOpposite + "'>" + task.getException().getMessage() + "</font></small>"));
+                                            progressDialog.setCancelable(true);
+
+                                            new Handler().postDelayed(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    progressDialog.dismiss();
+                                                    PublicVariable.eligibleLoadShowAds = true;
+                                                }
+                                            }, 777);
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                } else {
+                                    try {
+                                        progressDialog.setMessage(Html.fromHtml(
+                                                "<big><font color='" + PublicVariable.colorLightDarkOpposite + "'>" + getString(R.string.error) + "</font></big>"
+                                                        + "<br/>" +
+                                                        "<small><font color='" + PublicVariable.colorLightDarkOpposite + "'>" + task.getException().getMessage() + "</font></small>"));
+                                        progressDialog.setCancelable(true);
+
                                         new Handler().postDelayed(new Runnable() {
                                             @Override
                                             public void run() {
-                                                try {
-                                                    File betaFile = new File("/data/data/" + getPackageName() + "/shared_prefs/.UserInformation.xml");
-                                                    Uri uriBetaFile = Uri.fromFile(betaFile);
-                                                    FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
-
-                                                    StorageReference storageReference = firebaseStorage.getReference("/Users/" + "API" + functionsClass.returnAPI() + "/" +
-                                                            functionsClass.readPreference(".UserInformation", "userEmail", null));
-                                                    UploadTask uploadTask = storageReference.putFile(uriBetaFile);
-
-                                                    uploadTask.addOnFailureListener(new OnFailureListener() {
-                                                        @Override
-                                                        public void onFailure(@NonNull Exception exception) {
-                                                            exception.printStackTrace();
-                                                            try {
-                                                                progressDialog.setMessage(Html.fromHtml(
-                                                                        "<big><font color='" + PublicVariable.colorLightDarkOpposite + "'>" + getString(R.string.error) + "</font></big>"
-                                                                                + "<br/>" +
-                                                                                "<small><font color='" + PublicVariable.colorLightDarkOpposite + "'>" + exception.getMessage() + "</font></small>"));
-                                                                progressDialog.setCancelable(true);
-                                                                new Handler().postDelayed(new Runnable() {
-                                                                    @Override
-                                                                    public void run() {
-                                                                        progressDialog.dismiss();
-                                                                        PublicVariable.eligibleLoadShowAds = true;
-                                                                    }
-                                                                }, 777);
-                                                            } catch (Exception e) {
-                                                                e.printStackTrace();
-                                                            }
-                                                        }
-                                                    }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                                                        @Override
-                                                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                                            FunctionsClassDebug.Companion.PrintDebug("Firebase Activities Done Successfully");
-                                                            functionsClass.Toast(getString(R.string.signinFinished), Gravity.TOP);
-                                                            try {
-                                                                progressDialog.dismiss();
-                                                                PublicVariable.eligibleLoadShowAds = true;
-                                                            } catch (Exception e) {
-                                                                e.printStackTrace();
-                                                            }
-                                                        }
-                                                    });
-                                                } catch (Exception e) {
-                                                    e.printStackTrace();
-                                                }
+                                                progressDialog.dismiss();
+                                                PublicVariable.eligibleLoadShowAds = true;
                                             }
-                                        }, 333);
+                                        }, 777);
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
                                     }
-                                } else {
                                 }
                             }
                         });
