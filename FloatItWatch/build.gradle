@@ -1,9 +1,8 @@
 apply plugin: 'com.android.application'
-apply plugin: 'io.fabric'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion '29.0.2'
+    buildToolsVersion '29.0.3'
 
     defaultConfig {
         applicationId "net.geekstools.floatshort"
@@ -11,7 +10,7 @@ android {
         minSdkVersion 25
         targetSdkVersion 29
 
-        versionCode 693
+        versionCode 701
         versionName "${majorVersion}." + getDateMonth() + "." + getDateDay() + "." + getDateYear() + ".${versionCode}"
     }
 
@@ -43,13 +42,6 @@ android {
             versionNameSuffix '[FREE][WearOS][Watch][BETA]'
         }
     }
-
-    packagingOptions {
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/LICENSE-FIREBASE.txt'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/DEPENDENCIES'
-    }
 }
 
 static def getDateYear() {
@@ -74,18 +66,16 @@ dependencies {
     implementation project(':LicenseLibrary')
     implementation project(':ShapesCustomImageViewLibrary')
 
-    compileOnly 'com.google.android.wearable:wearable:2.5.0'
-    implementation 'com.google.android.support:wearable:2.5.0'
+    compileOnly 'com.google.android.wearable:wearable:2.7.0'
+    implementation 'com.google.android.support:wearable:2.7.0'
 
     implementation 'androidx.palette:palette:1.0.0'
 
     implementation 'com.google.android.gms:play-services-wearable:17.0.0'
 
-    implementation 'com.google.firebase:firebase-core:17.2.1'
-    implementation 'com.google.firebase:firebase-messaging:20.1.0'
-    implementation 'com.google.firebase:firebase-config:19.1.0'
-    implementation 'com.google.firebase:firebase-analytics:17.2.1'
-
-    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+    implementation 'com.google.firebase:firebase-core:17.4.3'
+    implementation 'com.google.firebase:firebase-messaging:20.2.0'
+    implementation 'com.google.firebase:firebase-config:19.1.4'
+    implementation 'com.google.firebase:firebase-analytics:17.4.3'
 }
 apply plugin: 'com.google.gms.google-services'

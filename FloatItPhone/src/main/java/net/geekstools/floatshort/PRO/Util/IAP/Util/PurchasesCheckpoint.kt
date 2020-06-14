@@ -48,28 +48,30 @@ class PurchasesCheckpoint(var appCompatActivity: AppCompatActivity) {
 
                         val purchases = billingClient.queryPurchases(BillingClient.SkuType.INAPP).purchasesList
 
-                        for (purchase in purchases) {
-                            PrintDebug("*** Purchased Item: $purchase ***")
+                        if (purchases != null) {
+                            for (purchase in purchases) {
+                                PrintDebug("*** Purchased Item: $purchase ***")
 
-                            functionsClass.savePreference(".PurchasedItem", purchase.sku, true)
+                                functionsClass.savePreference(".PurchasedItem", purchase.sku, true)
 
-                            //Consume Donation
-                            if (purchase.sku == BillingManager.iapDonation
-                                    && functionsClass.alreadyDonated()) {
+                                //Consume Donation
+                                if (purchase.sku == BillingManager.iapDonation
+                                        && functionsClass.alreadyDonated()) {
 
-                                val consumeResponseListener = ConsumeResponseListener { billingResult, purchaseToken ->
-                                    if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
-                                        PrintDebug("*** Consumed Item: $purchaseToken ***")
+                                    val consumeResponseListener = ConsumeResponseListener { billingResult, purchaseToken ->
+                                        if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
+                                            PrintDebug("*** Consumed Item: $purchaseToken ***")
 
-                                        functionsClass.savePreference(".PurchasedItem", purchase.sku, false)
+                                            functionsClass.savePreference(".PurchasedItem", purchase.sku, false)
+                                        }
                                     }
+                                    val consumeParams = ConsumeParams.newBuilder()
+                                    consumeParams.setPurchaseToken(purchase.purchaseToken)
+                                    billingClient.consumeAsync(consumeParams.build(), consumeResponseListener)
                                 }
-                                val consumeParams = ConsumeParams.newBuilder()
-                                consumeParams.setPurchaseToken(purchase.purchaseToken)
-                                billingClient.consumeAsync(consumeParams.build(), consumeResponseListener)
-                            }
 
-                            purchaseAcknowledgeProcess(billingClient, purchase, BillingClient.SkuType.INAPP)
+                                purchaseAcknowledgeProcess(billingClient, purchase, BillingClient.SkuType.INAPP)
+                            }
                         }
                     }
                 }
@@ -88,12 +90,14 @@ class PurchasesCheckpoint(var appCompatActivity: AppCompatActivity) {
                         functionsClass.savePreference(".SubscribedItem", BillingManager.iapRemoveAds, false)
 
                         val purchases = billingClient.queryPurchases(BillingClient.SkuType.SUBS).purchasesList
-                        for (purchase in purchases) {
-                            PrintDebug("*** Subscribed Item: $purchase ***")
+                        if (purchases != null) {
+                            for (purchase in purchases) {
+                                PrintDebug("*** Subscribed Item: $purchase ***")
 
-                            functionsClass.savePreference(".SubscribedItem", purchase.sku, true)
+                                functionsClass.savePreference(".SubscribedItem", purchase.sku, true)
 
-                            purchaseAcknowledgeProcess(billingClient, purchase, BillingClient.SkuType.SUBS)
+                                purchaseAcknowledgeProcess(billingClient, purchase, BillingClient.SkuType.SUBS)
+                            }
                         }
                     }
                 }
