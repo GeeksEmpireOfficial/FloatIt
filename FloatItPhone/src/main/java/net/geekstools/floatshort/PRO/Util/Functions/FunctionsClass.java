@@ -2177,13 +2177,15 @@ public class FunctionsClass {
             alertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                 @Override
                 public void onDismiss(DialogInterface dialog) {
+
+
+
                     saveFile(".Updated", String.valueOf(appVersionCode(context.getPackageName())));
 
-                    dialog.dismiss();
                 }
             });
 
-            if (showChangeLog == true) {
+            if (showChangeLog) {
                 alertDialog.show();
             } else if (!context.getFileStreamPath(".Updated").exists()) {
                 alertDialog.show();
